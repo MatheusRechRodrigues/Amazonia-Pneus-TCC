@@ -1,0 +1,141 @@
+html{
+    margin: 0;
+    padding: 0;
+    
+    
+}
+
+body{
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    
+}
+
+.logoamazonia{
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    
+}
+
+.login-card {
+  top: 40%;
+  background-color: #dddddd86;
+  margin-left:65%;
+  transform: translate(-45%, -40%);
+  position: absolute;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 7%;
+  height: 97%;
+  width: 40%;
+  
+
+  }
+  
+  .card-header {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .card-header h1 {
+    font-size: 2em;
+    color: #333;
+    text-shadow: 1px 1px #ddd;
+  }
+  
+  .form-group {
+    margin-bottom: 1%;
+    margin-left:2%;
+    
+  }
+  
+  .form-group label {
+    display: block;
+    font-size: 1.2em;
+    color: #555;
+    margin-bottom: 10px;
+  }
+  input[type="text"],
+  input[type="email"],
+  input[type="password"],
+  input[type="number"],
+  input[type="date"]
+  
+  {
+    box-sizing: border-box;
+    padding: 3px;
+    margin-left: 3%;
+    width: 90%;
+    border-radius: 5px;
+    border: none;
+    background-color: #f0f0f0;
+    font-size: 1.2em;
+    color: #555;
+    box-shadow: inset 0px 2px 5px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+    margin-top: -6px;
+  }
+  
+  input[type="email"]:focus,
+  input[type="password"]:focus,
+  input[type="text"]:focus,
+  input[type="number"]:focus,
+  input[type="date"]:focus
+  {
+    box-shadow: inset 0px 2px 5px rgba(0, 0, 0, 0.3);
+    outline: none;
+  }
+  
+  input[type="submit"] {
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 1.2em;
+    padding: 10%;
+    transition: background-color 0.3s ease;
+  }
+  
+  input[type="submit"]:hover {
+    background-color: #0069d9;
+  }
+  
+  .login-button {
+    background-color: #077510e7;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 1.2em;
+    padding: 10px;
+    width: 90%;
+    transition: background-color 0.3s ease;
+    transition: 0.25s;
+    margin-left: 16px;
+    margin-top: 20px;
+  }
+  
+  .login-button:hover {
+    background-color: #379e40e7;
+    -webkit-box-shadow: 0px 0px 30px 0px #379e40e7;
+    -moz-box-shadow: 0px 0px 30px 0px #379e40e7;
+    box-shadow: 0px 0px 30px 0px #379e40e7;
+  }
+  /* logo da amazonia canto esquerdo*/
+
+
+  .logoamazonia{
+    margin-top: 1%;
+    margin-left: 10%;
+    width: 35%;
+  }
+
+/*escrita sem login ir para o cadastrar*/
+  .cadastrolinkdiv{
+    margin-left: 20px;
+  }
+
+
+  
