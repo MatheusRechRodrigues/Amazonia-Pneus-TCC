@@ -7,7 +7,7 @@
     <title>Document</title>
     <link rel="stylesheet" href="../assets/css/stylelogin.css" >
 </head>
-<body background="../assets/image/bgamazonialogin.png" class="logoamazonia">
+<body>
 
 <!-- formulario de login -->
 <div class="login-card">
@@ -29,7 +29,7 @@
       </div>
       <div class="cadastrolinkdiv">
       <a class="cadastrolog">Sem conta?</a>
-      <a href="../pages/cadastro.php" class="linkcadastrolog">Cadastre-se</a>
+      <a href="../cadastro.php" class="linkcadastrolog">Cadastre-se</a>
       </div>     
 
     </form>

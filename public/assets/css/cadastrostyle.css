@@ -1,14 +1,13 @@
 html{
     margin: 0;
     padding: 0;
-    
+    height: 100vh;
     
 }
 
 body{
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
+  background-image: url(../image/bgamazonialogin.png);
+  height: 100vh;
     
 }
 

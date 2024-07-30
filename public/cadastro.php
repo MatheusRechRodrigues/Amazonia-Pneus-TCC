@@ -11,9 +11,10 @@ $pdo = conect();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="assets/css/cadastrostyle.css" >
+    <link rel="stylesheet" href="./assets/css/cadastrostyle.css" >
 </head>
-<body background="./assets/image/bgamazonialogin.png" class="logoamazonia">
+<body> 
+  <!-- body/ troca pro css -->
 
 <!-- formulario de login -->
 <div class="login-card">
@@ -69,7 +70,7 @@ $pdo = conect();
 
 
       <div class="form-group">
-        <button type="submit" class="login-button" name="btnAdd">Login</button>
+        <button type="submit" class="login-button" name="btnAdd">Cadastrar</button>
       </div>
      
      
@@ -79,14 +80,14 @@ $pdo = conect();
 
       <div class="cadastrolinkdiv">
       <a class="cadastrolog">Já possui cadastro</a>
-      <a href="../pages/login.php" class="linkcadastrolog">Entrar</a>
+      <a href="./pages/login.php" class="linkcadastrolog">Entrar</a>
       </div>     
 
     </form>
   </div>
 </div>
 
-<img src="../assets/image/logoamazonia.png" >
+<img src="../public/assets/image/logoamazonia.png" >
 
 <?php
 if (isset($_POST['btnAdd'])) {
