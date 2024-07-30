@@ -5,16 +5,30 @@ $pdo = conect();
 $message = '';
 $messageType = '';
 
-if (isset($_GET['id'])) {
+if (isset($_GET['id'])) 
     $id = $_GET['id'];
 
     // Verificar se o formulário de atualização foi submetido
-    if (isset($_POST['update'])) {
-        $descricao = $_POST['descricao'];
+    if (isset($_POST['update'])) 
+        $codcliente = $_POST['codcliente'];
+        $nome = $_POST['nome'];
+        $rua = $_POST['rua'];
+        $cpf = $_POST['cpf'];
+        $fone = $_POST['fone'];
+        $email = $_POST['email'];
+        $senha = $_POST['senha'];
+        $datanasc = $_POST['datanasc'];
+        $ncasa = $_POST['ncasa'];
+        $bairro = $_POST['bairro'];
+        $complemento = $_POST['complemento'];
+        $tipo = $_POST['tipo'];
+        $ativo = $_POST['ativo'];
+        $codcidade = $_POST['codcidade'];
+       
 
         if (!empty($descricao)) {
             try {
-                $sql = "UPDATE tb_grupo SET descricao = :descricao WHERE idgrupo = :id";
+                $sql = "UPDATE tb_clientes SET nome = :nome WHERE idgrupo = :id";
                 $stmt = $pdo->prepare($sql);
                 $stmt->bindParam(':id', $id, PDO::PARAM_INT);
                 $stmt->bindParam(':descricao', $descricao, PDO::PARAM_STR);
@@ -31,7 +45,7 @@ if (isset($_GET['id'])) {
             $message = "Descrição não pode ser vazia!";
             $messageType = "danger";
         }
-    } else {
+     else {
         // Obter os detalhes do registro para preencher o formulário de atualização
         try {
             $sql = "SELECT * FROM tb_grupo WHERE idgrupo = :id";
@@ -44,7 +58,7 @@ if (isset($_GET['id'])) {
             $messageType = "danger";
         }
     }
-} else {
+ else {
     header('Location: congrupo.php');
     exit;
 }

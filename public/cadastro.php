@@ -1,5 +1,5 @@
 <?php
-include '../app/functions/database/conect.php'; // Assumindo que você já criou uma função de conexão PDO
+include "../app/functions/database/conect.php"; // Assumindo que você já criou uma função de conexão PDO
 
 $pdo = conect();
 ?>
@@ -22,7 +22,7 @@ $pdo = conect();
     <h1>CADASTRO</h1>
   </div>
   <div class="card-body">
-    <form>                                            <!-- pegar todos os name, exemplo: name="text" de cada input e colocar
+    <form method="post">                                            <!-- pegar todos os name, exemplo: name="text" de cada input e colocar
        em $data = $_POST['data'];-->
     
         <div class="form-group">
