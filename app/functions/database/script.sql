@@ -1,6 +1,3 @@
-DROP DATABASE IF EXISTS amazoniabd;
-CREATE DATABASE IF NOT EXISTS amazoniabd;
-USE amazoniabd;
 
 
 CREATE TABLE tb_cidades (
@@ -23,7 +20,7 @@ CREATE TABLE tb_clientes (
     bairro VARCHAR(100) NOT NULL,
     complemento VARCHAR(255),
     tipo VARCHAR(1) NOT NULL DEFAULT "c" CHECK (tipo IN ('c', 'a')),
-    ativo VARCHAR(1) NOT NULL CHECK (ativo IN ('s', 'n')),
+    ativo VARCHAR(1) NOT NULL DEFAULT "s" CHECK (ativo IN ('s', 'n')),
     codcidade INTEGER,
     FOREIGN KEY (codcidade) REFERENCES tb_cidades (codcidade)
 );
