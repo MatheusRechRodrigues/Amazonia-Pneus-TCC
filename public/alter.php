@@ -5,12 +5,11 @@ $pdo = conect();
 $message = '';
 $messageType = '';
 
-if (isset($_GET['id'])) 
-    $id = $_GET['id'];
+if (isset($_GET['codcliente'])) 
+    $codcliente = $_GET['codcliente'];
 
     // Verificar se o formulário de atualização foi submetido
-    if (isset($_POST['update'])) 
-        $codcliente = $_POST['codcliente'];
+    if (isset($_POST['update'])) {
         $nome = $_POST['nome'];
         $rua = $_POST['rua'];
         $cpf = $_POST['cpf'];
@@ -23,20 +22,30 @@ if (isset($_GET['id']))
         $complemento = $_POST['complemento'];
         $tipo = $_POST['tipo'];
         $ativo = $_POST['ativo'];
-        $codcidade = $_POST['codcidade'];
        
 
-        if (!empty($descricao)) {
+        if (!empty($nome) && !empty($rua) && !empty($cpf) && !empty($fone) && !empty($email) && !empty($senha) && !empty($datanasc) &&  !empty($ncasa) && !empty($bairro) && !empty($complemento) && !empty($tipo) && !empty($ativo) &&  ) {
             try {
-                $sql = "UPDATE tb_clientes SET nome = :nome WHERE idgrupo = :id";
+                $sql = "UPDATE tb_clientes SET nome = :nome, rua = :rua, cpf = :cpf, fone = :fone, email = :email, senha = :senha, datanasc = :datanasc, ncasa = :ncasa, bairro = :bairro, complemento = :complemento, tipo = :tipo, ativo = :ativo WHERE codcliente = :codcliente";
                 $stmt = $pdo->prepare($sql);
-                $stmt->bindParam(':id', $id, PDO::PARAM_INT);
-                $stmt->bindParam(':descricao', $descricao, PDO::PARAM_STR);
+                $stmt->bindParam(':codcliente', $codcliente, PDO::PARAM_INT);
+                $stmt->bindParam(':nome', $nome, PDO::PARAM_STR);
+                $stmt->bindParam(':rua', $rua, PDO::PARAM_STR);
+                $stmt->bindParam(':cpf', $cpf, PDO::PARAM_STR);
+                $stmt->bindParam(':fone', $fone, PDO::PARAM_STR);
+                $stmt->bindParam(':email', $email, PDO::PARAM_STR);
+                $stmt->bindParam(':senha', $senha, PDO::PARAM_STR);
+                $stmt->bindParam(':datanasc', $datanasc, PDO::PARAM_STR);
+                $stmt->bindParam(':ncasa', $ncasa, PDO::PARAM_STR);
+                $stmt->bindParam(':bairro', $bairro, PDO::PARAM_STR);
+                $stmt->bindParam(':complemento', $complemento, PDO::PARAM_STR);
+                $stmt->bindParam(':tipo', $tipo, PDO::PARAM_STR);
+                $stmt->bindParam(':ativo', $ativo, PDO::PARAM_STR);
                 $stmt->execute();
-                $message = "Registro atualizado com sucesso!";
+                $message = "Registro alterado com sucesso!";
                 $messageType = "success";
                 // Redireciona após 2 segundos
-                header("refresh:2;url=congrupo.php");
+                header("refresh:2;url=consulta.php");
             } catch (PDOException $e) {
                 $message = "Erro ao atualizar registro: " . $e->getMessage();
                 $messageType = "danger";
@@ -45,20 +54,22 @@ if (isset($_GET['id']))
             $message = "Descrição não pode ser vazia!";
             $messageType = "danger";
         }
+    }
      else {
         // Obter os detalhes do registro para preencher o formulário de atualização
         try {
-            $sql = "SELECT * FROM tb_grupo WHERE idgrupo = :id";
+            $sql = "SELECT * FROM tb_clientes WHERE codcliente = :codcliente";
             $stmt = $pdo->prepare($sql);
-            $stmt->bindParam(':id', $id, PDO::PARAM_INT);
+            $stmt->bindParam(':codcliente', $codcliente, PDO::PARAM_INT);
             $stmt->execute();
-            $grupo = $stmt->fetch(PDO::FETCH_ASSOC);
+            $tb_clientes = $stmt->fetch(PDO::FETCH_ASSOC);
         } catch (PDOException $e) {
             $message = "Erro ao buscar registro: " . $e->getMessage();
             $messageType = "danger";
         }
+        
     }
- else {
+  else {
     header('Location: congrupo.php');
     exit;
 }
