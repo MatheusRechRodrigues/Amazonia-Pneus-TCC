@@ -88,7 +88,7 @@ $pdo = conect();
 </div>
 
 <img src="../public/assets/image/logoamazonia.png" >
-
+<div class="mensagem-banco">
 <?php
 if (isset($_POST['btnAdd'])) {
     
@@ -121,6 +121,7 @@ if (isset($_POST['btnAdd'])) {
 }
 ?>
 
+</div>
 
 </body>
 </html>

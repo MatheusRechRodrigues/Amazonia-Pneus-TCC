@@ -16,7 +16,7 @@ margin-left:65%;
 transform: translate(-45%, -40%);
 position: absolute;
 box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
-border-radius: 9%;
+border-radius: 10%;
 height: 55%;
 width: 20%;
 
@@ -99,9 +99,12 @@ input[type="submit"]:hover {
 
 .login-button:hover {
   background-color: #379e40e7;
-  -webkit-box-shadow: 0px 0px 30px 0px #379e40e7;
-  -moz-box-shadow: 0px 0px 30px 0px #379e40e7;
-  box-shadow: 0px 0px 30px 0px #379e40e7;
+    -webkit-box-shadow: 0px 0px 10px 0px #379e40e7;
+    -moz-box-shadow: 0px 0px 10px 0px #379e40e7;
+    box-shadow: 0px 0px 10px 0px #379e40e7;
+    transform: scale(98%);
+    
+    transition: transform 0.5s ease;
 }
 /* logo da amazonia canto esquerdo*/
 
@@ -118,3 +121,7 @@ input[type="submit"]:hover {
 }
 
 
+.alink {
+  color: inherit;
+  text-decoration: none;
+ } 

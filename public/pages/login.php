@@ -15,7 +15,7 @@
     <h1>Login</h1>
   </div>
   <div class="card-body">
-    <form>
+    <form id="form">
       <div class="form-group">
         <label for="email">E-mail</label>
         <input type="email" id="email" name="email" required="">
@@ -25,7 +25,7 @@
         <input type="password" id="password" name="password" required="">
       </div>
       <div class="form-group">
-        <button type="submit" class="login-button">Login</button>
+        <button type="submit" class="login-button" onclick="logar()"><a class="alink" href="../public/index.php">Login</a></button>
       </div>
       <div class="cadastrolinkdiv">
       <a class="cadastrolog">Sem conta?</a>
@@ -39,7 +39,6 @@
 <img src="..//assets/image/logoamazonia.png" >
 
 
-
-
+<script src="./public/assets/js/bloq-log-empty.js"></script>
 </body>
 </html>

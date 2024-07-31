@@ -25,7 +25,7 @@ body{
   transform: translate(-45%, -40%);
   position: absolute;
   box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
-  border-radius: 7%;
+  border-radius: 10%;
   height: 97%;
   width: 40%;
   
@@ -99,6 +99,9 @@ body{
   
   input[type="submit"]:hover {
     background-color: #0069d9;
+    transform: translateY(-7px);
+    filter: drop-shadow(17px 17px 11px rgba(0, 0, 0, 0.7));
+    transition: transform 0.3s ease;
   }
   
   .login-button {
@@ -118,9 +121,11 @@ body{
   
   .login-button:hover {
     background-color: #379e40e7;
-    -webkit-box-shadow: 0px 0px 30px 0px #379e40e7;
-    -moz-box-shadow: 0px 0px 30px 0px #379e40e7;
-    box-shadow: 0px 0px 30px 0px #379e40e7;
+    -webkit-box-shadow: 0px 0px 10px 0px #379e40e7;
+    -moz-box-shadow: 0px 0px 10px 0px #379e40e7;
+    box-shadow: 0px 0px 10px 0px #379e40e7;
+    transform: scale(99%);
+    transition: transform 0.5s ease;
   }
   /* logo da amazonia canto esquerdo*/
 
@@ -136,5 +141,9 @@ body{
     margin-left: 20px;
   }
 
+
+  .mensagem-banco{
+    margin-top: 10%;
+  }
 
   
