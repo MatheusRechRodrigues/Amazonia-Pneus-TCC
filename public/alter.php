@@ -24,7 +24,7 @@ if (isset($_GET['codcliente']))
         $ativo = $_POST['ativo'];
        
 
-        if (!empty($nome) && !empty($rua) && !empty($cpf) && !empty($fone) && !empty($email) && !empty($senha) && !empty($datanasc) &&  !empty($ncasa) && !empty($bairro) && !empty($complemento) && !empty($tipo) && !empty($ativo) &&  ) {
+        if (!empty($nome) && !empty($rua) && !empty($cpf) && !empty($fone) && !empty($email) && !empty($senha) && !empty($datanasc) &&  !empty($ncasa) && !empty($bairro) && !empty($complemento) && !empty($tipo) && !empty($ativo) ) {
             try {
                 $sql = "UPDATE tb_clientes SET nome = :nome, rua = :rua, cpf = :cpf, fone = :fone, email = :email, senha = :senha, datanasc = :datanasc, ncasa = :ncasa, bairro = :bairro, complemento = :complemento, tipo = :tipo, ativo = :ativo WHERE codcliente = :codcliente";
                 $stmt = $pdo->prepare($sql);
@@ -70,10 +70,7 @@ if (isset($_GET['codcliente']))
         }
         
     }
-  else {
-    header('Location: consulta.php');
-    exit;
-}
+
 ?>
 
 <!DOCTYPE html>
@@ -105,7 +102,7 @@ if (isset($_GET['codcliente']))
             </div>
             <div class="form-group">
                 <label for="rua">Rua:</label>
-                <input type="text" class="form-control" id="rua" name="rua" value="<?php echo htmlspecialchars($tb_clientes['nome']); ?>" required>
+                <input type="text" class="form-control" id="rua" name="rua" value="<?php echo htmlspecialchars($tb_clientes['rua']); ?>" required>
                 
             </div>
             <div class="form-group">

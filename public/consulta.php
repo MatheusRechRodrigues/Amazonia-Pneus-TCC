@@ -56,12 +56,17 @@ $pdo = conect();
             echo "<td>" . htmlspecialchars($row['complemento']) . "</td>";
             echo "<td>" . htmlspecialchars($row['tipo']) . "</td>";
             echo "<td>" . htmlspecialchars($row['ativo']) . "</td>";
+            echo "<td> <a href='alter.php?codcliente=" .  htmlspecialchars($row['codcliente']) . "' class='btn btn-danger'>Alterar</a> </td>";
+            
             echo "</tr>";
         }
     } catch (\PDOException $e) {
         echo "Erro: " . $e->getMessage();
     }
     ?>
+
+
+
 </tbody>
 
     </table>
