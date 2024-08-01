@@ -1,0 +1,16 @@
+.table table-striped{
+    background-color: rgb(20, 20, 20);
+}
+
+tr{
+    border-color: black;
+    background-color: rgb(151, 153, 149);
+    border: 1px solid rgb(48, 48, 48);
+}
+
+td{
+    border-color: black;
+    background-color: rgb(151, 153, 149);
+    border: 1px solid rgb(48, 48, 48);
+    
+}

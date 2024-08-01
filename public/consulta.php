@@ -8,7 +8,7 @@ $pdo = conect();
 <head>
     <meta charset="UTF-8">
     <title>Lista de Grupos</title>
-
+    <link rel="stylesheet" href="./assets/css/crudstyle.css">
 
 </head>
 <body>
@@ -29,8 +29,7 @@ $pdo = conect();
                 <th>Bairro</th>
                 <th>Complemento</th>
                 <th>Tipo</th>
-                <th>Ativo</th>
-                <th>Cidade/Estado</th>
+                <th>Ativo</th>  
             </tr>
         </thead>
         <tbody>
@@ -57,7 +56,6 @@ $pdo = conect();
             echo "<td>" . htmlspecialchars($row['complemento']) . "</td>";
             echo "<td>" . htmlspecialchars($row['tipo']) . "</td>";
             echo "<td>" . htmlspecialchars($row['ativo']) . "</td>";
-            echo "<td>" . htmlspecialchars($row['codcidade']) . "</td>";
             echo "</tr>";
         }
     } catch (\PDOException $e) {
