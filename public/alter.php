@@ -95,10 +95,10 @@ if (isset($_GET['codcliente']))
                 <a href="consulta.php" class="btn btn-secondary mt-2">Voltar</a>
             <?php endif; ?>
         </div>
-    <?php elseif (isset($grupo)): ?>
+    <?php elseif (isset($tb_clientes)): ?>
         <form method="post" action="">
             <div class="form-group">
-                <label for="descricao">Descrição:</label>
+                <label for="descricao">codigo:</label>
                 <input type="text" class="form-control" id="descricao" name="descricao" value="<?php echo htmlspecialchars($grupo['codcliente']); ?>" required>
                 
             </div>
