@@ -70,7 +70,7 @@ if (isset($_GET['codcliente']))
         
     }
   else {
-    header('Location: congrupo.php');
+    header('Location: consulta.php');
     exit;
 }
 ?>
@@ -92,26 +92,27 @@ if (isset($_GET['codcliente']))
             <?php if ($messageType == 'success'): ?>
                 <p>Você será redirecionado em 2 segundos...</p>
             <?php else: ?>
-                <a href="congrupo.php" class="btn btn-secondary mt-2">Voltar</a>
+                <a href="consulta.php" class="btn btn-secondary mt-2">Voltar</a>
             <?php endif; ?>
         </div>
     <?php elseif (isset($grupo)): ?>
         <form method="post" action="">
             <div class="form-group">
                 <label for="descricao">Descrição:</label>
-                <input type="text" class="form-control" id="descricao" name="descricao" value="<?php echo htmlspecialchars($grupo['descricao']); ?>" required>
+                <input type="text" class="form-control" id="descricao" name="descricao" value="<?php echo htmlspecialchars($grupo['codcliente']); ?>" required>
+                
             </div>
             <button type="submit" name="update" class="btn btn-primary">Atualizar</button>
-            <a href="congrupo.php" class="btn btn-secondary">Cancelar</a>
+            <a href="consulta.php" class="btn btn-secondary">Cancelar</a>
         </form>
     <?php else: ?>
         <div class="alert alert-danger" role="alert">
             Registro não encontrado.
-            <a href="congrupo.php" class="btn btn-secondary mt-2">Voltar</a>
+            <a href="consulta.php" class="btn btn-secondary mt-2">Voltar</a>
         </div>
     <?php endif; ?>
 </div>
 
-<script src="js/bootstrap.min.js"></script>
+
 </body>
 </html>
