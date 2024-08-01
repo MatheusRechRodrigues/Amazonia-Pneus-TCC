@@ -50,7 +50,8 @@ if (isset($_GET['codcliente']))
                 $message = "Erro ao atualizar registro: " . $e->getMessage();
                 $messageType = "danger";
             }
-        } else {
+        }
+         else {
             $message = "Descrição não pode ser vazia!";
             $messageType = "danger";
         }
@@ -98,10 +99,63 @@ if (isset($_GET['codcliente']))
     <?php elseif (isset($tb_clientes)): ?>
         <form method="post" action="">
             <div class="form-group">
-                <label for="descricao">codigo:</label>
-                <input type="text" class="form-control" id="descricao" name="descricao" value="<?php echo htmlspecialchars($grupo['codcliente']); ?>" required>
+                <label for="nome">Nome:</label>
+                <input type="text" class="form-control" id="nome" name="nome" value="<?php echo htmlspecialchars($tb_clientes['nome']); ?>" required>
                 
             </div>
+            <div class="form-group">
+                <label for="rua">Rua:</label>
+                <input type="text" class="form-control" id="rua" name="rua" value="<?php echo htmlspecialchars($tb_clientes['nome']); ?>" required>
+                
+            </div>
+            <div class="form-group">
+                <label for="cpf">Cpf:</label>
+                <input type="text" class="form-control" id="cpf" name="cpf" value="<?php echo htmlspecialchars($tb_clientes['cpf']); ?>" required>
+                
+            </div>
+            <div class="form-group">
+                <label for="fone">Fone:</label>
+                <input type="text" class="form-control" id="fone" name="fone" value="<?php echo htmlspecialchars($tb_clientes['fone']); ?>" required>
+                
+            </div>
+            <div class="form-group">
+                <label for="email">E-Mail:</label>
+                <input type="text" class="form-control" id="email" name="email" value="<?php echo htmlspecialchars($tb_clientes['email']); ?>" required>
+                
+           
+            </div>
+            <div class="form-group">
+                <label for="datanasc">Data de Nasc:</label>
+                <input type="text" class="form-control" id="datanasc" name="datanasc" value="<?php echo htmlspecialchars($tb_clientes['datanasc']); ?>" required>
+                
+            </div>
+            <div class="form-group">
+                <label for="ncasa">N° Casa:</label>
+                <input type="text" class="form-control" id="ncasa" name="ncasa" value="<?php echo htmlspecialchars($tb_clientes['ncasa']); ?>" required>
+                
+            </div>
+            <div class="form-group">
+                <label for="bairro">Bairro:</label>
+                <input type="text" class="form-control" id="bairro" name="bairro" value="<?php echo htmlspecialchars($tb_clientes['bairro']); ?>" required>
+                
+            </div>
+            <div class="form-group">
+                <label for="complemento">complemento:</label>
+                <input type="text" class="form-control" id="complemento" name="complemento" value="<?php echo htmlspecialchars($tb_clientes['complemento']); ?>" required>
+                
+            </div>
+            <div class="form-group">
+                <label for="tipo">Tipo:</label>
+                <input type="text" class="form-control" id="tipo" name="tipo" value="<?php echo htmlspecialchars($tb_clientes['tipo']); ?>" required>
+
+            </div>    
+                <div class="form-group">
+                <label for="ativo">Ativo:</label>
+                <input type="text" class="form-control" id="ativo" name="ativo" value="<?php echo htmlspecialchars($tb_clientes['ativo']); ?>" required>
+
+            </div>    
+
+
             <button type="submit" name="update" class="btn btn-primary">Atualizar</button>
             <a href="consulta.php" class="btn btn-secondary">Cancelar</a>
         </form>
