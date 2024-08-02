@@ -15,7 +15,6 @@ if (isset($_GET['codcliente']))
         $cpf = $_POST['cpf'];
         $fone = $_POST['fone'];
         $email = $_POST['email'];
-        $senha = $_POST['senha'];
         $datanasc = $_POST['datanasc'];
         $ncasa = $_POST['ncasa'];
         $bairro = $_POST['bairro'];
@@ -24,7 +23,7 @@ if (isset($_GET['codcliente']))
         $ativo = $_POST['ativo'];
        
 
-        if (!empty($nome) && !empty($rua) && !empty($cpf) && !empty($fone) && !empty($email) && !empty($senha) && !empty($datanasc) &&  !empty($ncasa) && !empty($bairro) && !empty($complemento) && !empty($tipo) && !empty($ativo) ) {
+        if (!empty($nome) && !empty($rua) && !empty($cpf) && !empty($fone) && !empty($email) && !empty($datanasc) &&  !empty($ncasa) && !empty($bairro) && !empty($complemento) && !empty($tipo) && !empty($ativo) ) {
             try {
                 $sql = "UPDATE tb_clientes SET nome = :nome, rua = :rua, cpf = :cpf, fone = :fone, email = :email, senha = :senha, datanasc = :datanasc, ncasa = :ncasa, bairro = :bairro, complemento = :complemento, tipo = :tipo, ativo = :ativo WHERE codcliente = :codcliente";
                 $stmt = $pdo->prepare($sql);
@@ -33,8 +32,7 @@ if (isset($_GET['codcliente']))
                 $stmt->bindParam(':rua', $rua, PDO::PARAM_STR);
                 $stmt->bindParam(':cpf', $cpf, PDO::PARAM_STR);
                 $stmt->bindParam(':fone', $fone, PDO::PARAM_STR);
-                $stmt->bindParam(':email', $email, PDO::PARAM_STR);
-                $stmt->bindParam(':senha', $senha, PDO::PARAM_STR);
+                $stmt->bindParam(':email', $email, PDO::PARAM_STR);                
                 $stmt->bindParam(':datanasc', $datanasc, PDO::PARAM_STR);
                 $stmt->bindParam(':ncasa', $ncasa, PDO::PARAM_STR);
                 $stmt->bindParam(':bairro', $bairro, PDO::PARAM_STR);
