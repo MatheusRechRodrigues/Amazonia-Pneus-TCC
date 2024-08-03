@@ -39,7 +39,7 @@ $pdo = conect();
         
           <div class="form-group">
             <label for="text">Telefone</label>
-            <input type="text" id="text" name="fone" required="">
+            <input type="number" id="text" name="fone" required="">
           </div>
         
         
@@ -63,6 +63,38 @@ $pdo = conect();
         <label for="date">Data de Nascimento</label>
         <input type="date" id="date" name="datanasc" required="">
       </div>
+
+
+
+
+      <div class="form-group">
+            <label for="text">Rua</label>
+            <input type="text" id="text" name="rua" required="">
+          </div>
+
+
+
+          
+          <div class="form-group">
+            <label for="text">Bairro</label>
+            <input type="text" id="text" name="bairro" required="">
+          </div>
+          
+          
+
+          
+          <div class="form-group">
+            <label for="text">N° Casa</label>
+            <input type="number" id="text" name="ncasa" required="">
+          </div>
+          
+
+
+
+          <div class="form-group">
+            <label for="text">Complemento</label>
+            <input type="text" id="text" name="complemento" required="">
+          </div>
 
 
      
@@ -93,23 +125,31 @@ $pdo = conect();
 if (isset($_POST['btnAdd'])) {
     
     $nome = $_POST['nome'];
+    $rua = $_POST['rua'];
     $cpf = $_POST['cpf'];
     $fone = $_POST['fone'];
     $email = $_POST['email'];
     $senha = $_POST['senha'];
     $datanasc = $_POST['datanasc'];
+    $ncasa = $_POST['ncasa'];
+    $bairro = $_POST['bairro'];
+    $complemento = $_POST['complemento'];
     
     // colocar os bagui aq   //
     
     if (!empty($nome && $cpf && $fone && $email && $senha && $datanasc)) {
         try {
-            $stmt = $pdo->prepare("INSERT INTO tb_clientes (nome,cpf,fone,email,senha,datanasc) VALUES (:nome,:cpf,:fone,:email,:senha,:datanasc)");
+            $stmt = $pdo->prepare("INSERT INTO tb_clientes (nome,rua,cpf,fone,email,senha,datanasc,ncasa,bairro,complemento) VALUES (:nome,:rua,:cpf,:fone,:email,:senha,:datanasc,:ncasa,:bairro,:complemento)");
             $stmt->bindParam(':nome', $nome);
+            $stmt->bindParam(':rua', $rua);
             $stmt->bindParam(':cpf', $cpf);
             $stmt->bindParam(':fone', $fone);
             $stmt->bindParam(':email', $email);
             $stmt->bindParam(':senha', $senha);
             $stmt->bindParam(':datanasc', $datanasc);
+            $stmt->bindParam(':ncasa', $ncasa);
+            $stmt->bindParam(':bairro', $bairro);
+            $stmt->bindParam(':complemento', $complemento);
             $stmt->execute();
             echo "Grupo adicionado com sucesso!";
         } catch (\PDOException $e) {

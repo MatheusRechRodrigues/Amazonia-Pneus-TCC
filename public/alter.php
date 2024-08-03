@@ -81,6 +81,7 @@ if (isset($_GET['codcliente']))
 </head>
 <body>
 <div class="container mt-5">
+    
     <h2>Alterar Grupo</h2>
     <?php if ($message): ?>
         <div class="alert alert-<?php echo $messageType; ?>" role="alert">
