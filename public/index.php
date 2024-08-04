@@ -1,40 +1,44 @@
 
-
-<!-- asdddasdasdda-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="../assets/css/styleindex.css">
+    <link rel="stylesheet" href="../public/assets/css/stylelogin.css" >
 </head>
 <body>
-    
-        <div class="divnavbar"><!-- parte verde no topo -->
-      a
-        </div>
-        <div class="circleyellow">
-            <!-- parte amarela onde vai a logo amazonia pneus -->
-            <img src="" class=""><!-- logo amazonia aqui -->
-        </div>
 
-    <!-- menu com 3 riscos abrindo menu navbar na vertical -->
+<!-- formulario de login -->
+<div class="login-card">
+  <div class="card-header">
+    <h1>Login</h1>
+  </div>
+  <div class="card-body">
+    <form id="form">
+      <div class="form-group">
+        <label for="email">E-mail</label>
+        <input type="email" id="email" name="email" required="">
+      </div>
+      <div class="form-group">
+        <label for="password">Senha</label>
+        <input type="password" id="password" name="password" required="">
+      </div>
+      <div class="form-group">
+        <button type="submit" class="login-button"><a class="alink" href="../pages/inicio.php">Login</a></button>
+      </div>
+      <div class="cadastrolinkdiv">
+      <a class="cadastrolog">Sem conta?</a>
+      <a href="../cadastro.php" class="linkcadastrolog">Cadastre-se</a>
+      </div>     
 
-    <!-- circulo de usuario para conta, login/cadastro,
-     com simbolo de usuario estilo facebook-->
+    </form>
+  </div>
+</div>
 
-    <!-- simbolo de carrinho dentro de retangulo com border radius de 10%-->
-    </header>
-
-
-<h1>click </h1><a href="pages/login.php">Login</a><br>
-</h1><a href="consulta.php">consulta</a><br>
+<img src="../public/assets/image/logoamazonia.png" >
 
 
-<php? 
-phpinfo();
-?>
 
 </body>
 </html>
