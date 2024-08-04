@@ -1,6 +1,5 @@
 
 
-
 <!-- asdddasdasdda-->
 <!DOCTYPE html>
 <html lang="en">
@@ -8,14 +7,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="./assets/css/styleindex.css">
+    <link rel="stylesheet" href="../assets/css/styleindex.css">
 </head>
 <body>
-    <header class="header">
-        <div class="header-div"><!-- parte verde no topo -->
-      
+    
+        <div class="divnavbar"><!-- parte verde no topo -->
+      a
         </div>
-        <div class="header-circleyellow">
+        <div class="circleyellow">
             <!-- parte amarela onde vai a logo amazonia pneus -->
             <img src="" class=""><!-- logo amazonia aqui -->
         </div>
@@ -29,11 +28,13 @@
     </header>
 
 
-<h1>click </h1><a href="pages/login.php">here</a><br>
-</h1><a href="alter.php">alter</a><br>
+<h1>click </h1><a href="pages/login.php">Login</a><br>
 </h1><a href="consulta.php">consulta</a><br>
-</h1><a href="exclusao.php">exclusao</a><br>
-</h1><a href="inclusao.php">inclusao</a><br>
+
+
+<php? 
+phpinfo();
+?>
 
 </body>
 </html>

@@ -16,7 +16,7 @@ $pdo = conect();
     <h2>Tabela de Grupos</h2>
     <table class="table table-striped">
         <thead>
-            <tr>
+            <tr class="trgreen">
                 <th>ID</th>
                 <th>Nome</th>
                 <th>Rua</th>
@@ -57,6 +57,7 @@ $pdo = conect();
             echo "<td>" . htmlspecialchars($row['tipo']) . "</td>";
             echo "<td>" . htmlspecialchars($row['ativo']) . "</td>";
             echo "<td> <a href='alter.php?codcliente=" .  htmlspecialchars($row['codcliente']) . "' class='btn btn-danger'>Alterar</a> </td>";
+            echo "<td> <a href='exclusao.php?codcliente=" .  htmlspecialchars($row['codcliente']) . "' class='btn btn-danger'>Excluir</a> </td>";
             
             echo "</tr>";
         }

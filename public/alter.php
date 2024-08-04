@@ -25,7 +25,7 @@ if (isset($_GET['codcliente']))
 
         if (!empty($nome) && !empty($rua) && !empty($cpf) && !empty($fone) && !empty($email) && !empty($datanasc) &&  !empty($ncasa) && !empty($bairro) && !empty($complemento) && !empty($tipo) && !empty($ativo) ) {
             try {
-                $sql = "UPDATE tb_clientes SET nome = :nome, rua = :rua, cpf = :cpf, fone = :fone, email = :email, senha = :senha, datanasc = :datanasc, ncasa = :ncasa, bairro = :bairro, complemento = :complemento, tipo = :tipo, ativo = :ativo WHERE codcliente = :codcliente";
+                $sql = "UPDATE tb_clientes SET nome = :nome, rua = :rua, cpf = :cpf, fone = :fone, email = :email, datanasc = :datanasc, ncasa = :ncasa, bairro = :bairro, complemento = :complemento, tipo = :tipo, ativo = :ativo WHERE codcliente = :codcliente";
                 $stmt = $pdo->prepare($sql);
                 $stmt->bindParam(':codcliente', $codcliente, PDO::PARAM_INT);
                 $stmt->bindParam(':nome', $nome, PDO::PARAM_STR);
@@ -66,7 +66,7 @@ if (isset($_GET['codcliente']))
             $message = "Erro ao buscar registro: " . $e->getMessage();
             $messageType = "danger";
         }
-        
+
     }
 
 ?>

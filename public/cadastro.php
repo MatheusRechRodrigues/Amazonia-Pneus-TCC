@@ -33,7 +33,7 @@ $pdo = conect();
          
           <div class="form-group">
             <label for="text">Cpf</label>
-            <input type="text" id="text" name="cpf" required="">
+            <input type="number" id="text" name="cpf" required="">
           </div>
         
         
@@ -103,6 +103,7 @@ $pdo = conect();
 
       <div class="form-group">
         <button type="submit" class="login-button" name="btnAdd">Cadastrar</button>
+        <a href="../pages/inicio.php"></a>
       </div>
      
      
@@ -119,7 +120,7 @@ $pdo = conect();
   </div>
 </div>
 
-<img src="../public/assets/image/logoamazonia.png" >
+<img src="../public/assets/image/logoamazonia.png" class="logoamazonia">
 <div class="mensagem-banco">
 <?php
 if (isset($_POST['btnAdd'])) {
@@ -151,7 +152,8 @@ if (isset($_POST['btnAdd'])) {
             $stmt->bindParam(':bairro', $bairro);
             $stmt->bindParam(':complemento', $complemento);
             $stmt->execute();
-            echo "Grupo adicionado com sucesso!";
+            echo ' <div class="echoadd">Usuário adicionado com sucesso!</div>';
+            
         } catch (\PDOException $e) {
             echo "Erro: " . $e->getMessage();
         }

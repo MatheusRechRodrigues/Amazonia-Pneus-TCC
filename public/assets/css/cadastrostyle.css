@@ -139,7 +139,7 @@ body{
 
   .logoamazonia{
     margin-top: 1%;
-    margin-left: 10%;
+    margin-left: 5%;
     width: 35%;
   }
 
@@ -149,8 +149,20 @@ body{
   }
 
 
-  .mensagem-banco{
-    margin-top: 10%;
-  }
 
-  
+  /*mensagem de adicionado*/
+
+
+  .echoadd{
+    color: #ffffffe7;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 300;
+    font-size: 30px;
+    font-weight: 100;
+    font-weight: bolder;
+    width: 45%;
+    margin-left: 40px;
+    margin-top: -2%;
+    -webkit-text-stroke-color: black;
+    -webkit-text-stroke-width: 1.2px;
+  }
