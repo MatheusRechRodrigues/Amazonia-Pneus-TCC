@@ -37,6 +37,6 @@ if ($qtd > 0) {
 } else {
     // Se não encontrou usuário, exibe mensagem de erro e redireciona para a página inicial
     echo "<script>alert('Usuário e/ou senha incorreto(s)');</script>";
-    echo "<script>location.href='index.php';</script>";
+    echo "<script>location.href='../index.php';</script>";
 }
 ?>

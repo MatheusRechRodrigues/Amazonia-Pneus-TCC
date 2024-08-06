@@ -18,15 +18,25 @@ echo $_SESSION['email'];
 </div>
 </header>
  
-<a href="../consulta.php">a</a>
+
+
+
+
 <?php
 
 if (!empty($_SESSION) && $_SESSION['tipo'] == 'a' && empty($_SESSION['tipo'] == '')) //tela pro adm, somente o adm vai ter acesso a links aq
-{ echo "Bem vindo Administrador !" ;}
+
+{?> 
+<!-- tudo do html pro adm -->
+ <a href="../consulta.php">admin</a>
+
+
+<?php  
+}
+
 
 else{ //tela pro user, coisas que o usuario vai ter
     ?>
-<a href="../consulta.php">consulta</a>
 
 <?php  
 }
