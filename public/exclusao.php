@@ -55,8 +55,17 @@ if (isset($_GET['codcliente'])) {
     <meta charset="UTF-8">
     <title>Excluir Grupo</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./assets/css/crudstyle.css" >
 </head>
 <body>
+
+<header>
+    <div class="menubar">
+        
+    </div>
+    <img src="./assets/image/bandaglogo.png" alt="" class="circleyellow">
+</header>
+
 <div class="container mt-5">
     <h2>Excluir Grupo</h2>
     <?php if ($message): ?>

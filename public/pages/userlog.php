@@ -28,7 +28,7 @@ if ($qtd > 0) {
     $row = $res->fetch(PDO::FETCH_ASSOC);
     $_SESSION["email"] = $email;
     $_SESSION["nome"] = $row['nome']; // 'nome' é uma chave do resultado da consulta, use aspas simples para acessar
-    $_SESSION["tipo"] = $row['tipo'];//pega o tipo do user
+    $_SESSION["tipo"] = $row['tipo'];  //pega o tipo do user
 
     
 

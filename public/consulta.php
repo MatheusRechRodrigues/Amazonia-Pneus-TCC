@@ -14,7 +14,15 @@ $pdo = conect();
 </head>
 
 <body>
-    <div class="container mt-5">
+
+<header>
+    <div class="menubar">
+        
+    </div>
+    <img src="./assets/image/bandaglogo.png" alt="" class="circleyellow">
+</header>
+
+<div class="containerconsulta">
         <h2>Tabela de Grupos</h2>
         <table class="table table-striped">
             <thead>
@@ -75,13 +83,12 @@ $pdo = conect();
 
         </table>
     </div>
-<table>
-    <thead>
-        <tr>
-            <td><a href="./pages/inicio.php">Voltar</a>
-            </td>    
-        </tr>
-    </thead>
+
+    
+           <button class="containerconsultavoltar">
+                <a href="./pages/inicio.php">Voltar</a>
+           </button>
+         
     </table>
 </body>
 

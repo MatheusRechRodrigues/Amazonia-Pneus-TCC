@@ -76,11 +76,17 @@ if (isset($_GET['codcliente']))
 <head>
     <meta charset="UTF-8">
     <title>Alterar Grupo</title>
-
+    <link rel="stylesheet" href="./assets/css/crudstyle.css" >
 
 </head>
 <body>
-<div class="container mt-5">
+<header>
+    <div class="menubar">
+        
+    </div>
+    <img src="./assets/image/bandaglogo.png" alt="" class="circleyellow">
+</header>
+<div class="containeralter">
     
     <h2>Alterar Grupo</h2>
     <?php if ($message): ?>

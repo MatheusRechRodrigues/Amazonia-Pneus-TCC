@@ -18,11 +18,11 @@ echo $_SESSION['email'];
 </div>
 </header>
  
-<a href="./public/consulta.php">a</a>
+<a href="../consulta.php">a</a>
 <?php
 
 if (!empty($_SESSION) && $_SESSION['tipo'] == 'a' && empty($_SESSION['tipo'] == '')) //tela pro adm, somente o adm vai ter acesso a links aq
-{ echo "ivan é gay da a bunda" ;}
+{ echo "Bem vindo Administrador !" ;}
 
 else{ //tela pro user, coisas que o usuario vai ter
     ?>
