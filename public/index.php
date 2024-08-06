@@ -1,11 +1,12 @@
 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="../public/assets/css/stylelogin.css" >
+    <link rel="stylesheet" href="./assets/css/stylelogin.css" >
 </head>
 <body>
 
@@ -15,21 +16,21 @@
     <h1>Login</h1>
   </div>
   <div class="card-body">
-    <form id="form">
+    <form id="form" action="./pages/userlog.php" method="post">
       <div class="form-group">
         <label for="email">E-mail</label>
         <input type="email" id="email" name="email" required="">
       </div>
       <div class="form-group">
         <label for="password">Senha</label>
-        <input type="password" id="password" name="password" required="">
+        <input type="password" id="password" name="senha" required="">
       </div>
       <div class="form-group">
-        <button type="submit" class="login-button"><a class="alink" href="../pages/inicio.php">Login</a></button>
+        <button type="submit" class="login-button"><a class="alink">Login</a></button>
       </div>
       <div class="cadastrolinkdiv">
       <a class="cadastrolog">Sem conta?</a>
-      <a href="../cadastro.php" class="linkcadastrolog">Cadastre-se</a>
+      <a href="cadastro.php" class="linkcadastrolog">Cadastre-se</a>
       </div>     
 
     </form>
@@ -42,3 +43,4 @@
 
 </body>
 </html>
+

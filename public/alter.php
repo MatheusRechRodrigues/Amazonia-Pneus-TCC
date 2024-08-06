@@ -1,6 +1,6 @@
 <?php
 include '../app/functions/database/conect.php'; // Assumindo que você já criou uma função de conexão PDO
-
+session_start();
 $pdo = conect();
 $message = '';
 $messageType = '';

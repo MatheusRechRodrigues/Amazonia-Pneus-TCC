@@ -1,6 +1,6 @@
 
 <?php
-
+session_start();
 include '../app/functions/database/conect.php'; // Assumindo que você já criou uma função de conexão PDO
 
 $pdo = conect();

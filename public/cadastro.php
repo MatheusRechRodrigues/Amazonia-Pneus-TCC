@@ -1,5 +1,6 @@
 <?php
 include "../app/functions/database/conect.php"; // Assumindo que você já criou uma função de conexão PDO
+session_start(); //colocar em tudo o session
 
 $pdo = conect();
 ?>
@@ -14,7 +15,7 @@ $pdo = conect();
     <link rel="stylesheet" href="./assets/css/cadastrostyle.css" >
 </head>
 <body> 
-  <!-- body/ troca pro css -->
+ 
 
 <!-- formulario de login -->
 <div class="login-card">
@@ -22,8 +23,7 @@ $pdo = conect();
     <h1>CADASTRO</h1>
   </div>
   <div class="card-body">
-    <form method="post">                                            <!-- pegar todos os name, exemplo: name="text" de cada input e colocar
-       em $data = $_POST['data'];-->
+    <form method="post">                                            
     
         <div class="form-group">
             <label for="text">Nome</label>
@@ -113,7 +113,7 @@ $pdo = conect();
 
       <div class="cadastrolinkdiv">
       <a class="cadastrolog">Já possui cadastro</a>
-      <a href="./pages/login.php" class="linkcadastrolog">Entrar</a>
+      <a href="index.php" class="linkcadastrolog">Entrar</a>
       </div>     
 
     </form>
