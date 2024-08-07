@@ -29,9 +29,9 @@ if (!empty($_SESSION) && $_SESSION['tipo'] == 'a' && empty($_SESSION['tipo'] == 
 
 {?> 
 <!-- tudo do html pro adm -->
-<div class="linkcons">
-<a  href="../consulta.php">admin</a>
-</div>
+
+<a  href="../consulta.php">CONSULTA</a>
+
 <br><br><br>
 <h1>Olá administrador  </h1>
 
