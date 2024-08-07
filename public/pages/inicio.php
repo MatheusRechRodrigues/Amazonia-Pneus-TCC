@@ -1,6 +1,6 @@
 <?php
 session_start();
-echo $_SESSION['email'];
+
 ?>
 
 <!DOCTYPE html>
@@ -9,16 +9,17 @@ echo $_SESSION['email'];
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="../assets/css/crudstyle.css">
 </head>
 <body>
- 
-<header class="header-top-menu">
-    <div class="circle-yellow-bandai">
-    <img src="" alt="">
-</div>
-</header>
- 
+<header>
+        <div class="menubar">
 
+
+
+        </div>
+        <img src="../assets/image/bandaglogo.png" alt="" class="circleyellow">
+    </header>
 
 
 
@@ -28,8 +29,10 @@ if (!empty($_SESSION) && $_SESSION['tipo'] == 'a' && empty($_SESSION['tipo'] == 
 
 {?> 
 <!-- tudo do html pro adm -->
- <a href="../consulta.php">admin</a>
-
+<div class="linkcons">
+<a  href="../consulta.php">admin</a>
+</div>
+oiiiiiiiiiiiiiiiiiiiiiiiiiii
 
 <?php  
 }

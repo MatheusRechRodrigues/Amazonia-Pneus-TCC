@@ -1,9 +1,9 @@
 <?php
-include "../app/functions/database/conect.php"; // Assumindo que você já criou uma função de conexão PDO
-session_start(); //colocar em tudo o session
+include '../../app/functions/database/conect.php'; 
 
 $pdo = conect();
 ?>
+
 
 
 <!DOCTYPE html>
@@ -20,7 +20,7 @@ $pdo = conect();
 <!-- formulario de login -->
 <div class="login-card">
   <div class="card-header">
-    <h1>CADASTRO</h1>
+    <h1>CADASTRO DE ADM</h1>
   </div>
   <div class="card-body">
     <form method="post">                                            
@@ -97,6 +97,13 @@ $pdo = conect();
           </div>
 
 
+
+
+          <div class="form-group">
+            <label for="text">Tipo</label>
+            <input type="text" id="text" name="tipo" required="">
+          </div>
+          
      
 <!--  acaba aq os input, pra baixo botões   -->
 
@@ -135,13 +142,14 @@ if (isset($_POST['btnAdd'])) {
     $ncasa = $_POST['ncasa'];
     $bairro = $_POST['bairro'];
     $complemento = $_POST['complemento'];
+    $tipo = $_POST['tipo'];
     
     
     // colocar os bagui aq   //
     
-    if (!empty($nome && $cpf && $fone && $email && $senha && $datanasc)) {
+    if (!empty($nome && $cpf && $fone && $email && $senha && $datanasc && $ncasa && $bairro && $complemento && $tipo)) {
         try {
-            $stmt = $pdo->prepare("INSERT INTO tb_clientes (nome,rua,cpf,fone,email,senha,datanasc,ncasa,bairro,complemento) VALUES (:nome,:rua,:cpf,:fone,:email,:senha,:datanasc,:ncasa,:bairro,:complemento)");
+            $stmt = $pdo->prepare("INSERT INTO tb_clientes (nome,rua,cpf,fone,email,senha,datanasc,ncasa,bairro,complemento,tipo) VALUES (:nome,:rua,:cpf,:fone,:email,:senha,:datanasc,:ncasa,:bairro,:complemento,:tipo)");
             $stmt->bindParam(':nome', $nome);
             $stmt->bindParam(':rua', $rua);
             $stmt->bindParam(':cpf', $cpf);
