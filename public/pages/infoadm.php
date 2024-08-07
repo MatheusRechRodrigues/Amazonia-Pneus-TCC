@@ -12,7 +12,7 @@ $pdo = conect();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="./assets/css/cadastrostyle.css" >
+    <link rel="stylesheet" href="../assets/css/cadastrostyle.css" >
 </head>
 <body> 
  
@@ -24,7 +24,7 @@ $pdo = conect();
   </div>
   <div class="card-body">
     <form method="post">                                            
-    
+    <label class="n1">
         <div class="form-group">
             <label for="text">Nome</label>
             <input type="text" id="text" name="nome" required="">
@@ -35,8 +35,9 @@ $pdo = conect();
             <label for="text">Cpf</label>
             <input type="number" id="text" name="cpf" required="">
           </div>
+          </label>
         
-        
+          <label class="n2">
           <div class="form-group">
             <label for="text">Telefone</label>
             <input type="number" id="text" name="fone" required="">
@@ -48,9 +49,9 @@ $pdo = conect();
         <label for="email">E-mail</label>
         <input type="email" id="email" name="email" required="">
       </div>
+      </label>
      
-     
-     
+     <label class="n3">
       <div class="form-group">
         <label for="password">Senha</label>
         <input type="password" id="password" name="senha" required="">
@@ -63,7 +64,7 @@ $pdo = conect();
         <label for="date">Data de Nascimento</label>
         <input type="date" id="date" name="datanasc" required="">
       </div>
-
+      </label>
 
 
 
@@ -132,7 +133,7 @@ $pdo = conect();
   </div>
 </div>
 
-<img src="../public/assets/image/logoamazonia.png" class="logoamazonia">
+<img src="../assets/image/logoamazonia.png" class="logoamazonia">
 <div class="mensagem-banco">
 <?php
 if (isset($_POST['btnAdd'])) {
@@ -167,7 +168,7 @@ if (isset($_POST['btnAdd'])) {
             $stmt->bindParam(':complemento', $complemento);
             $stmt->bindParam(':tipo', $tipo);
             $stmt->execute();
-            echo ' <div class="echoadd">Usuário adicionado com sucesso!</div>';
+            echo ' <div class="echoadd">Adm adicionado com sucesso!</div>';
             
         } catch (\PDOException $e) {
             echo "Erro: " . $e->getMessage();

@@ -32,7 +32,8 @@ if (!empty($_SESSION) && $_SESSION['tipo'] == 'a' && empty($_SESSION['tipo'] == 
 <div class="linkcons">
 <a  href="../consulta.php">admin</a>
 </div>
-oiiiiiiiiiiiiiiiiiiiiiiiiiii
+<br><br><br>
+<h1>Olá administrador  </h1>
 
 <?php  
 }
@@ -40,7 +41,7 @@ oiiiiiiiiiiiiiiiiiiiiiiiiiii
 
 else{ //tela pro user, coisas que o usuario vai ter
     ?>
-
+<h1>Bem vindo nobre Cliente</h1>
 <?php  
 }
 ?>
