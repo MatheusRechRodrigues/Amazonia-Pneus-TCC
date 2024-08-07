@@ -1,3 +1,9 @@
+DROP DATABASE amazoniapneus;
+CREATE DATABASE amazoniapneus;
+USE amazoniapneus;
+
+
+
 
 
 CREATE TABLE tb_cidades (
@@ -80,3 +86,56 @@ CREATE TABLE tb_imagens (
     FOREIGN KEY (codpneu) REFERENCES tb_pneus (codpneu)
 
 );
+
+
+-- inserts --
+
+
+INSERT INTO tb_cidades (codcidade, estado, nome)
+VALUES 
+    (1, 'PR', 'Cascavel');
+    
+INSERT INTO tb_cidades (codcidade, estado, nome)
+VALUES 
+    (2, 'PR', 'Toledo');
+    
+
+
+INSERT INTO tb_cidades (codcidade, estado, nome)
+VALUES 
+    (3, 'SC', 'Joinville');
+
+
+
+INSERT INTO tb_clientes (codcliente, nome, rua, cpf, fone, email, senha, datanasc, ncasa, bairro, complemento, tipo, ativo, codcidade)
+VALUES 
+    (1, 'Célia', 'Rua Parana', '12345678901', '987654321', 'celia_me_da_nota_plz@gmail.com', MD5('senha123'), '1990-01-01', '123', 'Centro', 'Casa portão preto', 'c', 's', 1);
+    
+    
+    INSERT INTO tb_clientes (codcliente, nome, rua, cpf, fone, email, senha, datanasc, ncasa, bairro, complemento, tipo, ativo, codcidade)
+VALUES
+    (2, 'Matheus', 'Rua dos Tropeiros', '98765432101', '123456789', 'melhor_mortis_do_brasil@gmail.com', MD5('admin123'), '1985-01-01',  '456', 'Tropical', 'Casa Esquina', 'a', 's', 2);
+    
+    
+   INSERT INTO tb_clientes (codcliente, nome, rua, cpf, fone, email, senha, datanasc, ncasa, bairro, complemento, tipo, ativo, codcidade)
+VALUES 
+    (3, 'Elliot', 'Rua Pernambuco', '99945678881', '131554321', 'fsociety@gmail.com', MD5('mrrobot'), '1998-10-28', '158', 'Centro', 'apartamento cinza', 'c', 's', 3);
+
+
+
+
+INSERT INTO tb_pneus ( nomepneu, descricao, tipo, preco)
+VALUES 
+
+    ('bridgestone', 'pneu novo da briegstone', 'c', '200,00' );
+    
+    
+INSERT INTO tb_pneus ( nomepneu, descricao, tipo, preco)
+VALUES     
+    ('nuncafura', 'pneu recapado pela empresa', 'r', '230,00' );
+    
+    
+    
+    INSERT INTO tb_pneus ( nomepneu, descricao, tipo, preco)
+VALUES 
+    ('goodyear', 'pneu da melhor recapagem', 'o', '500,00' );
