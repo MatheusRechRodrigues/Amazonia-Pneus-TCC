@@ -46,8 +46,8 @@ td{
 
 /*parte dos inserts*/
 .containeralter{
-    margin-left: 20%;
-    margin-right: 30%;
+    margin-left: 20px;
+    margin-right: 30px;
     background: rgb(180, 180, 180);
     border-radius:3%;
     padding: 2%;

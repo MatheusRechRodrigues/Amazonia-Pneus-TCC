@@ -100,10 +100,18 @@ $pdo = conect();
 
 
           <div class="form-group">
-            <label for="text">Tipo</label>
-            <input type="text" id="text" name="tipo" required="">
-          </div>
-          
+    <label>Tipo</label>
+    <div>
+        <label>
+            <input type="radio" id="adm" name="tipo" value="a">
+            Adm
+        </label>
+        <label>
+            <input type="radio" id="cliente" name="tipo" value="c">
+            Cliente
+        </label>
+    </div>
+</div>
      
 <!--  acaba aq os input, pra baixo botões   -->
 
@@ -118,10 +126,7 @@ $pdo = conect();
 
 
 
-      <div class="cadastrolinkdiv">
-      <a class="cadastrolog">Já possui cadastro</a>
-      <a href="index.php" class="linkcadastrolog">Entrar</a>
-      </div>     
+      
 
     </form>
   </div>
@@ -160,6 +165,7 @@ if (isset($_POST['btnAdd'])) {
             $stmt->bindParam(':ncasa', $ncasa);
             $stmt->bindParam(':bairro', $bairro);
             $stmt->bindParam(':complemento', $complemento);
+            $stmt->bindParam(':tipo', $tipo);
             $stmt->execute();
             echo ' <div class="echoadd">Usuário adicionado com sucesso!</div>';
             
