@@ -21,7 +21,16 @@ session_start();
         <img src="../assets/image/bandaglogo.png" alt="" class="circleyellow">
     </header>
 
-
+    <nav class="navbar">
+        
+        <ul class="nav-links">
+            <li><a href="#">Início</a></li>
+            <li><a href="#">Sobre</a></li>
+            <li><a href="#">Serviços</a></li>
+            <li><a href="#">Contato</a></li>
+        </ul>
+        
+    </nav>
 
 <?php
 
