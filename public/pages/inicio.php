@@ -23,23 +23,26 @@ session_start();
 
     <nav class="navbar">
         
-        <ul class="nav-links">
-            <li><a href="#">Início</a></li>
-            <li><a href="#">Sobre</a></li>
-            <li><a href="#">Serviços</a></li>
-            <li><a href="#">Contato</a></li>
+        <ul class="nav-links1">
+            <li><a href="">Início</a></li>
+            <li><a href="">Sobre</a></li>
+        </ul>
+        <ul class="nav-links2">
+            <li><a href="">Serviços</a></li>
+            <li><a href="">Contato</a></li>
+            
         </ul>
         
     </nav>
 
 <?php
 
-if (!empty($_SESSION) && $_SESSION['tipo'] == 'a' && empty($_SESSION['tipo'] == '')) //tela pro adm, somente o adm vai ter acesso a links aq
+if (!empty($_SESSION) && $_SESSION['tipo'] == 'A' && empty($_SESSION['tipo'] == '')) //tela pro adm, somente o adm vai ter acesso a links aq
 
 {?> 
 <!-- tudo do html pro adm -->
 
-<a  href="../consulta.php">CONSULTA</a>
+<a  href="../consulta.php" class="buttons-adm">CONSULTA</a>
 
 <br><br><br>
 <h1>Olá administrador  </h1>

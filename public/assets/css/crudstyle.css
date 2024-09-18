@@ -116,7 +116,34 @@ input[type="text"],
   }
 
   .navbar{        /* fazer baseado no site do ceep o navbar */
-    display: flex;
- 
-    justify-items: flex-start;
+  display: flex;
   }
+
+  .nav-links1{
+    display: flex;
+    padding: -100px;
+    justify-self:flex-start;
+    margin-top: -100px;
+    column-gap: 200px;
+    margin-left: 200px;
+  }
+
+  .nav-links2{
+    display: flex;
+    padding: -100px;
+    justify-self:flex-start;
+    margin-top: -100px;
+    column-gap: 200px;
+    margin-left: 550px;
+    margin-bottom: 10px;
+    ;
+  }
+
+  li {
+    list-style-type: none;
+  }
+
+  a, a:hover, a:focus, a:active {
+    text-decoration: none;
+    color: inherit;
+}
