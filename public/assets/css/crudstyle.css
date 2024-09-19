@@ -115,35 +115,51 @@ input[type="text"],
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
   }
 
-  .navbar{        /* fazer baseado no site do ceep o navbar */
+  .navbar{        /* fazer o navbar */
   display: flex;
   }
 
   .nav-links1{
     display: flex;
-    padding: -100px;
     justify-self:flex-start;
-    margin-top: -100px;
-    column-gap: 200px;
-    margin-left: 200px;
+    margin-top: -108px;
+    column-gap: 60px;
+    margin-left: 110px;
   }
 
-  .nav-links2{
-    display: flex;
-    padding: -100px;
-    justify-self:flex-start;
-    margin-top: -100px;
-    column-gap: 200px;
-    margin-left: 550px;
-    margin-bottom: 10px;
-    ;
-  }
 
   li {
     list-style-type: none;
   }
 
-  a, a:hover, a:focus, a:active {
+  a{
     text-decoration: none;
-    color: inherit;
+    color: rgb(0, 0, 0);
+
 }
+
+a:hover{
+  
+  color: rgb(255, 255, 255);
+}
+
+
+/* ICONES !!! */
+
+
+/* icon do menu side bar */
+
+.menu-row-top-left{
+  height: 24px; 
+  width: 30px;
+  margin-top: -112px;
+  margin-left: 20px;
+  position: absolute;  /* pode deixar a imagem atraves ou atras */
+}
+
+
+.menu-row-top-left:hover{
+  background-image: url(../icon/menu-row-icon-white.png);
+  transition: background-image 0.3s ease;
+}
+
