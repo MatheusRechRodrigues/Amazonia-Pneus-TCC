@@ -1,0 +1,111 @@
+html{
+
+    height: 100vh;
+    
+}
+
+body{
+  padding: 0;
+  margin: 0;
+  height: 100vh;
+ background-color: #e9e9e9;
+    
+}
+
+
+.menubar{
+    background:  #077510e7;
+    width: 100%;
+    height: 15vh;
+}
+
+.circleyellow{
+    
+    margin-top: -5%;
+    margin-left: 526px;
+    width: 300px;
+    height: 140px;
+    
+}
+
+
+.navbar{        /* fazer o navbar */
+    display: flex;
+    }
+  
+    .nav-links1{
+      display: flex;
+      justify-self:flex-start;
+      margin-top: -108px;
+      column-gap: 60px;
+      margin-left: 110px;
+    }
+  
+  
+    li {
+      list-style-type: none;
+    }
+  
+    .menu-letters{
+      text-decoration: none;
+      color: rgb(255, 255, 255);
+      font-size: 1.1rem;
+  
+  }
+  
+  
+  .menu-letters:hover{
+    
+    color: rgb(180, 180, 180);
+  }
+  
+  
+  .menu-letters-adm{
+      text-decoration: none;
+      color: rgb(0, 0, 0);
+      font-size: 1.1rem;
+  }
+  
+  
+  .menu-letters-adm:hover{
+    
+    color: rgb(114, 114, 114);
+  }
+  
+  
+  /* ICONES !!! */
+  
+  
+  /* icon do menu side bar */
+  
+  .menu-row-top-left{
+    height: 24px; 
+    width: 30px;
+    margin-top: -112px;
+    margin-left: 20px;
+    position: absolute;  /* pode deixar a imagem atraves ou atras */
+  }
+  
+  
+  .menu-row-top-left:hover{
+    background-image: url(../icon/menu-row-icon-white.png);
+    transition: background-image 0.3s ease;
+  }
+  
+  
+  .icon-cart{
+    width: 63px;
+    height: 40px;
+    margin-left: 1150px;
+    margin-top: -124px;
+    position: absolute;
+  }
+  
+  .icon-profile{
+    width: 84px;
+    height: 50px;
+    margin-left: 1250px;
+    margin-top: -128px;
+    position: absolute;
+  }
+  

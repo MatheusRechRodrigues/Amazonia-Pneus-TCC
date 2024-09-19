@@ -5,60 +5,87 @@ session_start();
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="../assets/css/crudstyle.css">
 </head>
+
 <body>
-<header>
+
+<!-- parte do menu, colocar em todos -->
+
+    <header>
         <div class="menubar">
 
 
 
         </div>
-       
+
         <img src="../assets/image/bandaglogo.png" alt="" class="circleyellow">
     </header>
 
 
-        <img src="../assets/icon/menu-row-icon.png" class="menu-row-top-left">
+    <img src="../assets/icon/menu-row-icon.png" class="menu-row-top-left">
 
     <nav class="navbar">
-        
+
         <ul class="nav-links1">
-            <li><a href="">Início</a></li>
-            <li><a href="">Sobre</a></li>
-            <li><a href="">Serviços</a></li>
-            <li><a href="">Contato</a></li>
-            
+            <li><a href="" class="menu-letters">Início</a></li>
+            <li><a href="about.php" class="menu-letters">Sobre</a></li>
+            <li><a href="about.php" class="menu-letters">Pneus</a></li>
+            <li><a href="about.php" class="menu-letters">Contato</a></li>
+
         </ul>
-        
+
     </nav>
+
+    <img src="../assets/icon/cart.png" alt="" class="icon-cart">
+
+    <img src="../assets/icon/icon.png" alt="" class="icon-profile">
+
+<!--  PARTE DO ADM LOGADO  -->
 
 <?php
 
-if (!empty($_SESSION) && $_SESSION['tipo'] == 'A' && empty($_SESSION['tipo'] == '')) //tela pro adm, somente o adm vai ter acesso a links aq
+    if (!empty($_SESSION) && $_SESSION['tipo'] == 'A' && empty($_SESSION['tipo'] == '')) //tela pro adm, somente o adm vai ter acesso a links aq
+    { ?>
+        <!-- tudo do html pro adm -->
 
-{?> 
-<!-- tudo do html pro adm -->
+        <div class="adm-div">
 
-<a  href="../consulta.php" class="buttons-adm">CONSULTA</a>
+            <ul class="links-adm">
+                <li> <a href="../consulta.php" class="menu-letters-adm">CLIENTES</a></li>
+                <li> <a href="../consulta.php" class="menu-letters-adm">PNEUS</a></li>
+                <li> <a href="../consulta.php" class="menu-letters-adm">IMAGENS</a></li>
+            </ul>
 
-<br><br><br>
-<h1>Olá administrador  </h1>
+        </div>
+    <?php
 
-<?php  
-}
+    } else { //tela pro user, coisas que o usuario vai ter
+        ?>
 
 
-else{ //tela pro user, coisas que o usuario vai ter
+    <?php
+    }
     ?>
-<h1>Bem vindo nobre Cliente</h1>
-<?php  
-}
-?>
+
+
+<!-- colocar coisas abaixo do menu do adm  -->
+
+
+
+
+<article class="part-inicio1"> </article>
+
+<article class="part-inicio2"></article>
+
+
+
 
 </body>
+
 </html>
