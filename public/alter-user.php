@@ -22,7 +22,7 @@ if (isset($_POST['update'])) {
     $tipo = $_POST['tipo'];
     $ativo = $_POST['ativo'];
 
-//Ivan gay dms
+
     if (!empty($nome) && !empty($rua) && !empty($cpf) && !empty($fone) && !empty($email) && !empty($datanasc) &&  !empty($ncasa) && !empty($bairro) && !empty($complemento) && !empty($tipo) && !empty($ativo)) {
         try {
             $sql = "UPDATE tb_clientes SET nome = :nome, rua = :rua, cpf = :cpf, fone = :fone, email = :email, datanasc = :datanasc, ncasa = :ncasa, bairro = :bairro, complemento = :complemento, tipo = :tipo, ativo = :ativo WHERE codcliente = :codcliente";
@@ -43,7 +43,7 @@ if (isset($_POST['update'])) {
             $message = "Registro alterado com sucesso!";
             $messageType = "success";
             // Redireciona após 2 segundos
-            header("refresh:2;url=consulta.php");
+            header("refresh:2;url=consulta-user.php");
         } catch (PDOException $e) {
             $message = "Erro ao atualizar registro: " . $e->getMessage();
             $messageType = "danger";
@@ -94,7 +94,7 @@ if (isset($_POST['update'])) {
                 <?php if ($messageType == 'success') : ?>
                     <p>Você será redirecionado em 2 segundos...</p>
                 <?php else : ?>
-                    <a href="consulta.php" class="btn btn-secondary mt-2">Voltar</a>
+                    <a href="consulta-user.php" class="btn btn-secondary mt-2">Voltar</a>
                 <?php endif; ?>
             </div>
         <?php elseif (isset($tb_clientes)) : ?>
@@ -158,12 +158,12 @@ if (isset($_POST['update'])) {
 
 
                 <button type="submit" name="update" class="btn btn-primary">Atualizar</button>
-                <a href="consulta.php" class="btn btn-secondary">Cancelar</a>
+                <a href="consulta-user.php" class="btn btn-secondary">Cancelar</a>
             </form>
         <?php else : ?>
             <div class="alert alert-danger" role="alert">
                 Registro não encontrado.
-                <a href="consulta.php" class="btn btn-secondary mt-2">Voltar</a>
+                <a href="consulta-user.php" class="btn btn-secondary mt-2">Voltar</a>
             </div>
         <?php endif; ?>
     </div>

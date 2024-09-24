@@ -67,8 +67,8 @@ $pdo = conect();
                         echo "<td>" . htmlspecialchars($row['complemento']) . "</td>";
                         echo "<td>" . htmlspecialchars($row['tipo']) . "</td>";
                         echo "<td>" . htmlspecialchars($row['ativo']) . "</td>";
-                        echo "<td> <a href='alter.php?codcliente=" .  htmlspecialchars($row['codcliente']) . "' class='btn btn-danger'>Alterar</a> </td>";
-                        echo "<td> <a href='exclusao.php?codcliente=" .  htmlspecialchars($row['codcliente']) . "' class='btn btn-danger'>Excluir</a> </td>";
+                        echo "<td> <a href='alter-user.php?codcliente=" .  htmlspecialchars($row['codcliente']) . "' class='btn btn-danger'>Alterar</a> </td>";
+                        echo "<td> <a href='exclusao-user.php?codcliente=" .  htmlspecialchars($row['codcliente']) . "' class='btn btn-danger'>Excluir</a> </td>";
 
                         echo "</tr>";
                     }

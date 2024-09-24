@@ -28,7 +28,7 @@
       </div>
       <div class="cadastrolinkdiv">
       <a class="cadastrolog">Sem conta?</a>
-      <a href="cadastro.php" class="linkcadastrolog">Cadastre-se</a>
+      <a href="cadastro-user.php" class="linkcadastrolog">Cadastre-se</a>
       </div>     
 
     </form>

@@ -20,7 +20,7 @@ if (isset($_GET['codcliente'])) {
             $message = "Registro excluído com sucesso!";
             $messageType = "success";
             // Redireciona após 2 segundos
-            header("refresh:2;url=consulta.php");
+            header("refresh:2;url=consulta-user.php");
             exit; // Adiciona exit para garantir que o script não continue
         } catch (PDOException $e) {
             $message = "Erro ao excluir usuário: " . $e->getMessage();
@@ -44,7 +44,7 @@ if (isset($_GET['codcliente'])) {
         }
     }
 } else {
-    header('Location: congrupo.php');
+    header('Location: consulta-user.php');
     exit;
 }
 ?>
@@ -74,7 +74,7 @@ if (isset($_GET['codcliente'])) {
             <?php if ($messageType == 'success'): ?>
                 <p>Você será redirecionado em 2 segundos...</p>
             <?php else: ?>
-                <a href="consulta.php" class="btn btn-secondary mt-2">Voltar</a>
+                <a href="consulta-user.php" class="btn btn-secondary mt-2">Voltar</a>
             <?php endif; ?>
         </div>
     <?php elseif (isset($tb_clientes)): ?>
@@ -83,12 +83,12 @@ if (isset($_GET['codcliente'])) {
         </div>
         <form method="post" action="">
             <button type="submit" name="confirm" class="btn btn-danger">Confirmar Exclusão</button>
-            <a href="consulta.php" class="btn btn-secondary">Cancelar</a>
+            <a href="consulta-user.php" class="btn btn-secondary">Cancelar</a>
         </form>
     <?php else: ?>
         <div class="alert alert-danger" role="alert">
             Registro não encontrado.
-            <a href="consulta.php" class="btn btn-secondary mt-2">Voltar</a>
+            <a href="consulta-user.php" class="btn btn-secondary mt-2">Voltar</a>
         </div>
     <?php endif; ?>
 </div>

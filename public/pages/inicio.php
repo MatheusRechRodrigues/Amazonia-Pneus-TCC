@@ -57,9 +57,9 @@ session_start();
         <div class="adm-div">
 
             <ul class="links-adm">
-                <li> <a href="../consulta.php" class="menu-letters-adm">CLIENTES</a></li>
-                <li> <a href="../consulta.php" class="menu-letters-adm">PNEUS</a></li>
-                <li> <a href="../consulta.php" class="menu-letters-adm">IMAGENS</a></li>
+                <li> <a href="../consulta-user.php" class="menu-letters-adm">CLIENTES</a></li>
+                <li> <a href="../consulta-user.php" class="menu-letters-adm">PNEUS</a></li>
+                <li> <a href="../consulta-user.php" class="menu-letters-adm">IMAGENS</a></li>
             </ul>
 
         </div>
