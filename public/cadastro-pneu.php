@@ -46,7 +46,7 @@ $pdo = conect();
         
         <div class="form-group">
         <label for="text">Preço:</label>
-        <input type="numberC" id="preco" name="preco" required="">
+        <input type="number" id="preco" name="preco" required="">
       </div>
      
      
