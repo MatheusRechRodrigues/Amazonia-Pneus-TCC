@@ -53,6 +53,7 @@ $pdo = conect();
                         echo "<td>" . htmlspecialchars($row['preco']) . "</td>";
                         echo "<td> <a href='alter-pneu.php?codpneu=" .  htmlspecialchars($row['codpneu']) . "' class='btn btn-danger'>Alterar</a> </td>";
                         echo "<td> <a href='exclusao-pneu.php?codpneu=" .  htmlspecialchars($row['codpneu']) . "' class='btn btn-danger'>Excluir</a> </td>";
+                        echo "<td> <a href='cadastro-pneu.php?codcliente=" .  htmlspecialchars($row['codmedida']) . "' class='btn btn-danger'>Cadastrar</a> </td>";
 
                         echo "</tr>";
                     }

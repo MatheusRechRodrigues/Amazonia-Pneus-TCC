@@ -60,6 +60,7 @@ session_start();
                 <li> <a href="../consulta-user.php" class="menu-letters-adm">CLIENTES</a></li>
                 <li> <a href="../consulta-pneu.php" class="menu-letters-adm">PNEUS</a></li>
                 <li> <a href="../consulta-user.php" class="menu-letters-adm">IMAGENS</a></li>
+                <li> <a href="../consulta-med.php" class="menu-letters-adm">MEDIDAS</a></li>
             </ul>
 
         </div>
