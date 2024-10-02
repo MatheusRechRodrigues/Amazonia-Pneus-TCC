@@ -6,46 +6,46 @@ $pdo = conect();
 $message = '';
 $messageType = '';
 
-if (isset($_GET['codpneu'])) {
+if (isset($_GET['codpneu']))
     $codcliente = $_GET['codpneu'];
 
-    // Verificar se o formulário de confirmação foi submetido
-    if (isset($_POST['confirm'])) {
-        try {
-            $sql = "DELETE FROM tb_pneus WHERE codpneu = :codpneu";
-            $stmt = $pdo->prepare($sql);
-            $stmt->bindParam(':codpneu', $codpneu, PDO::PARAM_INT);
-            $stmt->execute();
-            $message = "Registro excluído com sucesso!";
-            $messageType = "success";
-            // Redireciona após 2 segundos
-            header("refresh:2;url=consulta-pneu.php");
-            exit; // Adiciona exit para garantir que o script não continue
-        } catch (PDOException $e) {
-            $message = "Erro ao excluir usuário: " . $e->getMessage();
-            $messageType = "danger";
-        }
-    } else {
-        // Obter os detalhes do registro para exibir na mensagem de confirmação
-        try {
-            $sql = "SELECT * FROM tb_pneus WHERE codpneu = :codpneu";
-            $stmt = $pdo->prepare($sql);
-            $stmt->bindParam(':codpneu', $codpneu, PDO::PARAM_INT);
-            $stmt->execute();
-            $tb_pneus = $stmt->fetch(PDO::FETCH_ASSOC);
-            if (!$tb_pneus) {
-                $message = "Registro não encontrado.";
+    if (isset($_GET['codpneu'])) {
+        $codpneu = $_GET['codpneu'];  // Corrigido para $codpneu
+    
+        if (isset($_POST['confirm'])) {
+            try {
+                $sql = "DELETE FROM tb_pneus WHERE codpneu = :codpneu";
+                $stmt = $pdo->prepare($sql);
+                $stmt->bindParam(':codpneu', $codpneu, PDO::PARAM_INT);
+                $stmt->execute();
+                $message = "Registro excluído com sucesso!";
+                $messageType = "success";
+                header("refresh:2;url=consulta-pneu.php");
+                exit;
+            } catch (PDOException $e) {
+                $message = "Erro ao excluir o registro: " . $e->getMessage();
                 $messageType = "danger";
             }
-        } catch (PDOException $e) {
-            $message = "Erro ao buscar registro: " . $e->getMessage();
-            $messageType = "danger";
+        } else {
+            try {
+                $sql = "SELECT * FROM tb_pneus WHERE codpneu = :codpneu";
+                $stmt = $pdo->prepare($sql);
+                $stmt->bindParam(':codpneu', $codpneu, PDO::PARAM_INT);
+                $stmt->execute();
+                $tb_pneus = $stmt->fetch(PDO::FETCH_ASSOC);
+                if (!$tb_pneus) {
+                    $message = "Registro não encontrado.";
+                    $messageType = "danger";
+                }
+            } catch (PDOException $e) {
+                $message = "Erro ao buscar registro: " . $e->getMessage();
+                $messageType = "danger";
+            }
         }
+    } else {
+        header('Location: consulta-pneu.php');
+        exit;
     }
-} else {
-    header('Location: consulta-pneu.php');
-    exit;
-}
 ?>
 
 <!DOCTYPE html>

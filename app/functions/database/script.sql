@@ -12,7 +12,6 @@ CREATE TABLE tb_cidades (
     nome VARCHAR(50) NOT NULL
 );
 
-
 CREATE TABLE tb_clientes (
     codcliente INTEGER PRIMARY KEY AUTO_INCREMENT,
     nome VARCHAR(150) NOT NULL,
