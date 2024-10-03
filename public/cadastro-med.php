@@ -91,7 +91,7 @@ $pdo = conect();
 
       <div class="form-group">
         <button type="submit" class="login-button" name="btnAdd">Cadastrar</button>
-        <a href="consulta-med.php"></a>
+        <a href="consulta-user.php"></a>
       </div>
      
      
@@ -149,9 +149,7 @@ if (isset($_POST['btnAdd'])) {
 
 </div>
 
-<button class="containerconsultavoltar">
-                <a href="consulta-med.php">Voltar</a>
-           </button>
+
 
 
 </body>

@@ -8,7 +8,7 @@ $pdo = conect();
 
 <head>
     <meta charset="UTF-8">
-    <title>Lista de Grupos</title>
+    <title>Lista de Medidas</title>
     <link rel="stylesheet" href="./assets/css/crudstyle.css">
 
 </head>
@@ -23,7 +23,7 @@ $pdo = conect();
 </header>
 
 <div class="containerconsulta">
-        <h2>Tabela de Grupos</h2>
+        <h2>Tabela de Medidas</h2>
         <table class="table table-striped">
             <thead>
                 <tr class="trgreen">
@@ -61,9 +61,8 @@ $pdo = conect();
                         echo "<td>" . htmlspecialchars($row['construcao']) . "</td>";
                         echo "<td>" . htmlspecialchars($row['raio']) . "</td>";
                        
-                        echo "<td> <a href='alter-med.php?codcliente=" .  htmlspecialchars($row['codmedida']) . "' class='btn btn-danger'>Alterar</a> </td>";
-                        echo "<td> <a href='exclusao-med.php?codcliente=" .  htmlspecialchars($row['codmedida']) . "' class='btn btn-danger'>Excluir</a> </td>";
-                        echo "<td> <a href='cadastro-user.php?codcliente=" .  htmlspecialchars($row['codmedida']) . "' class='btn btn-danger'>Cadastrar</a> </td>";
+                        echo "<td> <a href='alter-med.php?codmedida=" .  htmlspecialchars($row['codmedida']) . "' class='btn btn-danger'>Alterar</a> </td>";
+                        echo "<td> <a href='exclusao-med.php?codmedida=" .  htmlspecialchars($row['codmedida']) . "' class='btn btn-danger'>Excluir</a> </td>";
                         echo "</tr>";
                     }
                 } catch (\PDOException $e) {
@@ -81,7 +80,12 @@ $pdo = conect();
     
            <button class="containerconsultavoltar">
                 <a href="./pages/inicio.php">Voltar</a>
-           </button>
+                
+                </button>     
+
+                <button class="containerconsultavoltar2">
+                <a href="cadastro-med.php">Cadastrar</a>
+                </button>
          
     </table>
 </body>

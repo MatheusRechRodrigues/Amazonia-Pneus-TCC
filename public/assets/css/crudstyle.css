@@ -1,13 +1,14 @@
 html{
-
-    height: 100vh;
+  
+   size: 100%;
     
 }
 
 body{
   padding: 0;
-  margin: 0;
+  margin: 0%;
   height: 100vh;
+  width: 100%;
  background-color: #e9e9e9;
     
 }
@@ -72,8 +73,20 @@ td{
     margin-left: 3%;
     background-color: #077510e7;
     text-decoration: none;
+    
 
 }
+
+.containerconsultavoltar2{
+  margin-top: 0%;
+  margin-left: 4%;
+  background-color: #077510e7;
+  text-decoration: none;
+  
+
+}
+
+
 /* css dos inputs*/
 input[type="text"],
   input[type="email"],
@@ -217,10 +230,10 @@ input[type="text"],
   color: rgb(0, 0, 0);
   margin-top: 20%;
 }
-
+/* botões do adm */
 .links-adm{
   margin-top: 5%;
-  margin-left: 24%;
+  margin-left: 1%;
   position: absolute;
   display: flex;
   row-gap: 100px;
