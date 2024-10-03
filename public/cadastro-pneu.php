@@ -103,7 +103,7 @@ if (isset($_POST['btnAdd'])) {
 ?>
 
 <button class="containerconsultavoltar">
-                <a href="consulta-pneu.php">Voltar</a>
+<a href="index.php" class="linkcadastrolog">Entrar</a>
            </button>
 
 </body>

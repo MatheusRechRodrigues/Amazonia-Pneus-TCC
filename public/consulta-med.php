@@ -87,6 +87,7 @@ $pdo = conect();
                 <a href="cadastro-med.php">Cadastrar</a>
                 </button>
          
+                
     </table>
 </body>
 

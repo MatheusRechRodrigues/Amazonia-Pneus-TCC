@@ -74,7 +74,7 @@ if (isset($_POST['update'])) {
 <head>
     <meta charset="UTF-8">
     <title>Alterar Grupo</title>
-    <link rel="stylesheet" href="./assets/css/crudstyle.css">
+    <link rel="stylesheet" href="./assets/css/altersyle.css">
 
 </head>
 
@@ -104,11 +104,7 @@ if (isset($_POST['update'])) {
                     <input type="text" class="form-control" id="nome" name="nome" value="<?php echo htmlspecialchars($tb_clientes['nome']); ?>" required>
 
                 </div>
-                <div class="form-group">
-                    <label for="rua">Rua:</label>
-                    <input type="text" class="form-control" id="rua" name="rua" value="<?php echo htmlspecialchars($tb_clientes['rua']); ?>" required>
-
-                </div>
+                
                 <div class="form-group">
                     <label for="cpf">Cpf:</label>
                     <input type="text" class="form-control" id="cpf" name="cpf" value="<?php echo htmlspecialchars($tb_clientes['cpf']); ?>" required>

@@ -1,0 +1,58 @@
+html{
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    
+}
+
+body{
+
+  height: 100vh;
+  margin: 0;
+  padding: 0;  
+}
+
+.logoamazonia{
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    
+}
+
+/* parte superior do style*/
+.menubar{
+    background:  #077510;
+    width: 100%;
+    height: 15vh;
+    
+}
+
+.circleyellow{
+    
+    margin-top: -5%;
+    margin-left: 526px;
+    width: 300px;
+    height: 140px;
+    
+}
+
+
+
+.containeralter{
+    margin-left: 20px;
+    margin-right: 30px;
+    background: rgb(180, 180, 180);
+    border-radius:3%;
+    padding: 2%;
+    display: grid;
+    border: 2px solid rgb(150, 150, 150);
+    display:inline-block;
+    
+}
+
+/*tirar as setinhas do input number*/
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
