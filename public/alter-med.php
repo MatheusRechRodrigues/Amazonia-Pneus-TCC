@@ -96,25 +96,37 @@ if (isset($_POST['update'])) {
         <?php elseif (isset($tb_medidas)) : ?>
             <form method="post" action="">
                 <div class="form-group">
-                    <label for="nome">Nome do Pneu:</label>
-                    <input type="text" class="form-control" id="nomepneu" name="nomepneu" value="<?php echo htmlspecialchars($tb_pneus['nomepneu']); ?>" required>
+                    <label for="largura">Largura:</label>
+                    <input type="text" class="form-control" id="largura" name="largura" value="<?php echo htmlspecialchars($tb_medidas['largura']); ?>" required>
 
                 </div>
                 <div class="form-group">
-                    <label for="rua">Descrição:</label>
-                    <input type="text" class="form-control" id="descricao" name="descricao" value="<?php echo htmlspecialchars($tb_pneus['descricao']); ?>" required>
+                    <label for="aro">Aro:</label>
+                    <input type="text" class="form-control" id="aro" name="aro" value="<?php echo htmlspecialchars($tb_medidas['aro']); ?>" required>
 
                 </div>
                 <div class="form-group">
-                    <label for="cpf">Tipo:</label>
-                    <input type="text" class="form-control" id="tipo" name="tipo" value="<?php echo htmlspecialchars($tb_pneus['tipo']); ?>" required>
+                    <label for="medida">Medida:</label>
+                    <input type="text" class="form-control" id="medida" name="medida" value="<?php echo htmlspecialchars($tb_medidas['medida']); ?>" required>
 
                 </div>
                 <div class="form-group">
-                    <label for="fone">Preço:</label>
-                    <input type="text" class="form-control" id="preco" name="preco" value="<?php echo htmlspecialchars($tb_pneus['preco']); ?>" required>
-
+                    <label for="altura">Altura:</label>
+                    <input type="text" class="form-control" id="altura" name="altura" value="<?php echo htmlspecialchars($tb_medidas['altura']); ?>" required>
+                </div>
               
+
+                <div class="form-group">
+                    <label for="indicecarga">Indicecarga:</label>
+                    <input type="text" class="form-control" id="indicecarga" name="indicecarga" value="<?php echo htmlspecialchars($tb_medidas['indicecarga']); ?>" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="velocidade">Velocidade:</label>
+                    <input type="text" class="form-control" id="velocidade" name="velocidade" value="<?php echo htmlspecialchars($tb_medidas['velocidade']); ?>" required>
+                </div>
+
+
 
                 <button type="submit" name="update" class="btn btn-primary">Atualizar</button>
                 <a href="consulta-med.php" class="btn btn-secondary">Cancelar</a>
