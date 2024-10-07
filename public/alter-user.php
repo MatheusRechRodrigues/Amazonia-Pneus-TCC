@@ -104,6 +104,14 @@ if (isset($_POST['update'])) {
                     <input type="text" class="form-control" id="nome" name="nome" value="<?php echo htmlspecialchars($tb_clientes['nome']); ?>" required>
 
                 </div>
+
+
+                <div class="form-group">
+                    <label for="rua">Rua:</label>
+                    <input type="text" class="form-control" id="rua" name="rua" value="<?php echo htmlspecialchars($tb_clientes['rua']); ?>" required>
+
+                </div>
+
                 
                 <div class="form-group">
                     <label for="cpf">Cpf:</label>
