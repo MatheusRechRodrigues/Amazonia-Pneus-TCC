@@ -44,7 +44,8 @@ session_start();
 
     <img src="../assets/icon/cart.png" alt="" class="icon-cart">
 
-    <img src="../assets/icon/icon.png" alt="" class="icon-profile">
+    <img src="../assets/icon/icon.png" alt="" class="icon-profile">        
+
 
 <!--  PARTE DO ADM LOGADO  -->
 

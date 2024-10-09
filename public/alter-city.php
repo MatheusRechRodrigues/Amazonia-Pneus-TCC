@@ -15,7 +15,7 @@ if (isset($_POST['update'])) {
     
 
 
-    if ( !empty($codcidade) && !empty($estado) && !empty($nome)) {
+    if ( !empty($estado) && !empty($nome)) {
         try {
             $sql = "UPDATE tb_cidades SET estado = :estado, nome = :nome WHERE codcidade = :codcidade";
             $stmt = $pdo->prepare($sql);
@@ -45,6 +45,9 @@ if (isset($_POST['update'])) {
         $stmt->bindParam(':codcidade', $codcidade, PDO::PARAM_INT);
         $stmt->execute();
         $tb_cidades = $stmt->fetch(PDO::FETCH_ASSOC);
+
+
+        
     } catch (PDOException $e) {
         $message = "Erro ao buscar registro: " . $e->getMessage();
         $messageType = "danger";
@@ -90,7 +93,7 @@ if (isset($_POST['update'])) {
 
                 </div>
                 <div class="form-group">
-                    <label for="nome">Cidade:</label>
+                    <label for="cidade">Cidade:</label>
                     <input type="text" class="form-control" id="nome" name="nome" value="<?php echo htmlspecialchars($tb_cidades['nome']); ?>" required>
 
                 </div>
