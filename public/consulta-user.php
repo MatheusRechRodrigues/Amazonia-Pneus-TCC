@@ -23,7 +23,7 @@ $pdo = conect();
 </header>
 
 <div class="containerconsulta">
-        <h2>Tabela de Grupos</h2>
+        <h2>Tabela de Usuarios</h2>
         <table class="table table-striped">
             <thead>
                 <tr class="trgreen">
@@ -90,6 +90,10 @@ $pdo = conect();
                 <a href="./pages/inicio.php">Voltar</a>
            </button>
          
+
+           <button class="containerconsultavoltar2">
+                <a href="cadastro-user.php">Cadastrar</a>
+                </button>
     </table>
 </body>
 

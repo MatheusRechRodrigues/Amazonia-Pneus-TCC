@@ -12,8 +12,10 @@ body{
   height: 100vh;
   width: 100%;
   background-color: #e9e9e9;
-  overflow: hidden;    
+  overflow-x: hidden; 
+  scroll-behavior: smooth;   
 }
+
 /*  tabelas tr e td cor e tamanho */ 
 .table table-striped{
     background-color: rgb(20, 20, 20);
@@ -33,9 +35,10 @@ td{
 }
 /* parte superior do style*/
 .menubar{
-    background:  #077510e7;
+    background:  #077510;
     width: 100%;
     height: 15vh;
+    
     
 }
 

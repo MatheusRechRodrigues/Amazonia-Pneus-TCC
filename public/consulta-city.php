@@ -48,9 +48,8 @@ $pdo = conect();
                         echo "<td>" . htmlspecialchars($row['codcidade']) . "</td>";
                         echo "<td>" . htmlspecialchars($row['estado']) . "</td>";
                         echo "<td>" . htmlspecialchars($row['nome']) . "</td>";
-                        echo "<td> <a href='alter-city.php?codcity=" .  htmlspecialchars($row['codcidade']) . "' class='btn btn-danger'>Alterar</a> </td>";
-                        echo "<td> <a href='exclusao-city.php?codcity=" .  htmlspecialchars($row['codcidade']) . "' class='btn btn-danger'>Excluir</a> </td>";
-                        echo "<td> <a href='cadastro-city.php?codcity=" .  htmlspecialchars($row['codcidade']) . "' class='btn btn-danger'>Cadastrar</a> </td>";
+                        echo "<td> <a href='alter-city.php?codcidade=" .  htmlspecialchars($row['codcidade']) . "' class='btn btn-danger'>Alterar</a> </td>";
+                        echo "<td> <a href='exclusao-city.php?codcidade=" .  htmlspecialchars($row['codcidade']) . "' class='btn btn-danger'>Excluir</a> </td>";
 
                         echo "</tr>";
                     }
@@ -70,6 +69,11 @@ $pdo = conect();
            <button class="containerconsultavoltar">
                 <a href="./pages/inicio.php">Voltar</a>
            </button>
+
+
+           <button class="containerconsultavoltar2">
+                <a href="cadastro-city.php">Cadastrar</a>
+                </button>
          
     </table>
 </body>

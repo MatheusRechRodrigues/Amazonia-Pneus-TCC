@@ -63,6 +63,7 @@ CREATE TABLE tb_compras (
     formapagamento INTEGER NOT NULL,
     dtcompra DATE NOT NULL,
     codcliente INTEGER,
+    token VARCHAR(255),
     FOREIGN KEY (codcliente) REFERENCES tb_clientes (codcliente)
 );
 
