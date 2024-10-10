@@ -201,7 +201,7 @@ input[type="text"],
 .icon-cart{
   width: 63px;
   height: 40px;
-  margin-left: 1150px;
+  margin-left: 1100px;
   margin-top: -124px;
   position: absolute;
 }
@@ -209,7 +209,7 @@ input[type="text"],
 .icon-profile{
   width: 84px;
   height: 50px;
-  margin-left: 1250px;
+  margin-left: 1200px;
   margin-top: -128px;
   position: absolute;
 }
@@ -238,11 +238,12 @@ input[type="text"],
 /* botões do adm */
 .links-adm{
   margin-top: 5%;
-  margin-left: 1%;
+  margin-left: 20%;
   position: absolute;
   display: flex;
-  row-gap: 100px;
-  column-gap: 200px;justify-content: space-between;
+  row-gap: 150px;
+  column-gap: 100px;
+  justify-content: space-between;
 
 }
 
@@ -268,3 +269,5 @@ input[type="text"],
   position: absolute;
   
 }
+
+
