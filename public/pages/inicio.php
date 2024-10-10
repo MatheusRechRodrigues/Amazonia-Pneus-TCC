@@ -27,8 +27,48 @@ session_start();
         <img src="../assets/image/bandaglogo.png" alt="" class="circleyellow">
     </header>
 
+<!-- tres riscosdo menu side-bar -->
+    <label class="popup">
+  <input type="checkbox">
+  <div class="burger" tabindex="0">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+  <nav class="popup-window">   
+    <ul>
+      <li>
+        <button>       
+          <span class="linkside">Colaboradores</span>
+        </button>
+      </li>
+      <li>
+        <button>  
+          <span class="linkside">Desenvolvimento</span>
+        </button>
+      </li>
+      <li>
+        <br><br><br><br><br><br>
+        <br><br><br><br><br><br>
+        <br><br><br><br><br><br>
+        
+        <button>  
+          <span class="linkside">Onde Ficamos</span>
+        </button>
+      </li> 
+      <li>
+        <button>  
+          <span class="linkside">Contato</span>
+        </button>
+      </li>
+  </nav>
+</label>
 
-    <img src="../assets/icon/menu-row-icon.png" class="menu-row-top-left">
+
+
+
+
+
 
     <nav class="navbar">
 
@@ -42,7 +82,7 @@ session_start();
 
     </nav>
 
-    <img src="../assets/icon/cart.png" alt="" class="icon-cart">
+    <a href="cart.php"><img src="../assets/icon/cart.png" alt="" class="icon-cart"></a>
 
     <img src="../assets/icon/icon.png" alt="" class="icon-profile">        
 
@@ -67,6 +107,7 @@ session_start();
 
         </div>
     <?php
+    
 
     } else { //tela pro user, coisas que o usuario vai ter
         ?>
@@ -78,6 +119,9 @@ session_start();
 
 
 <!-- colocar coisas abaixo do menu do adm  -->
+
+
+
 
 
 

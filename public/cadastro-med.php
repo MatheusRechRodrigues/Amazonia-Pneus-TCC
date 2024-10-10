@@ -18,7 +18,7 @@ $pdo = conect();
  
 
 <!-- formulario de login -->
-<div class="login-card">
+<div class="login-card-med">
   <div class="card-header">
     <h1>MEDIDAS DO PNEU</h1>
   </div>
@@ -136,7 +136,9 @@ if (isset($_POST['btnAdd'])) {
             $stmt->bindParam(':raio', $raio);
 
             $stmt->execute();
+            echo ' <div class="echoadd">Medida adicionada com sucesso!</div>';
             
+            echo ' <div class="echoadd"> <br><br><a href="consulta-med.php">VOLTAR</a></div>';
             
         } catch (\PDOException $e) {
             echo "Erro: " . $e->getMessage();

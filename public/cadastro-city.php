@@ -18,7 +18,7 @@ $pdo = conect();
  
 
 <!-- formulario de login -->
-<div class="login-card">
+<div class="login-card-city">
   <div class="card-header">
     <h1>Cadastrar Cidades</h1>
   </div>
@@ -79,7 +79,9 @@ if (isset($_POST['btnAdd'])) {
             $stmt->bindParam(':nome', $nome);
             
             $stmt->execute();
+            echo ' <div class="echoadd">Cidade adicionada com sucesso!</div>';
             
+            echo ' <div class="echoadd"> <br><br><a href="consulta-city.php">VOLTAR</a></div>';
             
         } catch (\PDOException $e) {
             echo "Erro: " . $e->getMessage();

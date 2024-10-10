@@ -18,13 +18,15 @@ body{
     
 }
 
-.login-card {
+
+/*DIV DOS CADASTROS DE CADA CRUD*/
+.login-card-user {
   top: 380px;
-  bottom: 60%;  
+  bottom: auto;  
   margin-left:65%;
   transform: translate(-45%, -40%);
   position: absolute;
-  height: 800px;
+  height: 770px;
   width: 40%;
   background: rgba(255, 255, 255, 0.23);
   border-radius: 16px;
@@ -32,9 +34,91 @@ body{
   backdrop-filter: blur(5.3px);
   -webkit-backdrop-filter: blur(5.3px);
   border: 1px solid rgba(207, 207, 207, 0.28);
-
-
   }
+
+
+
+  .login-card-pneu {
+    top: 380px;
+    bottom: auto;  
+    margin-left:65%;
+    transform: translate(-45%, -65%);
+    position: absolute;
+    height: 450px;
+    width: 40%;
+    background: rgba(255, 255, 255, 0.23);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5.3px);
+    -webkit-backdrop-filter: blur(5.3px);
+    border: 1px solid rgba(207, 207, 207, 0.28);
+  
+  
+    }
+
+
+
+
+    
+  .login-card-med {
+    top: 380px;
+    bottom: auto;  
+    margin-left:65%;
+    transform: translate(-45%, -40%);
+    position: absolute;
+    height: 680px;
+    width: 40%;
+    background: rgba(255, 255, 255, 0.23);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5.3px);
+    -webkit-backdrop-filter: blur(5.3px);
+    border: 1px solid rgba(207, 207, 207, 0.28);
+  
+  
+    }
+
+
+
+
+    .login-card-city {
+      top: 380px;
+      bottom: auto;  
+      margin-left:65%;
+      transform: translate(-45%, -65%);
+      position: absolute;
+      height: 350px;
+      width: 40%;
+      background: rgba(255, 255, 255, 0.23);
+      border-radius: 16px;
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+      backdrop-filter: blur(5.3px);
+      -webkit-backdrop-filter: blur(5.3px);
+      border: 1px solid rgba(207, 207, 207, 0.28);
+    
+    
+      }
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   
   .card-header {
     text-align: center;

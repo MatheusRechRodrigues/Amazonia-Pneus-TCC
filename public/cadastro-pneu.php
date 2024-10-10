@@ -18,7 +18,7 @@ $pdo = conect();
  
 
 <!-- formulario de login -->
-<div class="login-card">
+<div class="login-card-pneu">
   <div class="card-header">
     <h1>ADICIONAR PNEUS</h1>
   </div>
@@ -64,6 +64,10 @@ $pdo = conect();
      
 
 
+      <div class="cadastrolinkdiv">
+     
+      <a href="consulta-pneu.php" class="linkcadastrolog">VOLTAR</a>
+      </div> 
 
 
    
@@ -91,7 +95,10 @@ if (isset($_POST['btnAdd'])) {
             $stmt->bindParam(':tipo', $tipo);
             $stmt->bindParam(':preco', $preco);
             $stmt->execute();
-           
+            echo ' <div class="echoadd">Pneu adicionado com sucesso!</div>';
+            
+            echo ' <div class="echoadd"> <br><br><a href="consulta-pneu.php">VOLTAR</a></div>';
+
             
         } catch (\PDOException $e) {
             echo "Erro: " . $e->getMessage();
@@ -102,9 +109,7 @@ if (isset($_POST['btnAdd'])) {
 }
 ?>
 
-<button class="containerconsultavoltar">
-<a href="index.php" class="linkcadastrolog">Entrar</a>
-           </button>
+
 
 </body>
 </html>

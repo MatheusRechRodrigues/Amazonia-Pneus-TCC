@@ -92,7 +92,7 @@ $pdo = conect();
          
 
            <button class="containerconsultavoltar2">
-                <a href="cadastro-user.php">Cadastrar</a>
+                <a href="cadastro-user-do-consulta.php">Cadastrar</a>
                 </button>
     </table>
 </body>
