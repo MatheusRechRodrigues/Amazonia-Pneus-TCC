@@ -285,13 +285,13 @@ input[type="text"],
   width: 800px;
   height: 400px;
   border-radius: 16px;
-  margin-left: 4%;
+  margin-left: 2%;
   margin-top: 10%;
 }
 
 .part-inicio2{
   background-color: #c5c5c5;
-  width: 300px;
+  width: 380px;
   height: 400px;
   border-radius: 16px;
   margin-left: 70%;
