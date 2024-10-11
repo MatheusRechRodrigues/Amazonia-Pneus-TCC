@@ -33,7 +33,6 @@ $pdo = conect();
                     <th>Cpf</th>
                     <th>Telefone</th>
                     <th>E-mail</th>
-                    <th>Senha</th>
                     <th>Data de Nascimento</th>
                     <th>N° casa</th>
                     <th>Bairro</th>
@@ -60,7 +59,6 @@ $pdo = conect();
                         echo "<td>" . htmlspecialchars($row['cpf']) . "</td>";
                         echo "<td>" . htmlspecialchars($row['fone']) . "</td>";
                         echo "<td>" . htmlspecialchars($row['email']) . "</td>";
-                        echo "<td>" . htmlspecialchars($row['senha']) . "</td>";
                         echo "<td>" . htmlspecialchars($row['datanasc']) . "</td>";
                         echo "<td>" . htmlspecialchars($row['ncasa']) . "</td>";
                         echo "<td>" . htmlspecialchars($row['bairro']) . "</td>";
