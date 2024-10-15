@@ -37,7 +37,10 @@ session_start();
   </div>
   <nav class="popup-window">   
     <ul>
-      <li>
+      
+    <h3> Menu</h3>
+    <article class="line-grey"></article>
+    <li>
         <button>       
           <span class="linkside">Colaboradores</span>
         </button>
@@ -58,6 +61,70 @@ session_start();
           <span class="linkside">Contato</span>
         </button>
       </li>
+      <?php
+
+if (!empty($_SESSION) && $_SESSION['tipo'] == 'A' && empty($_SESSION['tipo'] == '')) //tela pro adm, somente o adm vai ter acesso a links aq
+{ ?>
+    <!-- tudo do html pro adm -->
+
+<h3 class="">Gerenciar Dados </h3>
+<article class="line-grey"></article>
+
+      <li>
+    <button onclick="window.location.href='../consulta-med.php'">
+        <span class="linkside">Medidas</span>
+    </button>
+</li>
+
+<li>
+    <button onclick="window.location.href='../consulta-user.php'">
+        <span class="linkside">Cliente</span>
+    </button>
+</li>
+
+<li>
+    <button onclick="window.location.href='../consulta-pneu.php'">
+        <span class="linkside">Pneus</span>
+    </button>
+</li>
+
+<li>
+    <button onclick="window.location.href='../consulta-img.php'">
+        <span class="linkside">Imagens</span>
+    </button>
+</li>
+
+<li>
+    <button onclick="window.location.href='../consulta-user.php'">
+        <span class="linkside">Compras</span>
+    </button>
+</li>
+
+<li>
+    <button onclick="window.location.href='../consulta-city.php'">
+        <span class="linkside">Cidades</span>
+    </button>
+</li>
+
+
+
+
+
+
+
+        
+
+    
+<?php
+
+
+} else { //tela pro user, coisas que o usuario vai ter
+    ?>
+<?php
+}
+?>
+
+<img src="../assets/image/logoamazonia.png" class="img-menu-lado">
   </nav>
 </label>
 
@@ -86,36 +153,9 @@ session_start();
 
 <!--  PARTE DO ADM LOGADO  -->
 
-<?php
-
-    if (!empty($_SESSION) && $_SESSION['tipo'] == 'A' && empty($_SESSION['tipo'] == '')) //tela pro adm, somente o adm vai ter acesso a links aq
-    { ?>
-        <!-- tudo do html pro adm -->
-
-        <div class="adm-div">
-
-            <ul class="links-adm">
-                <li> <a href="../consulta-user.php" class="menu-letters-adm">CLIENTES</a></li>
-                <li> <a href="../consulta-pneu.php" class="menu-letters-adm">PNEUS</a></li>
-                <li> <a href="../consulta-img.php" class="menu-letters-adm">IMAGENS</a></li>
-                <li> <a href="../consulta-med.php" class="menu-letters-adm">MEDIDAS</a></li>
-                <li> <a href="../consulta-city.php" class="menu-letters-adm">CIDADES</a></li>
-            </ul>
-
-        </div>
-    <?php
-    
-
-    } else { //tela pro user, coisas que o usuario vai ter
-        ?>
 
 
-    <?php
-    }
-    ?>
 
-
-<!-- colocar coisas abaixo do menu do adm  -->
 
 
 
@@ -126,61 +166,6 @@ session_start();
 <article class="part-inicio1"> </article>
 
 <article class="part-inicio2"></article>
-
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-
-
-
-
-
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background-color: #f0f0f0;
-        }
-
-        .carousel {
-            position: relative;
-            max-width: 600px; /* Largura máxima do carrossel */
-            margin: auto;
-            overflow: hidden; /* Oculta imagens fora do container */
-            border-radius: 10px; /* Bordas arredondadas */
-        }
-
-        .carousel img {
-            width: 100%; /* Faz a imagem ocupar toda a largura do container */
-            border-radius: 10px; /* Bordas arredondadas nas imagens */
-            display: none; /* Inicialmente, todas as imagens estão ocultas */
-        }
-
-        .active {
-            display: block; /* Mostra a imagem ativa */
-        }
-    </style>
-
-<div class="carousel">
-    <img src="https://via.placeholder.com/600x300/FF5733/FFFFFF?text=Imagem+1" alt="Imagem 1" class="active">
-    <img src="https://via.placeholder.com/600x300/33FF57/FFFFFF?text=Imagem+2" alt="Imagem 2">
-    <img src="https://via.placeholder.com/600x300/3357FF/FFFFFF?text=Imagem+3" alt="Imagem 3">
-    <img src="https://via.placeholder.com/600x300/FFFF33/000000?text=Imagem+4" alt="Imagem 4">
-</div>
-
-<script>
-    let index = 0;
-    const images = document.querySelectorAll('.carousel img');
-
-    function showNextImage() {
-        images[index].classList.remove('active'); // Remove a classe "active" da imagem atual
-        index = (index + 1) % images.length; // Avança para a próxima imagem, voltando ao início se necessário
-        images[index].classList.add('active'); // Adiciona a classe "active" à próxima imagem
-    }
-
-    // Muda a imagem a cada 3 segundos
-    setInterval(showNextImage, 3000);
-</script>
-
-
 
 
 

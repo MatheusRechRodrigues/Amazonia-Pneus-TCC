@@ -74,23 +74,35 @@ td{
 
 
 .containerconsultavoltar{
-    margin-top: 0%;
+    margin-top: -3.5%;
     margin-left: 3%;
     background-color: #077510e7;
     text-decoration: none;
-    
+    position: absolute; 
 
 }
 
 .containerconsultavoltar2{
-  margin-top: 0%;
-  margin-left: 4%;
+  margin-top: -3.5%;
+  margin-left: 7%;
   background-color: #077510e7;
   text-decoration: none;
-  
-
+  position: absolute; 
 }
 
+
+.mais-buttom{
+  height: 20px;
+  width: 18px;
+}
+
+
+.mais-buttom2{
+  height: 20px;
+  width: 18px;
+ 
+
+}
 
 /* css dos inputs*/
 input[type="text"],
@@ -237,45 +249,11 @@ input[type="text"],
 
 
 
-/*  div para as opçoes do administrador */
 
 
-.adm-div{
-  background-color: #d1d1d1;
-  height: 20%;
-  width: 100%;
-  margin-top: -78px;
-  
-
-}
-
-.adm-div:hover{
-  background-color: #d1d1d1;
-  height: 20%;
-  width: 100%;
-  margin-top: -78px;
- 
-
-}
 
 
-.buttons-adm{
-  list-style-type: none;
-  text-decoration: none;
-  color: rgb(0, 0, 0);
-  margin-top: 20%;
-}
-/* botões do adm */
-.links-adm{
-  margin-top: 5%;
-  margin-left: 20%;
-  position: absolute;
-  display: flex;
-  row-gap: 150px;
-  column-gap: 100px;
-  justify-content: space-between;
 
-}
 
 
 /*  começo do inicio  */
@@ -637,4 +615,16 @@ input[type="text"],
   transform: scale(var(--nav-active-scale));
   visibility: visible;
   opacity: 1;
+}
+
+
+.img-menu-lado{
+  width: 200px;
+  height: 200px;
+  margin-top: 5px;
+  position: fixed;
+}
+.line-grey{
+  height: 1px;
+  background-color: #555;
 }

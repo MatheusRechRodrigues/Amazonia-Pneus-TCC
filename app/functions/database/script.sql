@@ -211,12 +211,12 @@ VALUES
 
 INSERT INTO tb_imagens (url, nomeimg, codpneu)
 VALUES     
-    ('http://example.com/bridgestone.jpg', 'bridgestone', 1);
+    ('https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcTYyXISvw8bz2bDNLMriCjiFr2WQAD6oNDYJtYh6Ndd2sl882tNqlWqH1KRs_4sNkWLXLdGLbhkEseTjXZS0T2tgecR4DI_oFHv7lgCV0Knd3yQMu3O3ZVccw&usqp=CAE', 'bridgestone', 1);
    
 INSERT INTO tb_imagens (url, nomeimg, codpneu)
 VALUES    
-    ('http://example.com/nuncafura.jpg', 'nuncafura', 2);
+    ('https://s3.us-east-2.amazonaws.com/main.s3.pneubestec.astrus/tb_estrutura_produtos/256678/xforza2-94306505d14eed2ff096fabc4cf2c417_c35ceecc67e282f3429aa15a27750ad7.webp', 'nuncafura', 2);
    
 INSERT INTO tb_imagens (url, nomeimg, codpneu)
 VALUES    
-    ('http://example.com/goodyear.jpg', 'goodyear', 3);
+    ('https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcRHWrEb_R9vN7r7Hbt3PzhAh1mizsfw2WSof4TaVs2cpD0Le_gtlLaI_Kn01_cJ43fr6H7v0CEIEmhSFUuGQ5ZYBMSH1l-T1TBSxK11_x5akY76zZO06EsOeg&usqp=CAE', 'goodyear', 3);

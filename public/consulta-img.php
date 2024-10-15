@@ -21,7 +21,17 @@ $pdo = conect();
     <img src="./assets/image/bandaglogo.png" alt="" class="circleyellow">
 </header>
 
-<div class="containerconsulta">
+
+<button class="containerconsultavoltar">
+        <a href="./pages/inicio.php"><img src="./assets/icon/seta-pequena-esquerda.png" class="mais-buttom"></a>
+    </button>
+
+    <button class="containerconsultavoltar2">
+        <a href="cadastro-img.php"><img src="./assets/icon/mais.png" class="mais-buttom2"></a>
+    </button>
+
+
+    <div class="containerconsulta">
         <h2>Tabela de Imagens</h2>
         <table class="table table-striped">
             <thead>
@@ -44,7 +54,7 @@ $pdo = conect();
                         echo "<tr>";
                         echo "<td>" . htmlspecialchars($row['codimg']) . "</td>";
                         echo "<td>" . htmlspecialchars($row['nomeimg']) . "</td>";
-                        echo "<td>" . htmlspecialchars($row['url']) . "</td>";
+                        echo "<td><img src='" . htmlspecialchars($row['url']) . "' alt='Imagem' style='max-width: 100px; max-height: 100px;'></td>";
                         echo "<td>" . htmlspecialchars($row['codpneu']) . "</td>";
                         echo "<td> 
                                 <a href='alter-img.php?codimg=" . htmlspecialchars($row['codimg']) . "' class='btn btn-danger'>Alterar</a> 
@@ -60,13 +70,9 @@ $pdo = conect();
         </table>
     </div>
 
-    <button class="containerconsultavoltar">
-        <a href="./pages/inicio.php">Voltar</a>
-    </button>
+ 
 
-    <button class="containerconsultavoltar2">
-        <a href="cadastro-img.php">Cadastrar</a>
-    </button>
+
 </body>
 
 </html>
