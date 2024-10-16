@@ -38,7 +38,7 @@ session_start();
   <nav class="popup-window">   
     <ul>
       
-    <h3> Menu</h3>
+    <h3 class="nome-menu"> Menu</h3>
     <article class="line-grey"></article>
     <li>
         <button>       
@@ -67,7 +67,7 @@ if (!empty($_SESSION) && $_SESSION['tipo'] == 'A' && empty($_SESSION['tipo'] == 
 { ?>
     <!-- tudo do html pro adm -->
 
-<h3 class="">Gerenciar Dados </h3>
+<h3 class="nome-menu">Gerenciar Dados </h3>
 <article class="line-grey"></article>
 
       <li>

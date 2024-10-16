@@ -22,6 +22,21 @@ $pdo = conect();
     <img src="./assets/image/bandaglogo.png" alt="" class="circleyellow">
 </header>
 
+
+
+<button class="containerconsultavoltar">
+                <a href="./pages/inicio.php">Voltar</a>
+           </button>
+
+
+           <button class="containerconsultavoltar2">
+                <a href="cadastro-city.php">Cadastrar</a>
+                </button>
+
+
+
+
+
 <div class="containerconsulta">
         <h2>Tabela de Cidades</h2>
         <table class="table table-striped">
@@ -66,14 +81,7 @@ $pdo = conect();
     </div>
 
     
-           <button class="containerconsultavoltar">
-                <a href="./pages/inicio.php">Voltar</a>
-           </button>
-
-
-           <button class="containerconsultavoltar2">
-                <a href="cadastro-city.php">Cadastrar</a>
-                </button>
+         
          
     </table>
 </body>
