@@ -1,110 +1,110 @@
 <?php
-// Conexão com o banco de dados
+session_start();
 include '../../app/functions/database/conect.php';
 
-try {
-    $pdo = conect();
-    if (!$pdo) {
-        die("Erro ao conectar ao banco de dados.");
-    }
-} catch (Exception $e) {
-    die("Erro: " . $e->getMessage());
-}
-
-session_start();
-
-// Verifica se o parâmetro de pesquisa foi enviado (somente quando o AJAX faz a requisição)
-if (isset($_POST['pesquisa'])) {
-    $pesquisa = $_POST['pesquisa'];
-
-    try {
-        // Consulta SQL com INNER JOIN para buscar os pneus e suas medidas
-        $sql = "SELECT tb_pneus.nomepneu, tb_medidas.largura, tb_medidas.altura, tb_medidas.raio
-                FROM tb_pneus
-                JOIN tb_medidas ON tb_pneus.codmedida = tb_medidas.codmedida
-                WHERE tb_pneus.nomepneu LIKE :pesquisa
-                LIMIT 5";
-        
-        $stmt = $pdo->prepare($sql);
-        $stmt->bindValue(':pesquisa', '%' . $pesquisa . '%', PDO::PARAM_STR);
-        $stmt->execute();
-        $resultados = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-        // Depuração: Exibir resultados
-        if ($resultados) {
-            echo "<ul>";
-            foreach ($resultados as $pneu) {
-                echo "<li>" . htmlspecialchars($pneu['nomepneu']) . " - " . htmlspecialchars($pneu['largura']) . "/" . htmlspecialchars($pneu['altura']) . " R" . htmlspecialchars($pneu['raio']) . "</li>";
-            }
-            echo "</ul>";
-        } else {
-            echo "<ul><li>Nenhum pneu encontrado</li></ul>";
-        }
-        exit;  // Finaliza o script após retornar a resposta para o AJAX
-    } catch (PDOException $e) {
-        echo "Erro ao executar a consulta: " . $e->getMessage();
-        exit;
-    }
-}
+$pdo = conect();
+$sql = "SELECT * FROM tb_pneus";
+$stmt = $pdo->prepare($sql);
+$stmt->execute();
+$categorias = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pesquisa de Pneus</title>
-    <style>
-        /* Estilos para o dropdown */
-        .dropdown-content {
-            position: absolute;
-            border: 1px solid #ddd;
-            background-color: white;
-            max-height: 150px;
-            overflow-y: auto;
-            width: 300px;
-            display: none; /* Começa como invisível */
-        }
+    <title>Categorias - ERP Central de Materiais</title>
 
-        .dropdown-content li {
-            padding: 10px;
-            cursor: pointer;
-            list-style: none;
-        }
+    <!-- Fonte Google -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="../assets/css/crudstyle.css">
 
-        .dropdown-content li:hover {
-            background-color: #f1f1f1;
-        }
-    </style>
-    <script>
-        // Função que envia a pesquisa em tempo real
-        function pesquisaPneu() {
-            var pesquisa = document.getElementById("pesquisa").value;
-
-            if (pesquisa.length >= 2) {  // Começa a buscar a partir de 2 caracteres
-                var xhr = new XMLHttpRequest();
-                xhr.onreadystatechange = function() {
-                    if (xhr.readyState == 4 && xhr.status == 200) {
-                        document.getElementById("resultado").innerHTML = xhr.responseText;
-                        document.getElementById("resultado").style.display = "block"; // Exibe o dropdown
-                    }
-                };
-                xhr.open("POST", "", true);  // Envia a requisição para o mesmo arquivo
-                xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-                xhr.send("pesquisa=" + pesquisa);
-            } else {
-                document.getElementById("resultado").innerHTML = "";
-                document.getElementById("resultado").style.display = "none"; // Esconde o dropdown
-            }
-        }
-    </script>
+   <!-- jQuery -->
+   <script src="../assets/js/jquery-3.6.0.min.js"></script>
 </head>
 <body>
-    <h1>Pesquisa de Pneus</h1>
-    <form method="POST" action="">
-        <input type="text" id="pesquisa" name="pesquisa" placeholder="Digite o nome do pneu" onkeyup="pesquisaPneu()" autocomplete="off">
-        <div class="dropdown-content" id="resultado"></div>
-    </form>
+
+    <!-- Main content -->
+    <main>
+        <section class="hero">
+            <h1>Gerenciamento de Categorias</h1>
+        </section>
+
+        <!-- Barra de Pesquisa -->
+        <div class="search-container">
+            <input type="text" id="search" placeholder="Pesquisar categorias..." class="search-bar" />
+            <div class="no-results">Nenhum resultado encontrado.</div> <!-- Mensagem de nenhum resultado -->
+        </div>
+
+        <div class="containerconsulta">
+            <br><br><br><br>
+            <table class="table table-striped" id="categoriasTable"> <!-- Adicionado ID aqui -->
+                <thead>
+                    <tr class="trgreen">
+                        <th>ID</th>
+                        <th>Nome</th>
+                        <th>Descrição</th>
+                        <th>Tipo</th>
+                        <th>Preço</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php
+                    try {
+                        $sql = "SELECT * FROM tb_pneus";
+                        $stmt = $pdo->query($sql);
+
+                        while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+                            echo "<tr>";
+                            echo "<td>" . htmlspecialchars($row['codpneu']) . "</td>";
+                            echo "<td>" . htmlspecialchars($row['nomepneu']) . "</td>";
+                            echo "<td>" . htmlspecialchars($row['descricao']) . "</td>";
+                            echo "<td>" . htmlspecialchars($row['tipo']) . "</td>";
+                            echo "<td>" . htmlspecialchars($row['preco']) . "</td>";
+                            echo "<td> <a href='alter-pneu.php?codpneu=" .  htmlspecialchars($row['codpneu']) . "' class='btn btn-danger'>Alterar</a> </td>";
+                            echo "<td> <a href='exclusao-pneu.php?codpneu=" .  htmlspecialchars($row['codpneu']) . "' class='btn btn-danger'>Excluir</a> </td>";
+                            echo "</tr>";
+                        }
+                    } catch (\PDOException $e) {
+                        echo "Erro: " . $e->getMessage();
+                    }
+                    ?>
+                </tbody>
+            </table>
+        </div>
+
+    <!-- Script de Pesquisa -->
+    <script>
+    $(document).ready(function() {
+        $('.no-results').hide(); // Ocultar a mensagem ao carregar
+
+        $('#search').on('input', function() {
+            var searchTerm = $(this).val().toLowerCase();
+            var hasResults = false;
+
+            $('#categoriasTable tbody tr').each(function() { // ID corrigido aqui
+                var row = $(this);
+                var rowData = row.text().toLowerCase();
+
+                if (rowData.includes(searchTerm)) {
+                    row.fadeIn(100);
+                    hasResults = true;
+                } else {
+                    row.fadeOut(100);
+                }
+            });
+
+            if (!hasResults && searchTerm !== "") {
+                $('.no-results').fadeIn(100);
+            } else {
+                $('.no-results').fadeOut(100);
+            }
+        });
+    });
+    </script>
+
 </body>
 </html>
