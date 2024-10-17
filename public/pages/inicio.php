@@ -95,7 +95,7 @@ if (!empty($_SESSION) && $_SESSION['tipo'] == 'A' && empty($_SESSION['tipo'] == 
 </li>
 
 <li>
-    <button onclick="window.location.href='../consulta-user.php'">
+    <button onclick="window.location.href='../consulta-compra.php'">
         <span class="linkside">Compras</span>
     </button>
 </li>

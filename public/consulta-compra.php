@@ -3,12 +3,13 @@ include '../app/functions/database/conect.php'; // Assumindo que você já criou
 session_start();
 $pdo = conect();
 ?>
+
 <!DOCTYPE html>
 <html lang="pt">
 
 <head>
     <meta charset="UTF-8">
-    <title>Lista de Pneus</title>
+    <title>Lista de Compras</title>
     <link rel="stylesheet" href="./assets/css/crudstyle.css">
 </head>
 
@@ -23,7 +24,7 @@ $pdo = conect();
 
 <!-- Barra de Pesquisa -->
 <div class="search-container">
-    <input type="text" id="search" placeholder="Pesquisar pneus..." class="search-bar" />
+    <input type="text" id="search" placeholder="Pesquisar compras..." class="search-bar" />
     <div class="no-results">Nenhum resultado encontrado.</div> <!-- Mensagem de nenhum resultado -->
 </div>
 
@@ -32,38 +33,44 @@ $pdo = conect();
 </button>
 
 <button class="containerconsultavoltar2">
-    <a href="cadastro-pneu.php">Cadastrar</a>
+    <a href="cadastro-compra.php">Cadastrar</a>
 </button>
 
 <div class="containerconsulta">
-    <h2>Tabela de Pneus</h2>
-    <table class="table table-striped" id="categoriasTable"> <!-- ID adicionado -->
+    <h2>Tabela de Compras</h2>
+    <table class="table table-striped" id="comprasTable"> <!-- ID adicionado -->
         <thead>
             <tr class="trgreen">
                 <th>ID</th>
-                <th>Nome</th>
-                <th>Descrição</th>
-                <th>Tipo</th>
-                <th>Preço</th>
+                <th>Entregue</th>
+                <th>Entrega</th>
+                <th>Código de Entrega</th>
+                <th>Valor da Entrega (R$)</th>
+                <th>Forma de Pagamento</th>
+                <th>Data da Compra</th>
                 <th>Ações</th>
             </tr>
         </thead>
         <tbody>
             <?php
             try {
-                $sql = "SELECT * FROM tb_pneus"; // Consulta para obter os pneus
+                $sql = "SELECT * FROM tb_compras";
                 $stmt = $pdo->query($sql);
 
                 while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
                     echo "<tr>";
-                    echo "<td>" . htmlspecialchars($row['codpneu']) . "</td>"; // ID do pneu
-                    echo "<td>" . htmlspecialchars($row['nomepneu']) . "</td>"; // Nome do pneu
-                    echo "<td>" . htmlspecialchars($row['descricao']) . "</td>"; // Descrição do pneu
-                    echo "<td>" . htmlspecialchars($row['tipo']) . "</td>"; // Tipo do pneu
-                    echo "<td>" . htmlspecialchars($row['preco']) . "</td>"; // Preço do pneu
+                    echo "<td>" . htmlspecialchars($row['codcompra']) . "</td>";
+                    echo "<td>" . ($row['entregue'] ? 'Sim' : 'Não') . "</td>";
+                    echo "<td>" . htmlspecialchars($row['entrega']) . "</td>";
+                    echo "<td>" . htmlspecialchars($row['codentrega']) . "</td>";
+                    echo "<td>" . htmlspecialchars(number_format($row['valorentrega'], 2, ',', '.')) . "</td>";
+                    echo "<td>" . htmlspecialchars($row['formapagamento']) . "</td>";
+                    echo "<td>" . htmlspecialchars(date('d/m/Y', strtotime($row['dtcompra']))) . "</td>";
+                    
+                    
                     echo "<td>
-                            <a href='alter-pneu.php?codpneu=" . htmlspecialchars($row['codpneu']) . "' class='btn btn-danger'>Alterar</a>
-                            <a href='exclusao-pneu.php?codpneu=" . htmlspecialchars($row['codpneu']) . "' class='btn btn-danger'>Excluir</a>
+                            <a href='alter-compra.php?codcompra=" . htmlspecialchars($row['codcompra']) . "' class='btn btn-danger'>Alterar</a>
+                            <a href='exclusao-compra.php?codcompra=" . htmlspecialchars($row['codcompra']) . "' class='btn btn-danger'>Excluir</a>
                           </td>";
                     echo "</tr>";
                 }
@@ -75,6 +82,8 @@ $pdo = conect();
     </table>
 </div>
 
+
+
 <script>
 $(document).ready(function() {
     $('.no-results').hide(); // Ocultar a mensagem ao carregar
@@ -83,7 +92,7 @@ $(document).ready(function() {
         var searchTerm = $(this).val().toLowerCase();
         var hasResults = false;
 
-        $('#categoriasTable tbody tr').each(function() {
+        $('#comprasTable tbody tr').each(function() { // ID corrigido
             var row = $(this);
             var rowData = row.text().toLowerCase();
 
@@ -105,5 +114,4 @@ $(document).ready(function() {
 </script>
 
 </body>
-
 </html>

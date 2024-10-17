@@ -148,6 +148,7 @@ body{
   input[type="password"],
   input[type="number"],
   input[type="date"]
+  input[type="url"]
   
   {
     box-sizing: border-box;
@@ -170,6 +171,7 @@ body{
   input[type="text"]:focus,
   input[type="number"]:focus,
   input[type="date"]:focus
+  input[type="url"]:focus
   {
     box-shadow: inset 0px 2px 5px rgba(0, 0, 0, 0.3);
     outline: none;
