@@ -18,7 +18,7 @@ $pdo = conect();
  
 
 <!-- formulario de login -->
-<div class="login-card">
+<div class="login-card-user">
   <div class="card-header">
     <h1>CADASTRO</h1>
   </div>

@@ -1,0 +1,17 @@
+{
+    "name": "mathe/amazonia-pneus-tcc",
+    "autoload": {
+        "psr-4": {
+            "Mathe\\AmazoniaPneusTcc\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "DevShocks",
+            "email": "matheusrodrigues58277@gmail.com"
+        }
+    ],
+    "require": {
+        "phpmailer/phpmailer": "^6.9"
+    }
+}

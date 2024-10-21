@@ -6,46 +6,70 @@ $pdo = conect();
 $message = '';
 $messageType = '';
 
-if (isset($_GET['codcidade']))
+if (isset($_GET['codcidade'])) {
     $codcidade = $_GET['codcidade'];
 
-    if (isset($_GET['codcidade'])) {
-        $codcidade = $_GET['codcidade'];  
-    
-        if (isset($_POST['confirm'])) {
-            try {
-                $sql = "DELETE FROM tb_cidades WHERE codcidade = :codcidade";
-                $stmt = $pdo->prepare($sql);
-                $stmt->bindParam(':codcidade', $codcidade, PDO::PARAM_INT);
-                $stmt->execute();
-                $message = "Registro excluído com sucesso!";
-                $messageType = "success";
-                header("refresh:2;url=consulta-city.php");
-                exit;
-            } catch (PDOException $e) {
-                $message = "Erro ao excluir o registro: " . $e->getMessage();
-                $messageType = "danger";
-            }
-        } else {
-            try {
-                $sql = "SELECT * FROM tb_cidades WHERE codcidade = :codcidade";
-                $stmt = $pdo->prepare($sql);
-                $stmt->bindParam(':codcidade', $codcidade, PDO::PARAM_INT);
-                $stmt->execute();
-                $tb_cidades = $stmt->fetch(PDO::FETCH_ASSOC);
-                if (!$tb_cidades) {
-                    $message = "Registro não encontrado.";
-                    $messageType = "danger";
-                }
-            } catch (PDOException $e) {
-                $message = "Erro ao buscar registro: " . $e->getMessage();
-                $messageType = "danger";
-            }
+    if (isset($_POST['confirm'])) {
+        try {
+            // Excluir compras_pneus associadas a compras dos clientes da cidade
+            $sql = "DELETE FROM tb_compras_pneus WHERE codcompra IN (
+                        SELECT codcompra FROM tb_compras WHERE codcliente IN (
+                            SELECT codcliente FROM tb_clientes WHERE codcidade = :codcidade
+                        )
+                    )";
+            $stmt = $pdo->prepare($sql);
+            $stmt->bindParam(':codcidade', $codcidade, PDO::PARAM_INT);
+            $stmt->execute();
+
+            // Excluir compras associadas aos clientes da cidade
+            $sql = "DELETE FROM tb_compras WHERE codcliente IN (
+                        SELECT codcliente FROM tb_clientes WHERE codcidade = :codcidade
+                    )";
+            $stmt = $pdo->prepare($sql);
+            $stmt->bindParam(':codcidade', $codcidade, PDO::PARAM_INT);
+            $stmt->execute();
+
+            // Excluir os clientes da cidade
+            $sql = "DELETE FROM tb_clientes WHERE codcidade = :codcidade";
+            $stmt = $pdo->prepare($sql);
+            $stmt->bindParam(':codcidade', $codcidade, PDO::PARAM_INT);
+            $stmt->execute();
+
+            // Agora, excluir a cidade
+            $sql = "DELETE FROM tb_cidades WHERE codcidade = :codcidade";
+            $stmt = $pdo->prepare($sql);
+            $stmt->bindParam(':codcidade', $codcidade, PDO::PARAM_INT);
+            $stmt->execute();
+
+            $message = "Registro excluído com sucesso!";
+            $messageType = "success";
+            header("refresh:2;url=consulta-city.php");
+            exit;
+        } catch (PDOException $e) {
+            $message = "Erro ao excluir o registro: " . $e->getMessage();
+            $messageType = "danger";
         }
     } else {
-        header('Location: consulta-city.php');
-        exit;
+        try {
+            // Buscar detalhes da cidade para confirmar exclusão
+            $sql = "SELECT * FROM tb_cidades WHERE codcidade = :codcidade";
+            $stmt = $pdo->prepare($sql);
+            $stmt->bindParam(':codcidade', $codcidade, PDO::PARAM_INT);
+            $stmt->execute();
+            $tb_cidades = $stmt->fetch(PDO::FETCH_ASSOC);
+            if (!$tb_cidades) {
+                $message = "Registro não encontrado.";
+                $messageType = "danger";
+            }
+        } catch (PDOException $e) {
+            $message = "Erro ao buscar registro: " . $e->getMessage();
+            $messageType = "danger";
+        }
     }
+} else {
+    header('Location: consulta-city.php');
+    exit;
+}
 ?>
 
 <!DOCTYPE html>
@@ -64,12 +88,6 @@ if (isset($_GET['codcidade']))
     </div>
     <img src="./assets/image/bandaglogo.png" alt="" class="circleyellow">
 </header>
-
-
-
-
-
-
 
 <div class="card-exc">
     <div class="header">
@@ -104,7 +122,6 @@ if (isset($_GET['codcidade']))
         </div>
     </div>
 </div>
-
 
 </body>
 </html>

@@ -27,12 +27,13 @@ $pdo = conect();
     <div class="no-results">Nenhum resultado encontrado.</div> <!-- Mensagem de nenhum resultado -->
 </div>
 
+<!-- Botões de navegação -->
 <button class="containerconsultavoltar">
-    <a href="./pages/inicio.php">Voltar</a>
+    <a href="./pages/inicio.php"><img src="./assets/icon/seta-pequena-esquerda.png" class="mais-buttom"></a>
 </button>
 
 <button class="containerconsultavoltar2">
-    <a href="cadastro-med.php">Cadastrar</a>
+    <a href="cadastro-med.php"><img src="./assets/icon/mais.png" class="mais-buttom2"></a>
 </button>
 
 <div class="containerconsulta">

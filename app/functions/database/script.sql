@@ -27,6 +27,8 @@ CREATE TABLE tb_clientes (
     tipo VARCHAR(1) NOT NULL DEFAULT "C" CHECK (tipo IN ('C', 'A')),
     ativo VARCHAR(1) NOT NULL DEFAULT "S" CHECK (ativo IN ('S', 'N')),
     codcidade INTEGER,
+    token VARCHAR(250),
+    token_expira DATETIME,
     FOREIGN KEY (codcidade) REFERENCES tb_cidades (codcidade)
 );
 
@@ -103,12 +105,57 @@ INSERT INTO tb_cidades (codcidade, estado, nome)
 VALUES 
     (2, 'PR', 'Toledo');
     
-
-
 INSERT INTO tb_cidades (codcidade, estado, nome)
 VALUES 
     (3, 'SC', 'Joinville');
 
+INSERT INTO tb_cidades (codcidade, estado, nome)
+VALUES 
+    (4, 'RS', 'Porto Alegre');
+
+INSERT INTO tb_cidades (codcidade, estado, nome)
+VALUES 
+    (5, 'PR', 'Curitiba');
+
+INSERT INTO tb_cidades (codcidade, estado, nome)
+VALUES 
+    (6, 'SC', 'Blumenau');
+
+INSERT INTO tb_cidades (codcidade, estado, nome)
+VALUES 
+    (7, 'RS', 'Canoas');
+
+INSERT INTO tb_cidades (codcidade, estado, nome)
+VALUES 
+    (8, 'PR', 'Londrina');
+
+INSERT INTO tb_cidades (codcidade, estado, nome)
+VALUES 
+    (9, 'SC', 'Florianópolis');
+
+INSERT INTO tb_cidades (codcidade, estado, nome)
+VALUES 
+    (10, 'RS', 'Pelotas');
+
+INSERT INTO tb_cidades (codcidade, estado, nome)
+VALUES 
+    (11, 'PR', 'Ponta Grossa');
+
+INSERT INTO tb_cidades (codcidade, estado, nome)
+VALUES 
+    (12, 'SC', 'Chapecó');
+
+INSERT INTO tb_cidades (codcidade, estado, nome)
+VALUES 
+    (13, 'RS', 'Santa Maria');
+
+INSERT INTO tb_cidades (codcidade, estado, nome)
+VALUES 
+    (14, 'PR', 'Maringá');
+
+INSERT INTO tb_cidades (codcidade, estado, nome)
+VALUES 
+    (15, 'SC', 'Itajaí');
 
 
 
@@ -119,16 +166,63 @@ VALUES
 INSERT INTO tb_clientes (codcliente, nome, rua, cpf, fone, email, senha, datanasc, ncasa, bairro, complemento, tipo, ativo, codcidade)
 VALUES 
     (1, 'Célia', 'Rua Parana', '12345678901', '987654321', 'celia_me_da_nota_plz@gmail.com', MD5('senha123'), '1990-01-01', '123', 'Centro', 'Casa portão preto', 'C', 'S', 1);
-    
-    
+      
     INSERT INTO tb_clientes (codcliente, nome, rua, cpf, fone, email, senha, datanasc, ncasa, bairro, complemento, tipo, ativo, codcidade)
 VALUES
     (2, 'Matheus', 'Rua dos Tropeiros', '98765432101', '123456789', 'melhor_mortis_do_brasil@gmail.com', MD5('admin123'), '1985-01-01',  '456', 'Tropical', 'Casa Esquina', 'A', 'S', 2);
-    
-    
+        
    INSERT INTO tb_clientes (codcliente, nome, rua, cpf, fone, email, senha, datanasc, ncasa, bairro, complemento, tipo, ativo, codcidade)
 VALUES 
     (3, 'Elliot', 'Rua Pernambuco', '99945678881', '131554321', 'fsociety@gmail.com', MD5('mrrobot'), '1998-10-28', '158', 'Centro', 'apartamento cinza', 'C', 'S', 3);
+
+INSERT INTO tb_clientes (codcliente, nome, rua, cpf, fone, email, senha, datanasc, ncasa, bairro, complemento, tipo, ativo, codcidade)
+VALUES 
+    (4, 'Carlos', 'Rua XV de Novembro', '11122233344', '999999999', 'carlos@example.com', MD5('senha123'), '1990-05-10', '100', 'Centro', 'Prédio Azul', 'C', 'S', 4);
+
+INSERT INTO tb_clientes (codcliente, nome, rua, cpf, fone, email, senha, datanasc, ncasa, bairro, complemento, tipo, ativo, codcidade)
+VALUES 
+    (5, 'Ana', 'Rua das Flores', '22233344455', '888888888', 'ana@example.com', MD5('senha123'), '1992-06-15', '200', 'Jardim', 'Casa Verde', 'C', 'S', 5);
+
+INSERT INTO tb_clientes (codcliente, nome, rua, cpf, fone, email, senha, datanasc, ncasa, bairro, complemento, tipo, ativo, codcidade)
+VALUES 
+    (6, 'Pedro', 'Avenida Brasil', '33344455566', '777777777', 'pedro@example.com', MD5('senha123'), '1988-03-22', '150', 'Industrial', 'Sem complemento', 'C', 'S', 6);
+
+INSERT INTO tb_clientes (codcliente, nome, rua, cpf, fone, email, senha, datanasc, ncasa, bairro, complemento, tipo, ativo, codcidade)
+VALUES 
+    (7, 'Lucas', 'Rua Santos Dumont', '44455566677', '666666666', 'lucas@example.com', MD5('senha123'), '1995-02-12', '75', 'Aeroporto', 'Apartamento 305', 'C', 'S', 7);
+
+INSERT INTO tb_clientes (codcliente, nome, rua, cpf, fone, email, senha, datanasc, ncasa, bairro, complemento, tipo, ativo, codcidade)
+VALUES 
+    (8, 'Juliana', 'Avenida Independência', '55566677788', '555555555', 'juliana@example.com', MD5('senha123'), '1993-11-20', '80', 'Vila Nova', 'Sobrado', 'C', 'S', 8);
+
+INSERT INTO tb_clientes (codcliente, nome, rua, cpf, fone, email, senha, datanasc, ncasa, bairro, complemento, tipo, ativo, codcidade)
+VALUES 
+    (9, 'Roberta', 'Rua Getúlio Vargas', '66677788899', '444444444', 'roberta@example.com', MD5('senha123'), '1994-07-30', '220', 'Pinheiros', 'Casa de esquina', 'C', 'S', 9);
+
+INSERT INTO tb_clientes (codcliente, nome, rua, cpf, fone, email, senha, datanasc, ncasa, bairro, complemento, tipo, ativo, codcidade)
+VALUES 
+    (10, 'Felipe', 'Rua da Harmonia', '77788899900', '333333333', 'felipe@example.com', MD5('senha123'), '1991-09-17', '85', 'Santa Clara', 'Casa amarela', 'C', 'S', 10);
+
+INSERT INTO tb_clientes (codcliente, nome, rua, cpf, fone, email, senha, datanasc, ncasa, bairro, complemento, tipo, ativo, codcidade)
+VALUES 
+    (11, 'Carlos Eduardo', 'Avenida Central', '12312312345', '888888888', 'carlos.edu@example.com', MD5('senha123'), '1990-02-15', '202', 'Centro', 'Casa com garagem', 'C', 'S', 2);
+
+INSERT INTO tb_clientes (codcliente, nome, rua, cpf, fone, email, senha, datanasc, ncasa, bairro, complemento, tipo, ativo, codcidade)
+VALUES 
+    (12, 'Mariana Oliveira', 'Rua das Palmeiras', '45645645678', '777777777', 'mariana.oliver@example.com', MD5('senha123'), '1992-10-10', '15', 'Jardim Tropical', 'Casa de esquina', 'C', 'S', 3);
+
+INSERT INTO tb_clientes (codcliente, nome, rua, cpf, fone, email, senha, datanasc, ncasa, bairro, complemento, tipo, ativo, codcidade)
+VALUES 
+    (13, 'Rafael Souza', 'Avenida das Américas', '78978978901', '666666666', 'rafael.souza@example.com', MD5('senha123'), '1985-08-08', '35', 'Vila Nova', 'Apartamento 5', 'C', 'S', 1);
+
+INSERT INTO tb_clientes (codcliente, nome, rua, cpf, fone, email, senha, datanasc, ncasa, bairro, complemento, tipo, ativo, codcidade)
+VALUES 
+    (14, 'Patrícia Santos', 'Rua das Acácias', '14714714785', '555555555', 'patricia.santos@example.com', MD5('senha123'), '1995-04-04', '47', 'Centro', 'Casa com jardim', 'C', 'S', 2);
+
+INSERT INTO tb_clientes (codcliente, nome, rua, cpf, fone, email, senha, datanasc, ncasa, bairro, complemento, tipo, ativo, codcidade)
+VALUES 
+    (15, 'Rodrigo Almeida', 'Rua das Hortênsias', '36936936985', '444444444', 'matheusrodrigues58277@gmail.com', MD5('macaco'), '1989-12-12', '57', 'Jardim das Flores', 'Apartamento 2', 'C', 'S', 3);
+
 
 
 
@@ -138,22 +232,65 @@ VALUES
 
 
 
-INSERT INTO tb_pneus ( nomepneu, descricao, tipo, preco)
+INSERT INTO tb_pneus (nomepneu, descricao, tipo, preco)
 VALUES 
+    ('Michelin X Multiway', 'Pneu de alta performance para caminhões de carga', 'C', 450.00);
 
-    ('bridgestone', 'pneu novo da briegstone', 'C', '200,00' );
-    
-    
-INSERT INTO tb_pneus ( nomepneu, descricao, tipo, preco)
-VALUES     
-    ('nuncafura', 'pneu recapado pela empresa', 'R', '230,00' );
-    
-    
-    
-INSERT INTO tb_pneus ( nomepneu, descricao, tipo, preco)
+INSERT INTO tb_pneus (nomepneu, descricao, tipo, preco)
 VALUES 
-    ('goodyear', 'pneu da melhor recapagem', 'O', '500,00' );
+    ('Continental HSC1', 'Pneu robusto para caminhões com alta durabilidade', 'C', 470.00);
 
+INSERT INTO tb_pneus (nomepneu, descricao, tipo, preco)
+VALUES 
+    ('Pirelli FG01', 'Pneu especializado para caminhões rodoviários', 'C', 500.00);
+
+INSERT INTO tb_pneus (nomepneu, descricao, tipo, preco)
+VALUES 
+    ('Bridgestone M729', 'Pneu resistente para caminhões de longa distância', 'C', 510.00);
+
+INSERT INTO tb_pneus (nomepneu, descricao, tipo, preco)
+VALUES 
+    ('Goodyear KMax', 'Pneu econômico e durável para caminhões pesados', 'C', 490.00);
+
+INSERT INTO tb_pneus (nomepneu, descricao, tipo, preco)
+VALUES 
+    ('Dunlop SP 320', 'Pneu ideal para caminhões de carga média', 'C', 440.00);
+
+INSERT INTO tb_pneus (nomepneu, descricao, tipo, preco)
+VALUES 
+    ('Firestone FS591', 'Pneu para caminhões de uso misto, estrada e urbano', 'C', 460.00);
+
+INSERT INTO tb_pneus (nomepneu, descricao, tipo, preco)
+VALUES 
+    ('Yokohama TY517', 'Pneu de longa duração para caminhões de grande porte', 'C', 480.00);
+
+INSERT INTO tb_pneus (nomepneu, descricao, tipo, preco)
+VALUES 
+    ('Hankook DL11', 'Pneu para caminhões com tração reforçada', 'C', 465.00);
+
+INSERT INTO tb_pneus (nomepneu, descricao, tipo, preco)
+VALUES 
+    ('BFGoodrich Cross Control', 'Pneu para caminhões com resistência em condições severas', 'C', 455.00);
+
+INSERT INTO tb_pneus (nomepneu, descricao, tipo, preco)
+VALUES 
+    ('Toyo M647', 'Pneu de alta eficiência para caminhões de longa distância', 'C', 475.00);
+
+INSERT INTO tb_pneus (nomepneu, descricao, tipo, preco)
+VALUES 
+    ('Sumitomo ST719', 'Pneu versátil para caminhões de carga pesada', 'C', 430.00);
+
+INSERT INTO tb_pneus (nomepneu, descricao, tipo, preco)
+VALUES 
+    ('Kumho KRS50', 'Pneu reforçado para caminhões de carga', 'C', 445.00);
+
+INSERT INTO tb_pneus (nomepneu, descricao, tipo, preco)
+VALUES 
+    ('Maxxis M9208', 'Pneu especializado para caminhões off-road', 'C', 460.00);
+
+INSERT INTO tb_pneus (nomepneu, descricao, tipo, preco)
+VALUES 
+    ('Apollo Endurace RA', 'Pneu resistente para caminhões de entrega', 'C', 435.00);
 
 
 
@@ -161,18 +298,65 @@ VALUES
 /*TABELA MEDIDAS*/
 
 
+INSERT INTO tb_medidas (largura, aro, medida, altura, indicecarga, velocidade, construcao, raio)
+VALUES 
+    (315, 22, 80, 70, 154, 210, 'R', 22);
 
 INSERT INTO tb_medidas (largura, aro, medida, altura, indicecarga, velocidade, construcao, raio)
 VALUES 
-    (205, 15, 55, 65, 95, 210, 'R', 16);
-    
+    (295, 22, 75, 65, 152, 190, 'R', 22);
+
 INSERT INTO tb_medidas (largura, aro, medida, altura, indicecarga, velocidade, construcao, raio)
-VALUES     
-    (185, 14, 70, 60, 89, 190, 'C', 15);
-    
+VALUES 
+    (305, 20, 85, 70, 150, 200, 'R', 20);
+
 INSERT INTO tb_medidas (largura, aro, medida, altura, indicecarga, velocidade, construcao, raio)
-VALUES     
-    (225, 16, 60, 75, 100, 240, 'R', 17);
+VALUES 
+    (285, 19, 70, 65, 145, 180, 'C', 19);
+
+INSERT INTO tb_medidas (largura, aro, medida, altura, indicecarga, velocidade, construcao, raio)
+VALUES 
+    (275, 19, 75, 70, 143, 175, 'R', 19);
+
+INSERT INTO tb_medidas (largura, aro, medida, altura, indicecarga, velocidade, construcao, raio)
+VALUES 
+    (265, 18, 65, 60, 140, 170, 'C', 18);
+
+INSERT INTO tb_medidas (largura, aro, medida, altura, indicecarga, velocidade, construcao, raio)
+VALUES 
+    (245, 18, 70, 65, 137, 160, 'R', 18);
+
+INSERT INTO tb_medidas (largura, aro, medida, altura, indicecarga, velocidade, construcao, raio)
+VALUES 
+    (255, 17, 65, 60, 134, 155, 'C', 17);
+
+INSERT INTO tb_medidas (largura, aro, medida, altura, indicecarga, velocidade, construcao, raio)
+VALUES 
+    (235, 17, 70, 65, 130, 150, 'R', 17);
+
+INSERT INTO tb_medidas (largura, aro, medida, altura, indicecarga, velocidade, construcao, raio)
+VALUES 
+    (225, 16, 75, 70, 125, 140, 'C', 16);
+
+INSERT INTO tb_medidas (largura, aro, medida, altura, indicecarga, velocidade, construcao, raio)
+VALUES 
+    (215, 16, 80, 75, 123, 135, 'R', 16);
+
+INSERT INTO tb_medidas (largura, aro, medida, altura, indicecarga, velocidade, construcao, raio)
+VALUES 
+    (205, 15, 85, 80, 120, 130, 'C', 15);
+
+INSERT INTO tb_medidas (largura, aro, medida, altura, indicecarga, velocidade, construcao, raio)
+VALUES 
+    (195, 15, 70, 65, 118, 125, 'R', 15);
+
+INSERT INTO tb_medidas (largura, aro, medida, altura, indicecarga, velocidade, construcao, raio)
+VALUES 
+    (185, 14, 75, 70, 115, 120, 'C', 14);
+
+INSERT INTO tb_medidas (largura, aro, medida, altura, indicecarga, velocidade, construcao, raio)
+VALUES 
+    (175, 14, 80, 75, 110, 115, 'R', 14);
 
 
 
@@ -190,33 +374,163 @@ INSERT INTO tb_compras (entregue, entrega, codentrega, valorentrega, formapagame
 VALUES     
     (TRUE, 'Rua Pernambuco, 158 - Centro', 103, 30.00, 3, '2023-09-02', 3);
 
+INSERT INTO tb_compras (entregue, entrega, codentrega, valorentrega, formapagamento, dtcompra, codcliente)
+VALUES 
+    (TRUE, 'Avenida Brasil, 1000', 104, 18.50, 1, '2023-07-21', 4);
+
+INSERT INTO tb_compras (entregue, entrega, codentrega, valorentrega, formapagamento, dtcompra, codcliente)
+VALUES 
+    (FALSE, 'Rua Santos Dumont, 75', 105, 22.00, 2, '2023-09-11', 5);
+
+INSERT INTO tb_compras (entregue, entrega, codentrega, valorentrega, formapagamento, dtcompra, codcliente)
+VALUES 
+    (TRUE, 'Rua Getúlio Vargas, 300', 106, 20.00, 3, '2023-06-15', 6);
+
+INSERT INTO tb_compras (entregue, entrega, codentrega, valorentrega, formapagamento, dtcompra, codcliente)
+VALUES 
+    (FALSE, 'Avenida Independência, 85', 107, 19.00, 1, '2023-10-04', 7);
+
+INSERT INTO tb_compras (entregue, entrega, codentrega, valorentrega, formapagamento, dtcompra, codcliente)
+VALUES 
+    (TRUE, 'Rua da Harmonia, 85', 108, 21.50, 2, '2023-08-22', 8);
+
+INSERT INTO tb_compras (entregue, entrega, codentrega, valorentrega, formapagamento, dtcompra, codcliente)
+VALUES 
+    (FALSE, 'Rua Tibagi, 130', 109, 18.00, 3, '2023-07-17', 9);
+
+INSERT INTO tb_compras (entregue, entrega, codentrega, valorentrega, formapagamento, dtcompra, codcliente)
+VALUES 
+    (TRUE, 'Rua Amazonas, 300', 110, 25.00, 1, '2023-11-08', 10);
+
+INSERT INTO tb_compras (entregue, entrega, codentrega, valorentrega, formapagamento, dtcompra, codcliente)
+VALUES 
+    (TRUE, 'Avenida das Américas, 50', 111, 30.00, 2, '2023-08-05', 11);    
+
 
     /* TABELA COMPRA PNEUS */
 
 
 INSERT INTO tb_compras_pneus (qntd, preco, codcompra, codpneu)
 VALUES 
-    (2, 200.00, 1, 1);
-   
+    (5, 200.00, 1, 1);
+
 INSERT INTO tb_compras_pneus (qntd, preco, codcompra, codpneu)
-VALUES    
-    (1, 230.00, 2, 2);
-   
+VALUES 
+    (2, 230.00, 2, 2);
+
 INSERT INTO tb_compras_pneus (qntd, preco, codcompra, codpneu)
-VALUES    
+VALUES 
     (4, 500.00, 3, 3);
 
+INSERT INTO tb_compras_pneus (qntd, preco, codcompra, codpneu)
+VALUES 
+    (6, 250.00, 1, 4);
+
+INSERT INTO tb_compras_pneus (qntd, preco, codcompra, codpneu)
+VALUES 
+    (3, 300.00, 2, 5);
+
+INSERT INTO tb_compras_pneus (qntd, preco, codcompra, codpneu)
+VALUES 
+    (7, 450.00, 3, 6);
+
+INSERT INTO tb_compras_pneus (qntd, preco, codcompra, codpneu)
+VALUES 
+    (2, 220.00, 1, 7);
+
+INSERT INTO tb_compras_pneus (qntd, preco, codcompra, codpneu)
+VALUES 
+    (8, 280.00, 2, 8);
+
+INSERT INTO tb_compras_pneus (qntd, preco, codcompra, codpneu)
+VALUES 
+    (1, 190.00, 3, 9);
+
+INSERT INTO tb_compras_pneus (qntd, preco, codcompra, codpneu)
+VALUES 
+    (5, 350.00, 1, 10);
+
+INSERT INTO tb_compras_pneus (qntd, preco, codcompra, codpneu)
+VALUES 
+    (3, 270.00, 2, 11);
+
+INSERT INTO tb_compras_pneus (qntd, preco, codcompra, codpneu)
+VALUES 
+    (4, 380.00, 3, 12);
+
+INSERT INTO tb_compras_pneus (qntd, preco, codcompra, codpneu)
+VALUES 
+    (6, 210.00, 1, 13);
+
+INSERT INTO tb_compras_pneus (qntd, preco, codcompra, codpneu)
+VALUES 
+    (9, 320.00, 2, 14);
+
+INSERT INTO tb_compras_pneus (qntd, preco, codcompra, codpneu)
+VALUES 
+    (7, 430.00, 3, 15);
 
 
 
+/*TABELA DE IMAGENS */
+
+
 INSERT INTO tb_imagens (url, nomeimg, codpneu)
-VALUES     
-    ('https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcTYyXISvw8bz2bDNLMriCjiFr2WQAD6oNDYJtYh6Ndd2sl882tNqlWqH1KRs_4sNkWLXLdGLbhkEseTjXZS0T2tgecR4DI_oFHv7lgCV0Knd3yQMu3O3ZVccw&usqp=CAE', 'bridgestone', 1);
-   
+VALUES 
+    ('https://cdn.autoparts24.co.uk/images/pneu-truck-bridgestone.jpg', 'Bridgestone Truck', 1);
+
 INSERT INTO tb_imagens (url, nomeimg, codpneu)
-VALUES    
-    ('https://s3.us-east-2.amazonaws.com/main.s3.pneubestec.astrus/tb_estrutura_produtos/256678/xforza2-94306505d14eed2ff096fabc4cf2c417_c35ceecc67e282f3429aa15a27750ad7.webp', 'nuncafura', 2);
-   
+VALUES 
+    ('https://www.continental-truck-tyres.com/trucktyres/images/continental-truck-tyre.png', 'Continental Truck', 2);
+
 INSERT INTO tb_imagens (url, nomeimg, codpneu)
-VALUES    
-    ('https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcRHWrEb_R9vN7r7Hbt3PzhAh1mizsfw2WSof4TaVs2cpD0Le_gtlLaI_Kn01_cJ43fr6H7v0CEIEmhSFUuGQ5ZYBMSH1l-T1TBSxK11_x5akY76zZO06EsOeg&usqp=CAE', 'goodyear', 3);
+VALUES 
+    ('https://www.goodyear.eu/content/dam/goodyear-truck/uk/homepage-tyres.png', 'Goodyear Truck', 3);
+
+INSERT INTO tb_imagens (url, nomeimg, codpneu)
+VALUES 
+    ('https://www.michelin.co.uk/tyre-pictures/michelin-truck-tyres.png', 'Michelin Truck', 4);
+
+INSERT INTO tb_imagens (url, nomeimg, codpneu)
+VALUES 
+    ('https://www.pirelli.com/tyres/truck-and-bus/img/pirelli-truck.jpg', 'Pirelli Truck', 5);
+
+INSERT INTO tb_imagens (url, nomeimg, codpneu)
+VALUES 
+    ('https://www.hankooktire.com/images/products/truckbus/smartflex/dl12.jpg', 'Hankook Truck', 6);
+
+INSERT INTO tb_imagens (url, nomeimg, codpneu)
+VALUES 
+    ('https://cdn.tirerack.com/truck/tires/images/bfgoodrich-truck-tire.jpg', 'BFGoodrich Truck', 7);
+
+INSERT INTO tb_imagens (url, nomeimg, codpneu)
+VALUES 
+    ('https://www.dunloptruck.com/tyres/dunlop-truck.png', 'Dunlop Truck', 8);
+
+INSERT INTO tb_imagens (url, nomeimg, codpneu)
+VALUES 
+    ('https://www.toyotires.com/truck-bus/img/toyo-truck.jpg', 'Toyo Tires Truck', 9);
+
+INSERT INTO tb_imagens (url, nomeimg, codpneu)
+VALUES 
+    ('https://www.yokohamatire.com/tires/truck-bus/img/yokohama-truck.jpg', 'Yokohama Truck', 10);
+
+INSERT INTO tb_imagens (url, nomeimg, codpneu)
+VALUES 
+    ('https://www.falkentire.com/img/falken-truck-tire.jpg', 'Falken Truck', 11);
+
+INSERT INTO tb_imagens (url, nomeimg, codpneu)
+VALUES 
+    ('https://www.kumhotruck.com/tires/kumho-truck.jpg', 'Kumho Truck', 12);
+
+INSERT INTO tb_imagens (url, nomeimg, codpneu)
+VALUES 
+    ('https://www.maxxistruck.com/images/maxxis-truck.jpg', 'Maxxis Truck', 13);
+
+INSERT INTO tb_imagens (url, nomeimg, codpneu)
+VALUES 
+    ('https://www.coopertruck.com/img/cooper-truck-tire.jpg', 'Cooper Truck', 14);
+
+INSERT INTO tb_imagens (url, nomeimg, codpneu)
+VALUES 
+    ('https://www.generaltruck.com/images/general-truck-tire.jpg', 'General Tire Truck', 15);

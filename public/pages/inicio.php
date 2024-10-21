@@ -151,27 +151,38 @@ if (!empty($_SESSION) && $_SESSION['tipo'] == 'A' && empty($_SESSION['tipo'] == 
     <img src="../assets/icon/icon.png" alt="" class="icon-profile">        
 
 
-<!--  PARTE DO ADM LOGADO  -->
+    <section class="container">
+	<div class="slider-wrapper">
+		<div class="slider">
+			<img id="slide-1" src="" alt="" />
+			<img id="slide-2" src="" alt="" />
+			<img id="slide-3" src="" alt="" />
+		</div>
+		<div class="slider-nav">
+			<a href="#slide-1"></a>
+			<a href="#slide-2"></a>
+			<a href="#slide-3"></a>
+		</div>
+	</div>
+</section>
 
 
 
 
+<article class="part-inicio1"> 
+
+    
+</article>
+
+<article class="part-inicio2">
+
+<h2 class="text-ceo">
+            <center>Gerente da Sede De Cascavel</center>
+    </h2>
+    <a href="https://www.linkedin.com/in/haroldo-nunoi-945175106/" class="haroldao"><img src="" alt=""></a>
 
 
-
-
-
-
-
-<article class="part-inicio1"> </article>
-
-<article class="part-inicio2"></article>
-
-
-
-
-
-
+</article>
 
 
 

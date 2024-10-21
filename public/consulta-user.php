@@ -34,7 +34,7 @@ $pdo = conect();
 </button>
 
 <button class="containerconsultavoltar2">
-    <a href="cadastro-img.php"><img src="./assets/icon/mais.png" class="mais-buttom2"></a>
+    <a href="cadastro-user-do-consulta.php"><img src="./assets/icon/mais.png" class="mais-buttom2"></a>
 </button>
 
 <!-- Tabela de Usuários -->
