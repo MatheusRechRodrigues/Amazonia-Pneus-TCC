@@ -226,7 +226,14 @@ foreach ($pneus as $pneu) {
 
 
 
+<footer class="rodape">
+  <div class="footer-verde">
+    
+    <img src="" alt="" class="img1-footer">
+    <img src="" alt="" class="img2-footer">
 
+  </div>
+</footer>
 
 </body>
 
