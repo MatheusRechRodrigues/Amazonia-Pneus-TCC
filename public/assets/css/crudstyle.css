@@ -708,3 +708,27 @@ input[type="text"],
   height: 10%;
   border-radius: 30%;
 }
+
+
+
+
+
+/* CARD DOS PRODUTOS */
+
+
+.produtos_container {
+  display: flex; /* Enable flexbox layout */
+  flex-wrap: wrap; /* Allow wrapping of items */
+  justify-content: flex-start; /* Align items to the start */
+  gap: 10px; /* Space between cards */
+  margin-left: 22%;
+}
+
+.produto_card {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 20px;
+  width: 200px; 
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); /* Optional shadow for a better look */
+  background-color: #fff; /* Background color for cards */
+}

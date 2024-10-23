@@ -165,24 +165,66 @@ if (!empty($_SESSION) && $_SESSION['tipo'] == 'A' && empty($_SESSION['tipo'] == 
 		</div>
 	</div>
 </section>
+ <div class="produtos-div">
+<?php
+// Supondo que você já tenha uma consulta que retorna pneus
+$pneus = [
+    [
+        'codpneu' => 5,
+        'nomepneu' => 'Pneu A',
+        'descricao' => 'Pneu de alta performance para carros.',
+        'preco' => 299.99
+    ],
+    [
+        'codpneu' => 6,
+        'nomepneu' => 'Pneu B',
+        'descricao' => 'Pneu resistente para caminhões.',
+        'preco' => 399.99
+    ],
+    [
+      'codpneu' => 7,
+      'nomepneu' => 'Pneu C',
+      'descricao' => 'Pneu de alta durabilidade para caminhões.',
+      'preco' => 499.99
+  ]
+    // Adicione mais pneus conforme necessário
+];
 
-
+foreach ($pneus as $pneu) {
+    ?>
+   
+      
+   <div class="produtos_container">
+    <?php foreach ($pneus as $pneu) { ?>
+        <div class="produto_card">
+            <h3 class="produto_nome"><?php echo $pneu['nomepneu']; ?></h3>
+            <p class="produto_descricao"><?php echo $pneu['descricao']; ?></p>
+            <span class="produto_valor">R$ <?php echo number_format($pneu['preco'], 2, ',', '.'); ?></span>
+            <form action="add-carrinho.php" method="post">
+                <input type="hidden" name="id_pneu" value="<?php echo $pneu['codpneu']; ?>">
+                <button type="submit">Adicionar ao Carrinho</button>
+            </form>
+        </div>
+    <?php } ?>
+</div>
+    <?php
+}
+?>
 
 
 <article class="part-inicio1"> 
-
     
 </article>
 
+
+
 <article class="part-inicio2">
 
-<h2 class="text-ceo">
-            <center>Gerente da Sede De Cascavel</center>
-    </h2>
-    <a href="https://www.linkedin.com/in/haroldo-nunoi-945175106/" class="haroldao"><img src="" alt=""></a>
-
-
 </article>
+
+
+
+
 
 
 
