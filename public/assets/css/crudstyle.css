@@ -36,7 +36,7 @@ td{
 /* parte superior do style*/
 .menubar{
     background:  #077510;
-    width: 100%;
+    width: 110%;
     height: 15vh;
     
     
@@ -721,14 +721,29 @@ input[type="text"],
   flex-wrap: wrap; /* Allow wrapping of items */
   justify-content: flex-start; /* Align items to the start */
   gap: 10px; /* Space between cards */
-  margin-left: 22%;
+  margin-left: 13%;
 }
 
 .produto_card {
-  border: 1px solid #ccc;
+  border: 1px solid #e7e7e7;
   border-radius: 8px;
   padding: 20px;
   width: 200px; 
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); /* Optional shadow for a better look */
-  background-color: #fff; /* Background color for cards */
+  background-color: #ffffffb7; /* Background color for cards */
+  
+}
+
+.produto_card {
+  /* Defina um tamanho fixo para o card */
+  width: 200px; /* Ajuste conforme necessário */
+  height: 300px; /* Ajuste conforme necessário */
+  overflow: hidden; /* Oculta partes da imagem que ultrapassam o contêiner */
+  position: relative; /* Para controle de posicionamento se necessário */
+}
+
+.produto_card img {
+  width: 200px; /* Faz a imagem ocupar toda a largura do card */
+  height: 150px; /* Faz a imagem ocupar toda a altura do card */
+  object-fit: cover; /* Faz a imagem manter a proporção, cobrindo o contêiner */
 }

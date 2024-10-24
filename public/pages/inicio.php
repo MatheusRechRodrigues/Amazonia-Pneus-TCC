@@ -1,6 +1,7 @@
 <?php
+include '../../app/functions/database/conect.php'; // Assumindo que você já criou uma função de conexão PDO
 session_start();
-
+$pdo = conect();
 ?>
 
 <!DOCTYPE html>
@@ -146,7 +147,7 @@ if (!empty($_SESSION) && $_SESSION['tipo'] == 'A' && empty($_SESSION['tipo'] == 
 
     </nav>
 
-    <a href="cart.php"><img src="../assets/icon/cart.png" alt="" class="icon-cart"></a>
+    <a href="carrinho.php"><img src="../assets/icon/cart.png" alt="" class="icon-cart"></a>
 
     <img src="../assets/icon/icon.png" alt="" class="icon-profile">        
 
@@ -166,50 +167,81 @@ if (!empty($_SESSION) && $_SESSION['tipo'] == 'A' && empty($_SESSION['tipo'] == 
 	</div>
 </section>
  <div class="produtos-div">
-<?php
-// Supondo que você já tenha uma consulta que retorna pneus
-$pneus = [
-    [
-        'codpneu' => 5,
-        'nomepneu' => 'Pneu A',
-        'descricao' => 'Pneu de alta performance para carros.',
-        'preco' => 299.99
-    ],
-    [
-        'codpneu' => 6,
-        'nomepneu' => 'Pneu B',
-        'descricao' => 'Pneu resistente para caminhões.',
-        'preco' => 399.99
-    ],
-    [
-      'codpneu' => 7,
-      'nomepneu' => 'Pneu C',
-      'descricao' => 'Pneu de alta durabilidade para caminhões.',
-      'preco' => 499.99
-  ]
-    // Adicione mais pneus conforme necessário
-];
 
-foreach ($pneus as $pneu) {
-    ?>
-   
-      
-   <div class="produtos_container">
+ <?php
+// Consulta SQL com INNER JOIN para buscar pneus e suas respectivas imagens
+$sql = "
+    SELECT p.codpneu, p.nomepneu, p.descricao, p.preco, i.url 
+    FROM tb_pneus p
+    INNER JOIN tb_imagens i ON p.codpneu = i.codpneu
+";
+
+// Prepara e executa a consulta
+$stmt = $pdo->prepare($sql);
+$stmt->execute();
+
+// Busca todos os resultados em forma de array associativo
+$pneus = $stmt->fetchAll(PDO::FETCH_ASSOC);
+?>
+
+<div class="produtos_container">
     <?php foreach ($pneus as $pneu) { ?>
         <div class="produto_card">
-            <h3 class="produto_nome"><?php echo $pneu['nomepneu']; ?></h3>
-            <p class="produto_descricao"><?php echo $pneu['descricao']; ?></p>
+            <!-- Exibe a imagem do pneu -->
+            <img class="produto_imagem" src="<?php echo htmlspecialchars($pneu['url']); ?>" alt="Imagem do <?php echo htmlspecialchars($pneu['nomepneu']); ?>">
+
+            <!-- Exibe nome, descrição e preço do pneu -->
+            <h3 class="produto_nome"><?php echo htmlspecialchars($pneu['nomepneu']); ?></h3>
+            <p class="produto_descricao"><?php echo htmlspecialchars($pneu['descricao']); ?></p>
             <span class="produto_valor">R$ <?php echo number_format($pneu['preco'], 2, ',', '.'); ?></span>
+
+            <!-- Formulário para adicionar ao carrinho -->
             <form action="add-carrinho.php" method="post">
-                <input type="hidden" name="id_pneu" value="<?php echo $pneu['codpneu']; ?>">
+                <input type="hidden" name="id_pneu" value="<?php echo htmlspecialchars($pneu['codpneu']); ?>">
                 <button type="submit">Adicionar ao Carrinho</button>
             </form>
         </div>
     <?php } ?>
 </div>
-    <?php
-}
-?>
+
+<script>
+  var addZoom = targetClass => {
+    // Seleciona todas as imagens com a classe targetClass
+    let images = document.querySelectorAll(`.${targetClass}`);
+
+    images.forEach(image => {
+      // Cria um novo objeto de imagem para determinar o tamanho
+      let img = new Image();
+      img.src = image.src; // Usar a URL da imagem do elemento <img>
+
+      img.onload = () => {
+        let ratio = img.naturalHeight / img.naturalWidth;
+
+        image.onmousemove = e => {
+          let rect = image.getBoundingClientRect(),
+              xPos = e.clientX - rect.left,
+              yPos = e.clientY - rect.top,
+              xPercent = xPos / (image.clientWidth / 100) + "%",
+              yPercent = yPos / ((image.clientWidth * ratio) / 100) + "%";
+
+          Object.assign(image.style, {
+            objectFit: "cover", // Mantém a proporção
+            transform: `scale(1.1)`, // Aplica o zoom
+            transition: "transform 0.3s ease" // Animação suave
+          });
+        };
+
+        image.onmouseleave = e => {
+          Object.assign(image.style, {
+            transform: "scale(1)" // Reseta o zoom ao sair
+          });
+        };
+      };
+    });
+  };
+
+  window.onload = () => addZoom("produto_imagem"); // Usando a classe 'produto_imagem'
+</script>
 
 
 <article class="part-inicio1"> 
