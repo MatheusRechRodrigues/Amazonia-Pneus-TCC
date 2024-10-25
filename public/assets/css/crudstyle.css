@@ -703,12 +703,6 @@ input[type="text"],
 
 
 
-.harldao{
-  width: 10%;
-  height: 10%;
-  border-radius: 30%;
-}
-
 
 
 
@@ -746,4 +740,26 @@ input[type="text"],
   width: 200px; /* Faz a imagem ocupar toda a largura do card */
   height: 150px; /* Faz a imagem ocupar toda a altura do card */
   object-fit: cover; /* Faz a imagem manter a proporção, cobrindo o contêiner */
+}
+
+
+
+
+
+
+/*article que divide o site do carrousel para os produtos*/
+
+.divisao-site {
+  background-color: #c5c5c5;
+  width: 100%;
+  height: auto; 
+  padding: 15px 0; 
+  box-sizing: border-box; 
+}
+
+.conf-prod-inicio {
+  margin: 0 auto; 
+  text-align: center; 
+  font-size: 1.5rem; 
+  padding: 0 5%; 
 }

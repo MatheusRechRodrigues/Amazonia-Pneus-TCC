@@ -166,6 +166,22 @@ if (!empty($_SESSION) && $_SESSION['tipo'] == 'A' && empty($_SESSION['tipo'] == 
 		</div>
 	</div>
 </section>
+
+
+
+
+
+
+
+<article class="divisao-site"><h2 class="conf-prod-inicio">Confira alguns de nossos produtos</h2></article>
+
+
+
+
+<br><br>
+
+
+
  <div class="produtos-div">
 
  <?php
@@ -212,11 +228,12 @@ $pneus = $stmt->fetchAll(PDO::FETCH_ASSOC);
     images.forEach(image => {
       // Cria um novo objeto de imagem para determinar o tamanho
       let img = new Image();
-      img.src = image.src; // Usar a URL da imagem do elemento <img>
+      img.src = image.src;
 
       img.onload = () => {
         let ratio = img.naturalHeight / img.naturalWidth;
 
+        // Configura eventos de zoom ao passar o mouse
         image.onmousemove = e => {
           let rect = image.getBoundingClientRect(),
               xPos = e.clientX - rect.left,
@@ -225,22 +242,23 @@ $pneus = $stmt->fetchAll(PDO::FETCH_ASSOC);
               yPercent = yPos / ((image.clientWidth * ratio) / 100) + "%";
 
           Object.assign(image.style, {
-            objectFit: "cover", // Mantém a proporção
-            transform: `scale(1.1)`, // Aplica o zoom
-            transition: "transform 0.3s ease" // Animação suave
+            transformOrigin: `${xPercent} ${yPercent}`,
+            transform: "scale(2)",
+            transition: "transform 0.1s ease" // Animação rápida para resposta
           });
         };
 
-        image.onmouseleave = e => {
+        // Reset ao sair do elemento
+        image.onmouseleave = () => {
           Object.assign(image.style, {
-            transform: "scale(1)" // Reseta o zoom ao sair
+            transform: "scale(1)"
           });
         };
       };
     });
   };
 
-  window.onload = () => addZoom("produto_imagem"); // Usando a classe 'produto_imagem'
+  window.onload = () => addZoom("produto_imagem");
 </script>
 
 
