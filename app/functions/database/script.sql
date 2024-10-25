@@ -270,7 +270,7 @@ VALUES
 
 INSERT INTO tb_pneus (nomepneu, descricao, tipo, preco)
 VALUES 
-    ('BFGoodrich Cross Control', 'Pneu para caminhões com resistência em condições severas', 'C', 455.00);
+    ('BFGoodrich Cross ', 'Pneu para resistência em condições severas', 'C', 455.00);
 
 INSERT INTO tb_pneus (nomepneu, descricao, tipo, preco)
 VALUES 
@@ -477,60 +477,60 @@ VALUES
 
 INSERT INTO tb_imagens (url, nomeimg, codpneu)
 VALUES 
-    ('https://cdn.autoparts24.co.uk/images/pneu-truck-bridgestone.jpg', 'Bridgestone Truck', 1);
+    ('https://aecbmesvcm.cloudimg.io/v7/https://cxf-prod.azureedge.net/b2b-experience-production/attachments/ckaz1ze9n020r01hhj787iga5-tyre-x-multiway-3d-xze-xde-22-5-persp-perspective.full.png', 'Bridgestone Truck', 1);
 
 INSERT INTO tb_imagens (url, nomeimg, codpneu)
 VALUES 
-    ('https://www.continental-truck-tyres.com/trucktyres/images/continental-truck-tyre.png', 'Continental Truck', 2);
+    ('https://www.conti.com.br/adobe/dynamicmedia/deliver/dm-aid--b22c09e6-2386-489d-816b-507053d0ddb5/Continental__HSC1___ProductPicture__30__ZZ_STAT_DIM__275_80_R_22_5.webp?preferwebp=true&quality=85&width=950', 'Continental Truck', 2);
 
 INSERT INTO tb_imagens (url, nomeimg, codpneu)
 VALUES 
-    ('https://www.goodyear.eu/content/dam/goodyear-truck/uk/homepage-tyres.png', 'Goodyear Truck', 3);
+    ('https://www.bellenzier.com.br/media/tmp/webp/catalog/product/cache/1/image/600x/9df78eab33525d08d6e5fb8d27136e95/2/9/295_80_r22.5_pneu_pirelli_prometeon_fg_01_plus_caminhao_152_148_l_tl_1.webp', 'Goodyear Truck', 3);
 
 INSERT INTO tb_imagens (url, nomeimg, codpneu)
 VALUES 
-    ('https://www.michelin.co.uk/tyre-pictures/michelin-truck-tyres.png', 'Michelin Truck', 4);
+    ('https://dellavia.vteximg.com.br/arquivos/ids/161961-1000-1000/M729.jpg?v=638459524585130000', 'Michelin Truck', 4);
 
 INSERT INTO tb_imagens (url, nomeimg, codpneu)
 VALUES 
-    ('https://www.pirelli.com/tyres/truck-and-bus/img/pirelli-truck.jpg', 'Pirelli Truck', 5);
+    ('https://http2.mlstatic.com/D_NQ_NP_738907-MLB74325608688_022024-O.webp', 'Pirelli Truck', 5);
 
 INSERT INTO tb_imagens (url, nomeimg, codpneu)
 VALUES 
-    ('https://www.hankooktire.com/images/products/truckbus/smartflex/dl12.jpg', 'Hankook Truck', 6);
+    ('https://http2.mlstatic.com/D_NQ_NP_851940-MLB75509043082_042024-O.webp', 'Hankook Truck', 6);
 
 INSERT INTO tb_imagens (url, nomeimg, codpneu)
 VALUES 
-    ('https://cdn.tirerack.com/truck/tires/images/bfgoodrich-truck-tire.jpg', 'BFGoodrich Truck', 7);
+    ('https://http2.mlstatic.com/D_NQ_NP_901307-MLU77135560780_062024-O.webp', 'BFGoodrich Truck', 7);
 
 INSERT INTO tb_imagens (url, nomeimg, codpneu)
 VALUES 
-    ('https://www.dunloptruck.com/tyres/dunlop-truck.png', 'Dunlop Truck', 8);
+    ('https://http2.mlstatic.com/D_NQ_NP_851940-MLB75509043082_042024-O.webp', 'Dunlop Truck', 8);
 
 INSERT INTO tb_imagens (url, nomeimg, codpneu)
 VALUES 
-    ('https://www.toyotires.com/truck-bus/img/toyo-truck.jpg', 'Toyo Tires Truck', 9);
+    ('https://www.hankooktire.com/content/dam/hankooktire/local/img/product-detil-page/tire-list-thumbnail/tbr/DL11_normal.png', 'Toyo Tires Truck', 9);
 
 INSERT INTO tb_imagens (url, nomeimg, codpneu)
 VALUES 
-    ('https://www.yokohamatire.com/tires/truck-bus/img/yokohama-truck.jpg', 'Yokohama Truck', 10);
+    ('https://http2.mlstatic.com/D_NQ_NP_622601-MLU77402084433_072024-O.webp', 'Yokohama Truck', 10);
 
 INSERT INTO tb_imagens (url, nomeimg, codpneu)
 VALUES 
-    ('https://www.falkentire.com/img/falken-truck-tire.jpg', 'Falken Truck', 11);
+    ('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQWtjji-Wg6xUv3NrsVKRK8eOtc3qUfZQB4iQ&s', 'Falken Truck', 11);
 
 INSERT INTO tb_imagens (url, nomeimg, codpneu)
 VALUES 
-    ('https://www.kumhotruck.com/tires/kumho-truck.jpg', 'Kumho Truck', 12);
+    ('https://cdn11.bigcommerce.com/s-dzuemmesww/products/4807/images/5069/5321__15220.1673642914.386.513.jpg?c=1', 'Kumho Truck', 12);
 
 INSERT INTO tb_imagens (url, nomeimg, codpneu)
 VALUES 
-    ('https://www.maxxistruck.com/images/maxxis-truck.jpg', 'Maxxis Truck', 13);
+    ('https://http2.mlstatic.com/D_NQ_NP_752583-MLB74779415533_022024-O.webp', 'Maxxis Truck', 13);
 
 INSERT INTO tb_imagens (url, nomeimg, codpneu)
 VALUES 
-    ('https://www.coopertruck.com/img/cooper-truck-tire.jpg', 'Cooper Truck', 14);
+    ('https://http2.mlstatic.com/D_NQ_NP_752583-MLB74779415533_022024-O.webp', 'Cooper Truck', 14);
 
 INSERT INTO tb_imagens (url, nomeimg, codpneu)
 VALUES 
-    ('https://www.generaltruck.com/images/general-truck-tire.jpg', 'General Tire Truck', 15);
+    ('https://autoamerica.com.br/wp-content/uploads/2022/12/EnduRace-RA.png', 'General Tire Truck', 15);
