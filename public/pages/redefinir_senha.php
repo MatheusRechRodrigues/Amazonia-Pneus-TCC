@@ -20,7 +20,7 @@ if (isset($_GET['token'])) {
 
             if ($nova_senha === $confirmar_senha) {
                 // Criptografa a nova senha
-                $senha_criptografada = password_hash($nova_senha, PASSWORD_DEFAULT);
+                $senha_criptografada = md5($nova_senha);
 
                 // Atualiza a senha no banco de dados e remove o token
                 $query = "UPDATE tb_clientes SET senha = :senha, token = NULL, token_expira = NULL WHERE codcliente = :codcliente";
