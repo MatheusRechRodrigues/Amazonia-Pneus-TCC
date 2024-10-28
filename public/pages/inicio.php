@@ -215,6 +215,7 @@ $pneus = $stmt->fetchAll(PDO::FETCH_ASSOC);
             <form action="add-carrinho.php" method="post">
                 <input type="hidden" name="id_pneu" value="<?php echo htmlspecialchars($pneu['codpneu']); ?>">
                 <button type="submit">Adicionar ao Carrinho</button>
+                <button><a href="iten-card.php"></a>Adicionar ao Carrinho</button>
             </form>
         </div>
     <?php } ?>

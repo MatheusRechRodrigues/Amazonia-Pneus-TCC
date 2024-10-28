@@ -1,0 +1,41 @@
+html{
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    
+}
+
+body{
+  
+  height: 100vh;
+    
+}
+
+.space-img-itens{
+    width: 70%;
+    height: 400px;
+    background-color: #bbbbbb;
+    margin-left: 15%;
+    border-radius: 8px;
+}
+    
+
+    .space-img-itens.line-division{
+    width: 1px;
+    height: 100%;
+    background-color: rgb(231, 22, 22);
+    margin-left: 60%;
+    
+    
+    }
+
+   .img-itens{
+    width: 350px;
+    height: 300px;
+    }
+
+
+
+    .space-img-itens.division-text-information{
+    background-color: aqua;
+    }
