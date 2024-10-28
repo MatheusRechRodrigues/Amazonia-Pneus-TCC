@@ -243,7 +243,7 @@ $pneus = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
           Object.assign(image.style, {
             transformOrigin: `${xPercent} ${yPercent}`,
-            transform: "scale(2)",
+            transform: "scale(1.25)",
             transition: "transform 0.1s ease" // Animação rápida para resposta
           });
         };
