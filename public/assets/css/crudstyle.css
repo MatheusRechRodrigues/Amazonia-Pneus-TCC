@@ -44,7 +44,7 @@ td{
 
 .circleyellow{
     
-    margin-top: -5%;
+    margin-top: -100px;
     margin-left: 526px;
     width: 300px;
     height: 140px;
@@ -639,7 +639,7 @@ input[type="text"],
 
 .container {
 	padding: 2rem;
-  margin-top: -9%;
+  margin-top: 0;
   margin-left: -25%;
   width: 1920px;
   height: 1080;
@@ -730,10 +730,13 @@ input[type="text"],
 
 .produto_card {
   /* Defina um tamanho fixo para o card */
-  width: 200px; /* Ajuste conforme necessário */
-  height: 400px; /* Ajuste conforme necessário */
+  width: 222px; /* Ajuste conforme necessário */
+  height: 380px; /* Ajuste conforme necessário */
   overflow: hidden; /* Oculta partes da imagem que ultrapassam o contêiner */
   position: relative; /* Para controle de posicionamento se necessário */
+  margin-left: -4px;
+  justify-content: space-between;
+  border: #c7c7c7 solid 1px;
 }
 
 .produto_card img {
@@ -743,9 +746,20 @@ input[type="text"],
 }
 
 
+.produto_nome{
+  margin-top: 15%;
+  font-size: 04vh;
+}
 
-
-
+.btn-card{
+  background-color: #077510e7;
+  text-decoration: none;
+  margin-bottom: 10px;
+  margin-top: 25px;
+  width: 130px;
+  height: 30px;
+  
+}
 
 /*article que divide o site do carrousel para os produtos*/
 
@@ -762,4 +776,11 @@ input[type="text"],
   text-align: center; 
   font-size: 1.5rem; 
   padding: 0 5%; 
+}
+
+
+.line-card-division{
+  background-color: #b8b8b8;
+  width: 100%;
+  height: 1px;
 }

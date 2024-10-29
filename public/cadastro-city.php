@@ -24,12 +24,17 @@ $pdo = conect();
   </div>
   <div class="card-body">
     <form method="post">                                            
+  
     
-        <div class="form-group">
-            <label for="text">Estado:</label>
-            <input type="text" id="estado" name="estado" required="" placeholder="PR-SC-RS">
-          </div>
-
+<div class="form-group">
+    <label for="estado">Estado:</label>
+<select id="estado" name="estado" required>
+  <option value="">Selecione</option>
+  <option value="PR">PR</option>
+  <option value="SC">SC</option>
+  <option value="RS">RS</option>
+</select>
+</div>
          
           <div class="form-group">
             <label for="text">Nome da Cidade</label>

@@ -144,13 +144,12 @@ body{
     margin-bottom: 10px;
   }
   input[type="text"],
-  input[type="email"],
-  input[type="password"],
-  input[type="number"],
-  input[type="date"]
-  input[type="url"]
-  
-  {
+input[type="email"],
+input[type="password"],
+input[type="number"],
+input[type="date"],
+input[type="url"],
+select {
     box-sizing: border-box;
     padding: 3px;
     margin-left: 3%;
@@ -163,19 +162,19 @@ body{
     box-shadow: inset 0px 2px 5px rgba(0, 0, 0, 0.1);
     transition: box-shadow 0.3s ease;
     margin-top: -6px;
-  
-  }
-  
-  input[type="email"]:focus,
-  input[type="password"]:focus,
-  input[type="text"]:focus,
-  input[type="number"]:focus,
-  input[type="date"]:focus
-  input[type="url"]:focus
-  {
+}
+
+input[type="email"]:focus,
+input[type="password"]:focus,
+input[type="text"]:focus,
+input[type="number"]:focus,
+input[type="date"]:focus,
+input[type="url"]:focus,
+select:focus {
     box-shadow: inset 0px 2px 5px rgba(0, 0, 0, 0.3);
     outline: none;
-  }
+}
+
   /* remove as setinhas do input type number*/
   input::-webkit-outer-spin-button,
   input::-webkit-inner-spin-button {

@@ -10,7 +10,8 @@ $pdo = conect();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="shortcut icon" href="../assets/icon/logoamazonia.ico" type="image/x-icon">
+    <title>Amazônia Pneus</title>
     <link rel="stylesheet" href="../assets/css/crudstyle.css">
 </head>
 
@@ -155,9 +156,9 @@ if (!empty($_SESSION) && $_SESSION['tipo'] == 'A' && empty($_SESSION['tipo'] == 
     <section class="container">
 	<div class="slider-wrapper">
 		<div class="slider">
-			<img id="slide-1" src="" alt="" />
-			<img id="slide-2" src="" alt="" />
-			<img id="slide-3" src="" alt="" />
+			<img id="slide-1" src="../assets/image/carrousel1.jpeg" alt="" />
+			<img id="slide-2" src="../assets/image/carrousel2.jpeg" alt="" />
+			<img id="slide-3" src="../assets/image/carrousel1.jpeg" alt="" />
 		</div>
 		<div class="slider-nav">
 			<a href="#slide-1"></a>
@@ -166,7 +167,7 @@ if (!empty($_SESSION) && $_SESSION['tipo'] == 'A' && empty($_SESSION['tipo'] == 
 		</div>
 	</div>
 </section>
-
+<script src="./assets/js/script-carrousel.js"></script>
 
 
 
@@ -214,11 +215,23 @@ $pneus = $stmt->fetchAll(PDO::FETCH_ASSOC);
             <!-- Formulário para adicionar ao carrinho -->
             <form action="add-carrinho.php" method="post">
                 <input type="hidden" name="id_pneu" value="<?php echo htmlspecialchars($pneu['codpneu']); ?>">
-                <button type="submit">Adicionar ao Carrinho</button>
-                <button><a href="iten-card.php"></a>Adicionar ao Carrinho</button>
+                <article class="line-card-division"></article>
+                
+                <!-- Botão 'Saiba Mais' que leva para iten-card.php -->
+                <button class="btn-card">
+                    <a href="iten-card.php" style="text-decoration: none; color: inherit;">Saiba Mais</a>
+                </button>
+
+                <!-- Botão 'Carrinho' que leva para carrinho.php -->
+                <button class="btn-card">
+                    <a href="carrinho.php" style="text-decoration: none; color: inherit;">Carrinho</a>
+                </button>
             </form>
         </div>
     <?php } ?>
+</div>
+
+    
 </div>
 
 <script>
@@ -244,7 +257,7 @@ $pneus = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
           Object.assign(image.style, {
             transformOrigin: `${xPercent} ${yPercent}`,
-            transform: "scale(1.25)",
+            transform: "scale(1.2)",
             transition: "transform 0.1s ease" // Animação rápida para resposta
           });
         };
