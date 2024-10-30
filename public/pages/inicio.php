@@ -141,7 +141,7 @@ if (!empty($_SESSION) && $_SESSION['tipo'] == 'A' && empty($_SESSION['tipo'] == 
         <ul class="nav-links1">
             <li><a href="" class="menu-letters">Início</a></li>
             <li><a href="about.php" class="menu-letters">Sobre</a></li>
-            <li><a href="about.php" class="menu-letters">Pneus</a></li>
+            <li><a href="prod-pneus.php" class="menu-letters">Pneus</a></li>
             <li><a href="about.php" class="menu-letters">Contato</a></li>
 
         </ul>
@@ -158,7 +158,7 @@ if (!empty($_SESSION) && $_SESSION['tipo'] == 'A' && empty($_SESSION['tipo'] == 
 		<div class="slider">
 			<img id="slide-1" src="../assets/image/carrousel1.jpeg" alt="" />
 			<img id="slide-2" src="../assets/image/carrousel2.jpeg" alt="" />
-			<img id="slide-3" src="../assets/image/carrousel1.jpeg" alt="" />
+			<img id="slide-3" src="../assets/image/carrousel3.jpeg" alt="" />
 		</div>
 		<div class="slider-nav">
 			<a href="#slide-1"></a>
@@ -167,7 +167,25 @@ if (!empty($_SESSION) && $_SESSION['tipo'] == 'A' && empty($_SESSION['tipo'] == 
 		</div>
 	</div>
 </section>
-<script src="./assets/js/script-carrousel.js"></script>
+<script >
+  let count = 1;
+const totalSlides = 3; // Total de slides que você possui
+
+document.getElementById("radio1").checked = true;
+
+setInterval(function() {
+    nextImage();
+}, 5000); // Altera a imagem a cada 5 segundos
+
+function nextImage() {
+    count++;
+    if (count > totalSlides) { // Verifica se o contador excede o número total de slides
+        count = 1; // Reseta o contador para o primeiro slide
+    }
+
+    document.getElementById("radio" + count).checked = true; // Marca o rádio correspondente ao slide atual
+}
+</script>
 
 
 
@@ -191,6 +209,7 @@ $sql = "
     SELECT p.codpneu, p.nomepneu, p.descricao, p.preco, i.url 
     FROM tb_pneus p
     INNER JOIN tb_imagens i ON p.codpneu = i.codpneu
+    LIMIT 4
 ";
 
 // Prepara e executa a consulta
@@ -212,23 +231,20 @@ $pneus = $stmt->fetchAll(PDO::FETCH_ASSOC);
             <p class="produto_descricao"><?php echo htmlspecialchars($pneu['descricao']); ?></p>
             <span class="produto_valor">R$ <?php echo number_format($pneu['preco'], 2, ',', '.'); ?></span>
 
-            <!-- Formulário para adicionar ao carrinho -->
-            <form action="add-carrinho.php" method="post">
+            <!-- Botão 'Saiba Mais' com o codpneu na URL -->
+            <form action="iten-card.php" method="get">
                 <input type="hidden" name="id_pneu" value="<?php echo htmlspecialchars($pneu['codpneu']); ?>">
                 <article class="line-card-division"></article>
                 
-                <!-- Botão 'Saiba Mais' que leva para iten-card.php -->
-                <button class="btn-card">
-                    <a href="iten-card.php" style="text-decoration: none; color: inherit;">Saiba Mais</a>
-                </button>
-
-                <!-- Botão 'Carrinho' que leva para carrinho.php -->
-                <button class="btn-card">
-                    <a href="carrinho.php" style="text-decoration: none; color: inherit;">Carrinho</a>
-                </button>
+            <button class="btn-card">    <a href="iten-card.php?codpneu=<?php echo htmlspecialchars($pneu['codpneu']); ?>" style="text-decoration: none; color: inherit;">
+                    Saiba Mais
+                </a></button>
             </form>
         </div>
     <?php } ?>
+</div>
+
+
 </div>
 
     

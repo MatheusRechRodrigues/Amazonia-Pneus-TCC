@@ -48,7 +48,7 @@ td{
     margin-left: 526px;
     width: 300px;
     height: 140px;
-    
+ 
 }
 
 /*parte dos inserts*/
@@ -153,9 +153,10 @@ input[type="text"],
   .nav-links1{
     display: flex;
     justify-self:flex-start;
-    margin-top: -108px;
+    margin-top: -80px;
     column-gap: 60px;
     margin-left: 110px;
+    position: absolute;
   }
 
 
@@ -215,7 +216,7 @@ input[type="text"],
   width: 63px;
   height: 40px;
   margin-left: 1100px;
-  margin-top: -124px;
+  margin-top: -100px;
   position: absolute;
 }
 
@@ -223,7 +224,7 @@ input[type="text"],
   width: 63px;
   height: 40px;
   margin-left: 1100px;
-  margin-top: -124px;
+  margin-top: -102px;
   position: absolute;
   transition: 0.4s;
   transform: translateY(-2px);
@@ -233,7 +234,7 @@ input[type="text"],
   width: 84px;
   height: 50px;
   margin-left: 1200px;
-  margin-top: -128px;
+  margin-top: -100px;
   position: absolute;
 }
 
@@ -241,7 +242,7 @@ input[type="text"],
   width: 84px;
   height: 50px;
   margin-left: 1200px;
-  margin-top: -128px;
+  margin-top: -102px;
   transition: 0.4s;
   transform: translateY(-2px);
 }
@@ -472,6 +473,7 @@ input[type="text"],
   outline: var(--burger-enable-outline-width) solid transparent;
   outline-offset: 0;
   height: 40px;
+  margin-top: 25px;
 }
 
 .burger span {
@@ -516,7 +518,8 @@ input[type="text"],
   width: 200px;
   height: 500px;
   margin-left: 0%;
-  margin-top: 2px;
+  margin-top: 36px;
+  z-index: 5;
 }
 
 
@@ -639,7 +642,7 @@ input[type="text"],
 
 .container {
 	padding: 2rem;
-  margin-top: 0;
+  margin-top: -40px;
   margin-left: -25%;
   width: 1920px;
   height: 1080;
@@ -756,10 +759,12 @@ input[type="text"],
   text-decoration: none;
   margin-bottom: 10px;
   margin-top: 25px;
-  width: 130px;
-  height: 30px;
+  width: 100%;
+  height: 40px;
   
 }
+
+
 
 /*article que divide o site do carrousel para os produtos*/
 
@@ -783,4 +788,25 @@ input[type="text"],
   background-color: #b8b8b8;
   width: 100%;
   height: 1px;
+}
+
+
+/*----------------------------------pagina dos pneus------------------------------*/
+
+
+.divisor-pneu{
+  background-color: #c5c5c5;
+  width: 100%;
+  height: 100px; 
+  padding: 15px 0; 
+  box-sizing: border-box; 
+  margin-bottom: 5%;
+  
+}
+
+.txt-pneu-prod{
+  font-family: 'Times New Roman', Times, serif;
+  justify-items: center;
+  text-align: center;
+ 
 }
