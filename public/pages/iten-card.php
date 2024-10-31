@@ -1,6 +1,6 @@
-<!--  colocar aqui o item como se fosse no mercado livre puxando variavel do banco  -->
+
 <?php
-include '../../app/functions/database/conect.php'; // Assumindo que você já criou uma função de conexão PDO
+include '../../app/functions/database/conect.php'; 
 session_start();
 $pdo = conect();
 ?>
@@ -30,7 +30,7 @@ $pdo = conect();
         <img src="../assets/image/bandaglogo.png" alt="" class="circleyellow">
     </header>
 
-<!-- tres riscosdo menu side-bar -->
+<!-- tres riscos do menu side-bar -->
     <label class="popup">
   <input type="checkbox">
   <div class="burger" tabindex="0">
@@ -146,13 +146,10 @@ if (!empty($_SESSION) && $_SESSION['tipo'] == 'A' && empty($_SESSION['tipo'] == 
 <img src="../assets/icon/icon.png" alt="" class="icon-profile">        
 
 <?php
-// Exemplo de conexão PDO
-// $pdo = new PDO('mysql:host=localhost;dbname=amazoniapneus', 'usuario', 'senha');
 
-// Verifica se o codpneu foi passado via GET
 $codpneu = isset($_GET['codpneu']) ? (int)$_GET['codpneu'] : 0;
 
-// Consulta SQL para buscar o pneu específico pelo codpneu
+
 $sql = "
     SELECT p.codpneu, p.nomepneu, p.descricao, p.preco, i.url 
     FROM tb_pneus p
@@ -160,12 +157,12 @@ $sql = "
     WHERE p.codpneu = :codpneu
 ";
 
-// Prepara e executa a consulta
+
 $stmt = $pdo->prepare($sql);
 $stmt->bindParam(':codpneu', $codpneu, PDO::PARAM_INT);
 $stmt->execute();
 
-// Busca o resultado
+
 $pneu = $stmt->fetch(PDO::FETCH_ASSOC);
 ?>
 
@@ -174,20 +171,18 @@ $pneu = $stmt->fetch(PDO::FETCH_ASSOC);
 
 <div class="produto_container">
     <?php if ($pneu) { ?>
-        <!-- Informações do produto (esquerda) -->
+        
         <div class="produto_info">
             <h1 class="produto_nome"><?php echo htmlspecialchars($pneu['nomepneu']); ?></h1>
             <p class="produto_descricao"><?php echo htmlspecialchars($pneu['descricao']); ?></p>
             <span class="produto_valor">R$ <?php echo number_format($pneu['preco'], 2, ',', '.'); ?></span>
             
-            <!-- Botão para adicionar ao carrinho -->
             <form action="add-carrinho.php" method="post">
                 <input type="hidden" name="id_pneu" value="<?php echo htmlspecialchars($pneu['codpneu']); ?>">
                 <button type="submit" class="btn-carrinho">Adicionar ao Carrinho</button>
             </form>
         </div>
 
-        <!-- Imagem do produto (direita) -->
         <img class="produto_imagem" src="<?php echo htmlspecialchars($pneu['url']); ?>" alt="Imagem do <?php echo htmlspecialchars($pneu['nomepneu']); ?>">
     <?php } else { ?>
         <p>Produto não encontrado.</p>

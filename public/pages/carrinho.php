@@ -70,7 +70,7 @@ $itensCarrinho = $queryCarrinho->fetchAll(PDO::FETCH_ASSOC);
 
 <script>
 $(document).ready(function() {
-    // Função para atualizar o preço total com base na quantidade
+    // atualiza o preço
     function updateTotalPrice(button) {
         var row = button.closest('tr');
         var quantityDisplay = row.find('.quantity-display');
@@ -82,7 +82,7 @@ $(document).ready(function() {
         totalPriceDisplay.text("R$ " + newTotalPrice.replace('.', ','));
     }
 
-    // Ação para o botão "Mais"
+    // função do mais
     $('.increase').click(function() {
         var row = $(this).closest('tr');
         var quantityDisplay = row.find('.quantity-display');
@@ -91,7 +91,7 @@ $(document).ready(function() {
         updateTotalPrice($(this));
     });
 
-    // Ação para o botão "Menos"
+    // função do menos
     $('.decrease').click(function() {
         var row = $(this).closest('tr');
         var quantityDisplay = row.find('.quantity-display');
@@ -103,12 +103,11 @@ $(document).ready(function() {
         }
     });
 
-    // Ação para o botão "Excluir"
+    
     $('.delete-btn').click(function() {
         var codpneu = $(this).data('codpneu');
-        // Lógica para excluir o pneu do carrinho no banco de dados
-        // (a ser implementada)
-        alert('Pneu com código ' + codpneu + ' excluído.');
+       
+      
     });
 });
 </script>

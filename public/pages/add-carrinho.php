@@ -7,9 +7,9 @@ $pdo = conect();
 
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $codpneu = $_POST['id_pneu']; // ID do pneu enviado no formulário
-    $codcompra =  // Supondo um código de compra fixo (pode ser gerenciado via sessão)
-    $qntd = 1; // Quantidade fixa (pode ser gerenciado via sessão ou input do usuário)
+    $codpneu = $_POST['id_pneu']; 
+    $codcompra =  
+    $qntd = 1;
 
     // Recuperar o preço do pneu
     $queryPneu = $pdo->prepare("SELECT preco FROM tb_pneus WHERE codpneu = :codpneu");
@@ -20,7 +20,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if ($pneu) {
         $preco = $pneu['preco'];
 
-        // Adicionar ao carrinho
+        
         $queryCarrinho = $pdo->prepare("INSERT INTO tb_compras_pneus (codcompra, codpneu, qntd, preco) VALUES (:codcompra, :codpneu, :qntd, :preco)");
         $queryCarrinho->bindParam(':codcompra', $codcompra);
         $queryCarrinho->bindParam(':codpneu', $codpneu);

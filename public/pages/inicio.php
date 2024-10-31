@@ -167,25 +167,29 @@ if (!empty($_SESSION) && $_SESSION['tipo'] == 'A' && empty($_SESSION['tipo'] == 
 		</div>
 	</div>
 </section>
-<script >
-  let count = 1;
-const totalSlides = 3; // Total de slides que você possui
+<script>
+    let currentIndex = 0;
+    const slides = document.querySelectorAll(".slider img");
+    const slideCount = slides.length;
 
-document.getElementById("radio1").checked = true;
-
-setInterval(function() {
-    nextImage();
-}, 5000); // Altera a imagem a cada 5 segundos
-
-function nextImage() {
-    count++;
-    if (count > totalSlides) { // Verifica se o contador excede o número total de slides
-        count = 1; // Reseta o contador para o primeiro slide
+    function showNextSlide() {
+        // Oculta o slide atual
+        slides[currentIndex].style.display = "none";
+        
+        // Calcula o próximo índice e mostra o próximo slide
+        currentIndex = (currentIndex + 1) % slideCount;
+        slides[currentIndex].style.display = "block";
     }
 
-    document.getElementById("radio" + count).checked = true; // Marca o rádio correspondente ao slide atual
-}
+    // Inicializa o carrossel (exibe o primeiro slide)
+    slides.forEach((slide, index) => {
+        slide.style.display = index === 0 ? "block" : "none";
+    });
+
+    // Define o intervalo de 5 segundos
+    setInterval(showNextSlide, 5000);
 </script>
+
 
 
 
@@ -303,6 +307,9 @@ $pneus = $stmt->fetchAll(PDO::FETCH_ASSOC);
 </article>
 
 
+<form action="logout.php" method="post">
+    <button type="submit" name="logout">Sair</button>
+</form>
 
 
 

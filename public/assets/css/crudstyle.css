@@ -717,14 +717,14 @@ input[type="text"],
   display: flex; /* Enable flexbox layout */
   flex-wrap: wrap; /* Allow wrapping of items */
   justify-content: flex-start; /* Align items to the start */
-  gap: 10px; /* Space between cards */
+  gap: 60px; /* Space between cards */
   margin-left: 13%;
 }
 
 .produto_card {
   border: 1px solid #e7e7e7;
   border-radius: 8px;
-  padding: 20px;
+  padding: 25px;
   width: 200px; 
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); /* Optional shadow for a better look */
   background-color: #ffffffb7; /* Background color for cards */
@@ -733,11 +733,11 @@ input[type="text"],
 
 .produto_card {
   /* Defina um tamanho fixo para o card */
-  width: 222px; /* Ajuste conforme necessário */
+  width: 230px; /* Ajuste conforme necessário */
   height: 380px; /* Ajuste conforme necessário */
   overflow: hidden; /* Oculta partes da imagem que ultrapassam o contêiner */
   position: relative; /* Para controle de posicionamento se necessário */
-  margin-left: -4px;
+  margin-left: -5%;
   justify-content: space-between;
   border: #c7c7c7 solid 1px;
 }
