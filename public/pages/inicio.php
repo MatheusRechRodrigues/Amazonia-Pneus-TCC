@@ -148,9 +148,56 @@ if (!empty($_SESSION) && $_SESSION['tipo'] == 'A' && empty($_SESSION['tipo'] == 
 
     </nav>
 
+<?php
+// Verifica se o cliente está logado
+if (isset($_SESSION["nome"])) {
+  $nomeCliente = $_SESSION["nome"]; // Pega o nome do cliente da sessão
+} else {
+  $nomeCliente = "Visitante"; // Se não estiver logado, exibe "Visitante"
+}
+?>
+
+
+
+
     <a href="carrinho.php"><img src="../assets/icon/cart.png" alt="" class="icon-cart"></a>
 
-    <img src="../assets/icon/icon.png" alt="" class="icon-profile">        
+    <div class="dropdown">
+    <img src="../assets/icon/icon.png" alt="Ícone de perfil" class="icon-profile" onclick="toggleDropdown()">
+    <div id="dropdownContent" class="dropdown-content">
+        <a href="#"><?php echo htmlspecialchars($nomeCliente); ?></a>
+        <a href="alterar.php">Alterar</a>
+        <form method="POST" action="logout.php"> <!-- Altere o action para o caminho correto do seu arquivo de logout -->
+    <button type="submit" class="logout-banana" name="logout">Sair</button>
+</form>
+    </div>
+</div>
+
+    <script>
+        // Função para mostrar/ocultar o menu dropdown ao clicar na imagem
+        function toggleDropdown() {
+            const dropdownContent = document.getElementById("dropdownContent");
+            dropdownContent.style.display = dropdownContent.style.display === "block" ? "none" : "block";
+        }
+
+        // Fecha o dropdown se clicar fora dele
+        window.onclick = function(event) {
+            const dropdownContent = document.getElementById("dropdownContent");
+            if (!event.target.matches('.icon-profile')) {
+                dropdownContent.style.display = "none";
+            }
+        }
+    </script>
+
+
+
+
+
+
+
+
+
+
 
 
     <section class="container">
