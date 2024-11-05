@@ -149,11 +149,11 @@ if (!empty($_SESSION) && $_SESSION['tipo'] == 'A' && empty($_SESSION['tipo'] == 
     </nav>
 
 <?php
-// Verifica se o cliente está logado
+
 if (isset($_SESSION["nome"])) {
-  $nomeCliente = $_SESSION["nome"]; // Pega o nome do cliente da sessão
+  $nomeCliente = $_SESSION["nome"]; 
 } else {
-  $nomeCliente = "Visitante"; // Se não estiver logado, exibe "Visitante"
+  $nomeCliente = "Visitante"; 
 }
 ?>
 
@@ -167,14 +167,14 @@ if (isset($_SESSION["nome"])) {
     <div id="dropdownContent" class="dropdown-content">
         <a href="#"><?php echo htmlspecialchars($nomeCliente); ?></a>
         <a href="alterar.php">Alterar</a>
-        <form method="POST" action="logout.php"> <!-- Altere o action para o caminho correto do seu arquivo de logout -->
+        <form method="POST" action="app\functions\logout.php"> 
     <button type="submit" class="logout-banana" name="logout">Sair</button>
 </form>
     </div>
 </div>
 
     <script>
-        // Função para mostrar/ocultar o menu dropdown ao clicar na imagem
+        
         function toggleDropdown() {
             const dropdownContent = document.getElementById("dropdownContent");
             dropdownContent.style.display = dropdownContent.style.display === "block" ? "none" : "block";
