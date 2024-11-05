@@ -26,11 +26,18 @@
       <div class="form-group">
         <button type="submit" class="login-button"><a class="alink">Login</a></button>
       </div>
+
+<div class="forgotlinkdiv">
+      <a href="./pages/forgot-password.php" class="linkcadastrolog">Esqueci minha senha</a>
+      </div>  
+
+
       <div class="cadastrolinkdiv">
       <a class="cadastrolog">Sem conta?</a>
       <a href="cadastro-user.php" class="linkcadastrolog">Cadastre-se</a>
       </div>     
 
+      
     </form>
   </div>
 </div>
