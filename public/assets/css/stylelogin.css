@@ -10,13 +10,13 @@ html{
 
 
 .login-card {
-top: 40%;
-margin-left:65%;
-transform: translate(-45%, -40%);
-position: absolute;
-height: 55%;
-width: 20%;
-background: rgba(255, 255, 255, 0.23);
+  top: 40%;
+  margin-left:65%;
+  transform: translate(-45%, -40%);
+  position: absolute;
+  height: 65%;
+  width: 20%;
+  background: rgba(255, 255, 255, 0.23);
   border-radius: 16px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(5.3px);
@@ -121,7 +121,14 @@ input[type="submit"]:hover {
 /*escrita sem login ir para o cadastrar*/
 .cadastrolinkdiv{
   margin-left: 20px;
+  margin-top: 3px;
+  text-decoration: none;
 }
+
+.forgotlinkdiv{
+  margin-left: 20px;
+}
+
 
 
 .alink {
