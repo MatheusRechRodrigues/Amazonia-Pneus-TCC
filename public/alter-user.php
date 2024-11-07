@@ -75,6 +75,7 @@ if (isset($_POST['update'])) {
     <meta charset="UTF-8">
     <title>Alterar Grupo</title>
     <link rel="stylesheet" href="./assets/css/altersyle.css">
+    <link rel="shortcut icon" href="./assets/icon/logoamazonia.ico" type="image/x-icon">
 
 </head>
 

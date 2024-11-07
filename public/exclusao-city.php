@@ -79,6 +79,7 @@ if (isset($_GET['codcidade'])) {
     <title>Excluir Cidade</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="./assets/css/crudstyle.css" >
+    <link rel="shortcut icon" href="./assets/icon/logoamazonia.ico" type="image/x-icon">
 </head>
 <body>
 

@@ -169,7 +169,7 @@ VALUES
       
     INSERT INTO tb_clientes (codcliente, nome, rua, cpf, fone, email, senha, datanasc, ncasa, bairro, complemento, tipo, ativo, codcidade)
 VALUES
-    (2, 'Matheus', 'Rua dos Tropeiros', '98765432101', '123456789', 'melhor_mortis_do_brasil@gmail.com', MD5('admin123'), '1985-01-01',  '456', 'Tropical', 'Casa Esquina', 'A', 'S', 2);
+    (2, 'Matheus', 'Rua dos Tropeiros', '98765432101', '123456789', 'admamazonia@gmail.com', MD5('admin123'), '1985-01-01',  '456', 'Tropical', 'Casa Esquina', 'A', 'S', 2);
         
    INSERT INTO tb_clientes (codcliente, nome, rua, cpf, fone, email, senha, datanasc, ncasa, bairro, complemento, tipo, ativo, codcidade)
 VALUES 

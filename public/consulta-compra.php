@@ -11,6 +11,7 @@ $pdo = conect();
     <meta charset="UTF-8">
     <title>Lista de Compras</title>
     <link rel="stylesheet" href="./assets/css/crudstyle.css">
+    <link rel="shortcut icon" href="./assets/icon/logoamazonia.ico" type="image/x-icon">
 </head>
 
 <body>

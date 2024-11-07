@@ -58,6 +58,7 @@ if (isset($_POST['update'])) {
     <meta charset="UTF-8">
     <title>Alterar Imagens</title>
     <link rel="stylesheet" href="./assets/css/crudstyle.css">
+    <link rel="shortcut icon" href="./assets/icon/logoamazonia.ico" type="image/x-icon">
 </head>
 
 <body>

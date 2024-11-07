@@ -14,6 +14,7 @@ $cidades = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <meta charset="UTF-8">
     <title>Lista de Cidades</title>
     <link rel="stylesheet" href="./assets/css/crudstyle.css">
+    <link rel="shortcut icon" href="./assets/icon/logoamazonia.ico" type="image/x-icon">
 </head>
 
 <!-- jQuery -->

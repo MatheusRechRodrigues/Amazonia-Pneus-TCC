@@ -51,6 +51,7 @@ if (isset($_GET['codimg'])) {
     <meta charset="UTF-8">
     <title>Excluir Imagem</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="shortcut icon" href="./assets/icon/logoamazonia.ico" type="image/x-icon">
     <link rel="stylesheet" href="./assets/css/crudstyle.css">
 </head>
 <body>
