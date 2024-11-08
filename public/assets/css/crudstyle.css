@@ -73,24 +73,22 @@ td{
   padding: 20px;
 }
 
-.containerconsulta h2 {
-  text-align: center;
-  margin-bottom: 20px;
-}
-
 table {
   width: 100%;
   border-collapse: collapse;
   margin-bottom: 20px;
+  table-layout: auto; /* Tabela ajusta automaticamente os tamanhos das colunas */
 }
 
 th, td {
   padding: 10px;
   text-align: left;
+  word-wrap: break-word; /* Quebra texto para caber na célula */
+  max-width: 150px; /* Limita a largura de cada célula */
 }
 
 th {
-  background-color: #4CAF50;
+  background-color: #077510;
   color: white;
 }
 
@@ -132,6 +130,7 @@ tr:hover {
 .actions {
   text-align: center;
 }
+
 
 /* Botões de navegação */
 .containerconsultavoltar,
@@ -838,7 +837,7 @@ input[type="text"],
 
 .produto_nome{
   margin-top: 15%;
-  font-size: 04vh;
+  font-size: 03vh;
 }
 
 .btn-card{
@@ -956,30 +955,46 @@ input[type="text"],
 
 
 
+.rodape {
+  background-color: #077510;
+  color: white;
+  padding: 20px 0;
+  text-align: center;
+  font-family: Arial, sans-serif;
+  height: 230px;
+}
 
+.footer-verde {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap; /* Permite quebra de linha para telas menores */
+  padding: 20px;
+}
 
+.footer-section {
+  flex: 1 1 200px; /* Responsividade, mínimo de 200px por seção */
+  margin: 10px;
+}
 
+.footer-section h4 {
+  margin-bottom: 10px;
+  font-size: 18px;
+}
 
+.footer-section p {
+  margin: 5px 0;
+}
 
+.footer-link {
+  color: white;
+  text-decoration: none;
+}
 
+.footer-link:hover {
+  text-decoration: underline;
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.footer-bottom {
+  margin-top: 10px;
+  font-size: 14px;
+}

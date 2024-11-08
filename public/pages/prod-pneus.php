@@ -241,3 +241,37 @@ $pneus = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
  window.onload = () => addZoom("produto_imagem");
 </script>
+
+
+
+
+
+
+
+<footer class="rodape">
+  <div class="footer-verde">
+    <div class="footer-section">
+      <h4>Contato</h4>
+      <p>Email: contato@amazoniapneus.com.br</p>
+      <p>Telefone: (92) 3333-3333</p>
+    </div>
+    <div class="footer-section">
+      <h4>Endereço</h4>
+      <p>Avenida da Amazônia, 1234</p>
+      <p>Manaus, AM</p>
+    </div>
+    <div class="footer-section">
+      <h4>Redes Sociais</h4>
+      <a href="#" class="footer-link">Facebook</a> | 
+      <a href="#" class="footer-link">Instagram</a> | 
+      <a href="#" class="footer-link">LinkedIn</a>
+    </div>
+    <div class="footer-section">
+      <h4>Sobre Nós</h4>
+      <p>A Amazônia Pneus é referência em pneus de alta qualidade, oferecendo serviços e produtos confiáveis para todos os nossos clientes.</p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2024 Amazônia Pneus. Todos os direitos reservados.</p>
+  </div>
+</footer>

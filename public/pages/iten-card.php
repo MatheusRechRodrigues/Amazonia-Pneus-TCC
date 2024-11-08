@@ -196,7 +196,7 @@ $pneu = $stmt->fetch(PDO::FETCH_ASSOC);
 
 
 <article class="line-division"></article>
-<div class="division-text-information">a </div>
+<div class="division-text-information"> </div>
 
 
 
