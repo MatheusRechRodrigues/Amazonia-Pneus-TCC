@@ -1,2 +1,2 @@
 # Amazonia-Pneus-TCC
-git pro tcc brabissimo
+Trabalho de conclusão de curso Ceep Informática
